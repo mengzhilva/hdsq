@@ -1,0 +1,29 @@
+<h2 class="contentTitle">处理操作</h2>
+
+
+<div class="pageContent">
+
+		<form method="post" action="__URL__/checkbm/navTabId/listhdbm/callbackType/closeCurrent"  class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone);">
+			<div class="pageFormContent nowrap" layoutH="97">
+
+				<input type="hidden" name="ID" value="{$info.ID}"/>
+				<input type="hidden" name="action" value="check"/>
+
+				<dl>
+					<dt>处理状态：</dt>
+					<dd>
+						<input type="radio" name="status" value="1" checked /> 已处理
+					</dd>
+				</dl>
+			
+			</div>
+			<div class="formBar">
+				<ul>
+					<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+					<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+				</ul>
+			</div>
+		</form>
+
+</div>
+

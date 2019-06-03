@@ -1,0 +1,91 @@
+
+<div class="pageContent">
+
+    <form method="post" action="__URL__/update/navTabId/listjob/callbackType/closeCurrent"  class="pageForm required-validate" 
+        onsubmit="return validateCallback(this,navTabAjaxDone);" novalidate="novalidate"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+        <input type="hidden" name="id" value="{$info.id}"/>
+        <div class="pageFormContent nowrap" layoutH="60" >
+            <dl>
+                <dt>工作地点：</dt>
+                <dd><select name="CityID">
+                    <volist name="city" id="vo">
+                        <option value="{$vo['ID']}" <if condition="$info['CityID'] eq $vo['ID'] ">selected</if>>{$vo['NAME']}</option>
+                    </volist>
+                </select>
+                </dd>
+            </dl>
+            <dl >
+                <dt>职位类别：</dt>
+                <dd ><select name="JobType">
+                    <volist name="tbjobtype" id="vos">
+                        <option value="{$vos['ClassID']}" <if condition="$info['JobType'] eq $vos['ClassName'] ">selected</if>>{$vos['ClassName']}</option>
+                    </volist>
+                </select></dd>
+            </dl>
+            <dl >
+                <dt>应聘类别：</dt>
+                <dd ><select name="ClassID">
+                    <volist name="tbjobclass" id="vo">
+                        <option value="{$vo['ClassID']}" <if condition="$info['ClassID'] eq $vo['ClassID']">selected</if>>{$vo['ClassName']}</option>
+                    </volist>
+                </select></dd>
+            </dl>
+            <dl>
+                <dt>招聘职位：</dt>
+                <dd><input type="text" class="required"  style="width:100%" name="Title" value="{$info.Title}"/></dd>
+            </dl>
+            <dl>
+                <dt>招聘部门：</dt>
+                <dd><input type="text" class="required"  style="width:100%" name="TeamName" value="{$info.TeamName}"/>
+                </dd>
+            </dl>
+            <dl>
+                <dt>招聘人数：</dt>
+                <dd><input type="text" class="required"  style="width:100%" name="JobNum" value="{$info.JobNum}"/></dd>
+            </dl>
+            <dl>
+                <dt>发布日期：</dt>
+                <dd class="unit">
+                <input type="text" name="AddTime" class="date textInput readonly valid" dateFmt="yyyy-MM-dd" readonly="true" value="{$info.AddTime}">
+                <a class="inputDateButton" href="javascript:;">选择</a>
+                
+                </dd>
+            </dl>
+            <dl>
+                <dt>截止日期：</dt>
+                <dd class="unit">
+                
+                <input type="text" name="EndTime" class="date textInput readonly valid" dateFmt="yyyy-MM-dd" readonly="true" value="{$info.EndTime}">
+                <a class="inputDateButton" href="javascript:;">选择</a>
+                </dd>
+            </dl>
+            <dl style="">
+                <dt>职责描述：</dt>
+                <dd>
+                    
+                <textarea name="JobNote" cols="50" rows="5" class="textInput">{$info.JobNote}</textarea>
+                </dd>
+            </dl>
+            <dl style="">
+                <dt>应聘要求：</dt>
+                <dd>
+                    
+                <textarea name="JobRequire" cols="50" rows="5" class="textInput">{$info.JobRequire}</textarea>
+                </dd>
+            </dl>
+            <dl>
+                <dt>联系方式：</dt>
+                <dd><input type="text"  style="width:100%" name="JobEmail" value="{$info.JobEmail}"/></dd>
+            </dl>
+        </div>
+        
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+

@@ -1,0 +1,157 @@
+<h2 class="contentTitle">编辑新闻</h2>
+
+
+<div class="pageContent">
+    
+    <form method="post" action="__CONTROLLER__/update/navTabId/listnewsyg/callbackType/closeCurrent"  enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="97">
+           
+            <dl>
+                <dt>城市：</dt>
+                <dd>
+                        <select class="combox required" name="CityID" >
+                            <volist name="city" id="ctname">
+                            <option value="{$ctname.ID}" <if condition="$ctname.ID eq $vo.CityID ">selected</if>>{$ctname.NAME}</option>
+                            </volist>
+                        </select>
+                         
+                </dd>
+            </dl>
+            <dl>
+                <dt>新闻类型：</dt>
+                <dd>
+                        <select class="combox" name="ClassID" >
+                            <volist name="newsclass" id="necl">
+                            <option value="{$necl.ClassID}" <if condition="$necl.ClassID eq $vo.ClassID ">selected</if>>{$necl.ClassName}</option>
+                            </volist>
+                        </select>
+                        
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>新闻标题：</dt>
+                <dd>
+                    <input type="hidden" name="ID" value="{$vo.ID}">
+                    <input type="text" name="Title" maxlength="100"  style="width:100%" class="required" value="{$vo.Title}" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            
+            <dl>
+                <dt>作者：</dt>
+                <dd>
+                    <input type="text" name="Author" maxlength="20" style="width:100%" class="" value="{$vo.Author}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>来源：</dt>
+                <dd>
+                    <input type="text" name="CopyFrom" maxlength="20" style="width:100%" class="" value="{$vo.CopyFrom}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>外链新闻：</dt>
+                <dd>
+                    <label><input type="radio" name="IsLink" value="1" <if condition="$vo.IsLink eq 1">checked</if>/>是</label>
+                    <label><input type="radio" name="IsLink"  value="0" <if condition="$vo.IsLink eq 0">checked</if>/>否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>外链地址：</dt>
+                <dd>
+                    <input type="text" name="LinkUrl" maxlength="100" style="width:100%" class=" url" placeholder="例如：http://www.baidu.com" value="{$vo.LinkUrl}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>新闻简介：</dt>
+                <dd><textarea name="Intro" class="" cols="90" rows="2">{$vo.Intro}</textarea></dd>
+            </dl>
+
+            <dl>
+                <dt>默认图片：</dt>
+                <dd>
+                    <div style="display:blodk;width:500px;">
+                        <img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.DefaultPicUrl}"/>
+                        <a class="button" href="__CONTROLLER__/upindex"  target="dialog"><span>上传图片</span></a>
+                    </div>
+                    <input type="hidden" style="width:100%" name="DefaultPicUrl" id="background">
+                </dd>
+            </dl>
+            
+            <dl>
+                <dt>新闻内容：</dt>
+                <dd>
+                    <textarea class="editor required" upImgUrl="__CONTROLLER__/doUpload" upImgExt="jpg,jpeg,gif,png" name="Content" rows="15" cols="100">{$vo.Content}</textarea>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>SEO标题：</dt>
+                <dd>
+                    <input type="text" name="SeoTitle" maxlength="50" style="width:100%" class="" value="{$vo.SeoTitle}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>SEO关键字：</dt>
+                <dd>
+                    <input type="text" name="SeoKeywords" maxlength="50" style="width:100%" class="" value="{$vo.SeoKeywords}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>HTML文件地址：</dt>
+                <dd>
+                    <input type="text" name="HtmlFileUrl" maxlength="50" style="width:100%" class="" value="{$vo.HtmlFileUrl}"/>
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>首页显示：</dt>
+                <dd>
+                    <label><input type="radio" name="InIndex" value="1" <if condition="vo.InIndex eq 1">checked </if> />是</label>
+                    <label><input type="radio" name="InIndex" value="0" <if condition="co.InIndex eq 0">checked </if> />否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>热点新闻：</dt>
+                <dd>
+                    <label><input type="radio" name="Hot" <if condition="$vo.InIndex eq 1">checked </if> value="1"/>是</label>
+                    <label><input type="radio" name="Hot" <if condition="$vo.InIndex eq 0">checked </if> value="0"/>否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>等级：</dt>
+                <dd>
+                    <label><input type="radio" name="Stars" <if condition="$vo.Stars eq 1">checked</if> value="0"/>1</label>
+                    <label><input type="radio" name="Stars" <if condition="$vo.Stars eq 2">checked</if> value="2"/>2</label>
+                    <label><input type="radio" name="Stars" <if condition="$vo.Stars eq 3">checked</if> value="3"/>3</label>
+                    <label><input type="radio" name="Stars" <if condition="$vo.Stars eq 4">checked</if> value="4"/>4</label>
+                    <label><input type="radio" name="Stars" <if condition="$vo.Stars eq 5">checked</if> value="5"/>5</label>
+                </dd>
+            </dl>
+   
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+    
+</div>
+

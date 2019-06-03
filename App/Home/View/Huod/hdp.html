@@ -1,0 +1,106 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<LINK href="__PUBLIC__/web/css/lanrentuku.css" type=text/css rel=stylesheet>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.4.2.min.js"></script>
+<?php
+$height = str_replace('px','',$height)-20;
+$height = $height.'px';
+$imgwidth = str_replace('px','',$width)-38;
+$imgheight = str_replace('px','',$height)/2-30;
+ ?>
+<style>
+/* Swipe 幻灯片 */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.slider-control .left{
+  position: absolute;
+  left: 20px;
+  top: 45%;
+}
+
+.slider-control .right{
+  position: absolute;
+  right: 20px;
+  top: 45%;
+}
+
+.slider-control button{
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  border: 3px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: block;
+}
+
+.swipe:hover button{
+  display: block;
+}
+
+.slider-control button:hover{
+  opacity: 0.5;
+}
+</style>
+<div id="iwidth" style="display:none" ><?php echo  str_replace('px','',$width) ?></div>
+<SCRIPT src="__PUBLIC__/web/js/swipe.js" type=text/javascript></SCRIPT>
+<!--iepng-->
+<script type="text/javascript" src="__PUBLIC__/web/js/iepng.js"></script>
+<script type="text/javascript">
+   EvPNG.fix('div ');
+</script>
+
+
+    <div id="showcase">
+      <div id='slider' class='swipe'>
+        <div class='swipe-wrap'>
+        <?php foreach($hdp as $kh=>$vh) {?>
+            <?php if(!empty($vh['url'])) {?>
+                <div>
+                <a href="<?php echo $vh['url'] ?>" target="_blank">
+                <img src="http://www.sc.cc/<?php echo $vh['img']?>" alt="" style="width:{$width}; height:{$height};">
+                </a>
+                </div>
+          <?php } else { ?>
+                <div><img src="http://www.sc.cc/<?php echo $vh['img']?>" alt="" style="width:{$width}; height:{$height};"></div>
+          <?php }?>
+        <?php }?>
+        </div>
+        </div>
+        <div class="slider-control">
+          <button class="left" onclick="mySwipe.prev()"><i class="icon-angle-left"></i></button>
+          <button class="right" onclick="mySwipe.next()"><i class="icon-angle-right"></i></button>
+        </div>
+      </div>
+       <script>
+        window.mySwipe = Swipe(document.getElementById('slider'),{
+			auto: 1000,
+			continuous: true,
+			});
+	   
+      </script>
+    </div>

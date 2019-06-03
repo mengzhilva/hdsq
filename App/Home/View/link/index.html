@@ -1,0 +1,56 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+
+
+<!--*********************contanier 内容区 *********************-->
+<link href="__PUBLIC__/web/css/yqlj.css" type="text/css" rel="stylesheet">
+       <div class="header-step-box" style="float:left">
+         <h1 class="h-s-title">友情链接</h1>
+       </div>
+<div class="layout">
+	<!--Breadcrumb -->
+    <div class="web-step">
+         <a href="{:C('scurl')['INDEX_INDEX']}">首页 ></a>
+         友情链接
+     </div>
+     <!--Breadcrumb  end-->
+</div>
+<style>
+  .linkpic{
+    display:block;
+    float:left;
+  }
+</style>
+<div class="layout container-minheight clearfix yqlj-con">  
+       <div class="tuan-tab clearfix">合作伙伴</div>
+       <table width="100%" border="0" cellpadding="0" cellspacing="0"  >
+          <tr align=center>
+            <volist name="listpic" id="vopic">
+            <td class="linkpic" width="196px" height="110px"><a href="{$vopic.url}"><img src="{$vopic.pic|default='default.jpg'}" width="180" height="80" /></a></td>
+            </volist>
+            
+          </tr>
+   
+      </table>
+ 	
+      <div class="tuan-tab clearfix"><span>友情链接</span><a href="#" class="yellow-btn-light btn-animate w-120 jh">交换链接</a><div class="clear"></div></div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0"  >
+          <tr align=center>
+            <volist name="listtext" id="votext">
+            <td class="linkpic" width="196px" height="50px"><a href="{$votext.url}" target="_blank"><empty name="votext.pic">{$votext.link_name}<else /><img src="{$votext.pic|default='default.jpg'}" width="180" height="30" /></empty></a></td>
+            </volist>
+ 
+          </tr>
+          
+      </table>
+</div>
+
+<!--*********************contanier 内容区 end *********************-->
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+</body>
+</html>

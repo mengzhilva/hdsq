@@ -1,0 +1,85 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<!--页面独立css和js引入区-->
+
+<link href="__CSS__/about.css" type="text/css" rel="stylesheet"><!--页脚服务支持导航等页面独立样式-->
+<!--<script src="__JS__/sc-ui-control.js" type="text/javascript"></script>-->
+
+<!--*********************contanier 内容区 *********************-->
+<div class="layout">
+	<!--Breadcrumb -->
+    <div class="web-step">
+          <a href="{:C('scurl')['INDEX_INDEX']}">首页 ></a>
+         <a href="{:C('scurl')['ABOUT_INDEX']}">关于实创 > </a>
+         <a>员工风采</a>
+     </div>
+     <!--Breadcrumb  end-->
+</div>
+
+<div class="about-employee-nav-bg">
+	<div class="layout container-minheight clearfix">
+		<div class="about-nav txt-center about-nav-2">
+        	<ul>
+<include file="left_menu_joinus" ygfc='  class="active"' />
+             </ul>
+        </div>
+	</div>
+</div>
+
+<div class="layout container-minheight clearfix">
+
+    <div class="inside-contanier-l-wrap padding-none f_r ">
+        <h2 class="h-s-title about-news-list-title txt-center">员工风采</h2>
+        	<!--循环体-->
+          <volist name="list" id="vo" mod="2" empty="暂无数据">
+            <eq name="mod" value="1">
+            <div class="about-employee-list">
+              <div class="employee-des m-r-2 f_l"><span><a href="{:U('About/lifeinfo?id='.$vo['ID'])}">{$vo.Title}</a></span>{$vo.Intro}</div>
+                <span class="employee-list-title f_l txt-center"><a href="{:U('About/lifeinfo?id='.$vo['ID'])}">{$vo.Title}</a></span>
+                <div class="employee-pic p-bg-2 txt-r f_r"><a href="{:U('About/lifeinfo?id='.$vo['ID'])}"><img src="{$vo.DefaultPicUrl}" width="273" height="203" /></a></div>
+                <div class="clear"></div>
+            </div> 
+            <else/>
+            <div class="about-employee-list">
+              <div class="employee-pic p-bg-1 m-r f_l"><a href="{:U('About/lifeinfo?id='.$vo['ID'])}"><img src="{$vo.DefaultPicUrl}" width="273" height="203" /></a></div>
+                <span class="employee-list-title f_l txt-center"><a href="{:U('About/lifeinfo?id='.$vo['ID'])}">{$vo.Title}</a></span>
+                <div class="employee-des f_r"><span><a href="{:U('About/lifeinfo?id='.$vo['ID'])}">{$vo.Title}</a></span>{$vo.Intro}</div>
+                <div class="clear"></div>
+            </div>           
+            </eq>
+          </volist>
+
+
+            <!--循环体 end-->       
+        
+        		<!--分页-->
+                <p class="nex-page">
+                 <div class="tppage t20">
+                {$page}
+                </div>
+                </p>
+
+                <!--分页 end--> 
+                
+                <div class="about-employee-ad">
+                	<div class="ad-title">成长实创</div>
+                    <ul>
+                      <volist name="czsc" id="vo"  empty="暂无数据">
+                    	<li><a href="{:U('About/lifeinfo?id='.$vo['ID'])}"><img src="{$vo.DefaultPicUrl}" width="280" height="175" /></a></li>
+                    </volist>
+                    </ul>
+                    <div class="clear"></div>
+                </div> 
+    </div>
+        
+</div>
+
+<!--*********************contanier 内容区 end *********************-->
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+</body>
+</html>

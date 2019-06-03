@@ -1,0 +1,42 @@
+//选择默认选定的合同
+function defaultcon(id)
+{
+	if(id=='')
+	{
+		if(document.getElementById("t_isdefault"))
+		{
+			location.href='/config/submit.php?id='+document.getElementById("t_isdefault").value+'&act=1';
+		}
+		else
+		{
+			alert('对不起，您还没有绑定过合同！');
+		}
+	}
+	else
+	{
+		document.getElementById("t_isdefault").value=id;	
+	}
+}
+//绑定的表单
+function check_connumber()
+{
+	if(document.formbind.mobile.value==''||document.formbind.mobile.value=='请输入您的手机号码')	
+	{
+		alert('请输入您的手机号码！');
+		document.formbind.mobile.focus();
+		exit();
+	}
+	if(isNaN(document.formbind.mobile.value)||(document.formbind.mobile.value.length!=11))
+	{
+		alert('请输入正确格式的手机号码！');
+		document.formbind.mobile.focus();
+		exit();
+	}
+	if(document.formbind.connumber.value==''||document.formbind.connumber.value=='请输入您的合同号')	
+	{
+		alert('请输入您的合同号！');
+		document.formbind.connumber.focus();
+		exit();
+	}
+	document.formbind.submit();
+}

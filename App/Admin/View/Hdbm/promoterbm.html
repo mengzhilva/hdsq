@@ -1,0 +1,121 @@
+<form id="pagerForm" action="__URL__/promoterbm" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> 
+					城市 
+					<select name="CityID">
+					<option value="">全部</option>
+					<volist name="citylists" id="vos">
+						<option value="{$vos['ID']}" <if condition="$Think.request.CityID eq $vos['ID']">selected</if>>{$vos['NAME']}</option>
+					</volist>
+ 				</select>
+					状态 
+					<select name="Dealstate">
+						<option value="">全部</option>
+							<option value="1" <if condition="$Think.request.Dealstate eq '1'">selected</if>>已处理</option>
+							<option value="0" <if condition="$Think.request.Dealstate eq '0'">selected</if>>未处理</option>
+						
+ 					</select>
+					&nbsp; 渠道：<input type="text" name="qudao" value="{$Think.request.qudao}" /> 
+					&nbsp; 活动名称：<input type="text" name="keyword" value="{$Think.request.keyword}" /> 
+						
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="__URL__/del/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/liststu" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="40" orderField="ID" <if condition="$Think.request._order eq 'ID'">class="{$Think.request._sort}"</if>>ID</th>
+				<th width="150" orderField="CityName" <if condition="$Think.request._order eq 'CityName'">class="{$Think.request._sort}"</if>>城市</th>
+				<th width="150" orderField="ClassRoomName" <if condition="$Think.request._order eq 'ClassRoomName'">class="{$Think.request._sort}"</if>>活动标题</th>
+				<th width="150" orderField="UserName" <if condition="$Think.request._order eq 'UserName'">class="{$Think.request._sort}"</if>>报名人</th>
+				<th width="150" orderField="TelePhone" <if condition="$Think.request._order eq 'TelePhone'">class="{$Think.request._sort}"</if>>报名人电话</th>
+				<th width="150" orderField="LpName" <if condition="$Think.request._order eq 'LpName'">class="{$Think.request._sort}"</if>>楼盘名称</th>
+				<th width="150" >推广员</th>
+				<th width="150" orderField="qudao" <if condition="$Think.request._order eq 'qudao'">class="{$Think.request._sort}"</if>>渠道</th>
+				<th width="150" orderField="utm_term" <if condition="$Think.request._order eq 'utm_term'">class="{$Think.request._sort}"</if>>转化关键词</th>
+				<th width="150" >处理状态</th>
+				<th width="150" orderField="UpdateTimes" <if condition="$Think.request._order eq 'UpdateTimes'">class="{$Think.request._sort}"</if>>报名时间</th>
+				<th width="150" >基本操作</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.ID}</td>
+					<td>{$vo.CityID|getcityname}</td>
+					<td>{$vo.ClassRoomName}</td>
+					<td>{$vo.UserName}({$vo.Sex})</td>
+					<td>{$vo.TelePhone}</td>
+					<td>{$vo.LpName}</td>
+					<td><if condition="$vo.PromoterId eq '0'">网站</if>
+					<if condition="$vo.PromoterId neq '0'">{$vo.PromoterId|gettgyname}</if></td>
+					<td>{$vo.qudao}</td>
+					<td>{$vo.utm_term}</td>
+					<td><if condition="$vo.Dealstate eq '-1'">已取消</if><if condition="$vo.Dealstate eq 0">未处理</if><if condition="$vo.Dealstate eq 1">已处理</if></td>
+					<td>{$vo.UpdateTime}</td>
+					<td>
+					<if condition="$vo.Dealstate eq 0"><a class="edit" href="__URL__/checkprombm/id/{$vo.ID}/" width="550" height="380" target="navTab"><span>处理</span></a></if>
+					</td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+	<script type="text/javascript">
+function display(id){
+	//alert(img.width());
+	//alert(image);
+	var url = "__URL__/editDisplay/id/"+id;
+     var xpwidth=window.screen.width-10;
+        var xpheight=window.screen.height-105;
+       // alert(xpheight);
+        //window.open('map/mapview.aspx', '_blank', 'resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+	window.open(url,'newWindow','scrollbars=yes, resizable=yes,resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+
+	
+}
+
+
+ </script>
+</div>

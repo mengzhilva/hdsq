@@ -1,0 +1,75 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字：<input type="text" name="keyword" value="{$Think.post.keyword}" /> 
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			
+			<select class="combox" name="province" ref="w_combox_city" refUrl="__CONTROLLER__/getcity/cid/{value}">
+				<option value="">所有省市</option>
+				<volist name="clist" id="ca">
+				<option value="{$ca.ID}">{$ca.NAME}</option>
+				</volist>
+			</select>
+			<select class="combox" name="city" id="w_combox_city" ref="w_combox_area" >
+				<option value="">所有城市</option>
+			</select>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="20">序号</th>
+				<th width="100">类别名称</th>
+				<th width="40">父类别id</th>
+				<th width="40">path路径</th>
+                <th width="40">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo" key="k">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.id}</td>
+					<td>{:outTypeInfo($vo["path"])}{$vo.name}</td>
+					<td>{$vo.pid}</td>
+					<td>{$vo.path}</td>
+					<td><a style="color:blue" href="__URL__/add/pid/{$vo.pid}/id/{$vo.id}" target="dialog" width="550" height="380">添加子类</a></td>
+                </tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>

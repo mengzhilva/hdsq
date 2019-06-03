@@ -1,0 +1,334 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-size:12px;}
+li{ list-style-type:none;}
+a{ text-decoration:none; }
+.clear{ clear:both;}
+img{border:none;}
+
+/*.bag{background:url(../images/bag_01.jpg) top center no-repeat}*/
+.bag_1{background:#318538 url(../images/bag_02.png) no-repeat center 0px }
+.newTop{
+	width: 100%;
+	height:53px;
+	background:#fff;
+}
+.newTopMain{
+	width: 1200px;
+	height: 53px;
+	position: relative;
+	margin: 0 auto;
+}
+.contain{ width:1124px; margin:0 auto; position:relative; font-family: Arial,Helvetica,sans-serif;}
+.nav{left:349px !important; top:19px !important;}
+.zt_ph{ left:693px !important;}
+.address{
+	position: absolute;
+	top: 425px;
+	left: 347px;
+	color: #cc0000;
+	font-size: 18px;
+	font-family: "微软雅黑";
+	width: 408px;
+	height: 35px;
+	font-weight: bold
+}
+.address font{ padding-left:32px; font-weight:normal;font-size: 28px;
+	font-family: "微软雅黑";}
+.guess{
+	position: absolute;
+	top: 1196px;
+	width: 1036px;
+	left: 133px;
+}
+.guess span{ float:left; padding-right:5px; font-size:16px; color:#666666}
+.guess p{ float:left; width:180px; padding-right:7px;}
+.g_z a{ color:#cd0065;font-size:16px; font-weight:bold}
+.baoming1,.baoming2,.baoming3,.baoming4,.baoming5,.baoming6,.baoming7,.baoming8,.baoming9,.baoming10{
+	color: #cc0000;
+	position: absolute;
+	width: 458px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	height: 122px;
+	
+}
+/*.baoming4,.baoming5,.baoming6,.baoming7,.baoming8,.baoming9,.baoming10{
+		color: #cc0000;
+	position: absolute;
+	width: 214px;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	height: 270px;}*/
+.baoming1 td{ color:#cc0000; font-size:14px;} 
+.input{ width:120px; height:26px; line-height:26px; padding:0px 0px 0px 4px; border:#a0a0a0 1px solid; }
+.gd,.gd2,.gd3,.gd4,.gd5,.gd6,.gd7,.gd8,.gd9,.gd10{position: absolute;height: 97px;}
+.bm_num,.bm_num2,.bm_num3,.bm_num4,.bm_num5,.bm_num6,.bm_num7,.bm_num8,.bm_num9,.bm_num10{
+	color: #cc0000;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	position: absolute;
+	width: 39px;
+	text-align: center;
+}
+.baoming1{
+	right: 482px;
+	top: 1396px;
+}
+.baoming2{
+	right: 506px;
+	top: 2588px;
+}
+.baoming3{
+	right: 506px;
+	top: 3509px;
+}
+.baoming4{
+	right: 491px;
+	top: 4431px;
+}
+.baoming5{
+	left: 46px;
+	top: 6470px;
+}
+.baoming6{
+	right: 509px;
+	top: 7469px;
+}
+.gd{
+	right: 135px;
+	top: 1406px;
+}
+.gd2{
+	right: 135px;
+	top: 2596px;
+}
+.gd3{
+	right: 135px;
+	top: 3518px;
+}
+.gd4{
+	right: 135px;
+	top: 4440px;
+}
+.gd5{
+	right: 135px;
+	top: 6478px;
+}
+.gd6{
+	right: 135px;
+	top: 7478px;
+}
+.bm_num{
+	right:90px;
+	top: 45px;
+}
+.bm_num2{
+	right: 240px;
+	top: 2548px;
+}
+.bm_num3{
+	right: 240px;
+	top: 3469px;
+}
+.bm_num4{
+	right: 240px;
+	top: 4394px;
+}
+.bm_num5{
+	right: 240px;
+	top: 6431px;
+}
+.bm_num6{
+	right: 240px;
+	top: 7431px;
+}
+.lb_2{
+	position: absolute;
+	top: 6875px;
+	left:122px;
+	width: 862px;
+	height: 463px;
+
+}
+.phone_3{
+	color: #fdef5a;
+	font-size: 24px;
+	position: absolute;
+	right: 464px;
+	top: 413px;
+	width: 204px;
+	height: 29px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+
+.phone_5{
+	top: 9202px;
+	color: #C10303;
+	font-size: 18px;
+	position: absolute;
+	right: 118px;
+	width: 179px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.yxl23{
+	color: #EA5503;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: normal;
+	left: 598px;
+	line-height: 26px;
+	position: absolute;
+	top: 4732px;
+	width: 374px;
+	}
+
+.bus{
+	color: #8d2202;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	left: 756px;
+	line-height: 23px;
+	position: absolute;
+	top: 5485px;
+	width: 338px;
+	height: 338px;
+	}
+.bus tr td{ font-size:12px; font-weight:bolder;}
+.bus_2{
+	color: #8d2202;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	left: 197px;
+	line-height: 24px;
+	position: absolute;
+	top: 5889px;
+	width: 840px;
+	height: 106px;
+	}
+.bus_2 tr td{ font-size:14px; font-weight:bolder;}
+.nextpage {
+	position: fixed;
+	filter: alpha(opacity=90);
+	line-height:20px; 
+	margin: 0px auto; 
+	width: 1088px; 
+	bottom: 0px;  
+	height: 163px; 
+	color: #fff;
+	opacity: .90;
+	_width: 1088px; background:url(../images/xf_bag.jpg) no-repeat center top;
+}
+*html{background-image:url(about:blank);background-attachment:fixed;}/*解决IE6下滚动抖动的问题*/
+/*解决IE6下不兼容 position:fixed 的问题*/
+#gotop{ display:none;}
+#gotop{  cursor:pointer;
+_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))); bottom:0px; _margin-bottom:0px; 
+}
+.t_phone{
+	float:right;
+	font-size:18px;
+	font-family:"微软雅黑";
+	color:#ffffff;
+	width:154px;
+	position:absolute; left:866px; top:7px;
+}
+
+.xf_con{ width:1088px; height:163px; margin:0 auto;position:relative; }
+.xf_bm{ position:absolute; left:305px; top:4px;}
+.bmrs{ position:absolute; right:9px; font-size:12px; color:#fef6c5; width:94px; top:9px; line-height:20px; text-align:center}
+.bmrs p{ font-size:14px;}
+.banner{
+	width: 100%;
+	height: 580px;
+	position: absolute;
+	z-index: 999;
+	top:4285px;
+}
+.baomingFd{
+	width: 199px;
+	height: 292px;
+	position: fixed;
+	top:35%;
+	left:0px;
+	z-index:9999;
+	background: url(../images/fd.png) no-repeat left center;
+}
+.baomingFd form{
+	padding-top: 80px;
+	width: 168px;
+	margin: 0 auto;
+	position: relative;
+	right:0px;
+}
+.baomingFd form tr{
+	border:1px solid green;
+}
+.baoming{
+	padding-top:10px;
+}
+.miaosha{
+	width: 1124px;
+	height: 825px;
+	margin: 0 auto;
+}
+#ms{/*
+	display: none;*/
+	width: 535px;
+	height: 300px;
+	border:8px solid #cc9966;
+	left: 30%;
+	top:10%;
+	position: absolute;
+	background: #fff;
+}
+.msTit{
+	width: 500px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	font-size: 16px;
+	color: #cc9966;
+	font-family: Microsoft YaHei;
+	border-bottom: 1px solid #cc9966;
+}
+.btnClose{
+	float: right;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#ms table{
+	width: 400px;
+	height: auto;
+	margin: 0 auto;
+}
+#ms table tr{
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	border:1px solid red;
+}
+#ms table tr td input{
+	width: 200px;
+	height: 30px;
+}
+.zz{
+	width: 100%;
+	height: 100%;
+	background: #fcc;
+}
+#ms table tr td input.tc_btn {
+	width: 200px;
+	height: 42px;
+	background: #ff0000;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 42px;
+	letter-spacing: 3px;
+	border: none;
+	cursor: pointer;
+	font-family: Microsoft YaHei;
+
+}

@@ -1,0 +1,157 @@
+<script type="text/javascript">
+$(function(){
+    /*第一次读取最新通知
+  setTimeout(function() {
+             fun();
+           },
+        200);*/
+      /*30轮询读取函数
+        setInterval(function() {
+            fun();
+    },
+        30000);*/
+/*请求函数的ajax*/
+function fun() {
+    $.get("__URL__/pcnewmessages",{},function(msg){
+      if(msg==0){
+        return false;
+      }else{
+        alert("您有"+msg+"条新消息啦！点击确定，去处理！");
+        return false;
+      }
+    });
+
+    }
+
+// run();
+});
+</script>
+
+<form id="pagerForm" action="__URL__/pconlinerepair" method="post">
+    <input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+    <input type="hidden" name="_order" value="{$Think.request._order}"/>
+    <input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader" >
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+    <div class="searchBar">
+        <table class="searchContent">
+            <tr>
+                <td>
+                    <b>搜索</b> 
+                    <!-- 城市 
+                    <select name="CityID">
+                        <option value="">全部</option>
+                        <volist name="city" id="vos">
+                            <option value="{$vos['ID']}" <if condition="$Think.post.CityID eq $vos['ID']">selected</if>>{$vos['NAME']}</option>
+                        </volist>
+                    </select>
+                    报名类型
+                    <select name="Typeid">
+                        <option value="-1"  <if condition="$Typeid eq -1">selected</if>>全部</option>
+                        <volist name="bmlxall" id="voa" key="k" >
+                                <option value="{$k-1}" <if condition="$Typeid eq $k-1">selected</if>>{$voa}</option>
+                            
+                        </volist>
+                    </select> -->
+                    状态 
+                    <select name="Dealstate">
+                        <option value="">全部</option>
+                            <option value="1" <if condition="$Think.post.Dealstate eq '1'">selected</if>>已处理</option>
+                            <option value="0" <if condition="$Think.post.Dealstate eq '0'">selected</if>>未处理</option>
+                        
+                    </select>
+                </td>
+                <td>
+                    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li><a class="delete" href="__URL__/delbm/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/listtgybmgl" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+
+            <li class="line">line</li>
+            <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+            <li><a class="icon"   onclick="doSelect(0)" ><span>全选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(1)" ><span>全不选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(2)" ><span>反选</span></a></li>
+            <li><a class="delete" href="__URL__/delbm" target="selectedTodo" postType="string" title="确定要删除吗?"><span>批量删除</span></a></li>
+            <!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="112">
+        <thead>
+            <tr>
+            <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                <th width="40" orderField="ID" <if condition="$Think.request._order eq 'ID'">class="{$Think.request._sort}"</if>>ID</th>
+                <th width="150" >类型</th>
+                <th width="50" >城市</th>
+                <th width="150" >报修类型</th>
+                <th width="250" >报修问题</th>
+                <th width="150" >姓名</th>
+                <th width="150" >电话</th>
+                <th width="150" >处理状态</th>
+                <th width="150" >报名时间</th>
+                <th width="150" >基本操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="vo">
+                <tr target="item_id" rel="{$vo.ID}">
+                    <td><input name="ids" value="{$vo.ID}" type="checkbox"></td>
+                    <td>{$vo.ID}</td>
+                    <td>{$vo.TYPE|getbmlx}</td>
+                    <td>{$vo.CID|getcityname}</td>
+                    <td><switch name="vo.servicetype"><case value="1">工程施工问题</case><case value="2">主材安装问题</case><case value="3">服务态度问题</case><case value="4">其他</case><default />无</switch></td>
+                    <td>{$vo.remark}</td>
+                    <td>{$vo.NAME}</td>
+                    <td>{$vo.PHONE}</td>
+                    <!-- <td>{$vo.Promoterid|gettgyname}</td> -->
+                    <td><if condition="$vo.Dealstate eq '-1'">已取消</if><if condition="$vo.Dealstate eq 0">未处理</if><if condition="$vo.Dealstate eq 1">已处理</if></td>
+                    <td>{$vo.TIME}</td>
+                    <td>
+                    <a href="__URL__/chakan/id/{$vo.ID}" target="navTab" title="查看问题">查看</a>
+                    <if condition="$vo.Dealstate eq 0"><a class="edit" href="__URL__/pccheck/id/{$vo.ID}" width="550" height="380" target="navTab"><span>处理</span></a></if>
+                    <!-- <a class="edit" href="__URL__/delbmr/id/{$vo.ID}"  width="550" height="380" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a> -->
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <div class="panelBar">
+        <div class="pages">
+            <span>显示</span>
+            <select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+                <option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+                <option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+                <option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+                <option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+                <option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+            </select>
+            <span>共{$totalCount}条</span>
+        </div>
+        <div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+    </div>
+    <script type="text/javascript">
+function display(id){
+    //alert(img.width());
+    //alert(image);
+    var url = "__URL__/editDisplay/id/"+id;
+     var xpwidth=window.screen.width-10;
+        var xpheight=window.screen.height-105;
+       // alert(xpheight);
+        //window.open('map/mapview.aspx', '_blank', 'resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+    window.open(url,'newWindow','scrollbars=yes, resizable=yes,resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+
+    
+}
+
+ </script>
+</div>

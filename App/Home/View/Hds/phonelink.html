@@ -1,0 +1,16 @@
+
+<script>
+
+function openphone()
+{
+	var diag = new Dialog();
+	diag.Width = 400;
+	diag.Height = 230;
+	diag.Title = "获取活动地址";
+	diag.URL = "{:C('scurl')['HD_INDEX']}sendView/id/{$id}?utm_source={$utm_source}&utm_term={$utm_term}&Promoterid={$Promoterid}";
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+
+
+</script>

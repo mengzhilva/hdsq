@@ -1,0 +1,18 @@
+<script type="text/javascript" src="__PUBLIC__/web/js/lb_zDialog.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/lb_zDrag.js"></script>
+<script type="text/javascript">
+    var DWidth = document.documentElement.clientWidth;
+    var DHeight = document.documentElement.clientHeight;
+    $(function(){
+        //alert(DHeight);
+    });
+    function getlunbo(id)
+    {
+        var diag = new LDialog();
+        diag.Width = DWidth;
+        diag.Height = DHeight;
+        diag.Title = "";
+        diag.URL = "__APP__/Huod/lunbotu/id/"+ id;
+        diag.show();
+    }
+</script>

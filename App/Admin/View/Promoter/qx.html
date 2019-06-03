@@ -1,0 +1,107 @@
+<style>
+<!--
+
+-->
+.add_tr {
+clear: both;
+height: 35px;
+width: 100%;
+overflow: hidden;
+background: #fff;
+border-bottom: solid 1px #a8c7ce;
+}.add_tr4_1 {
+float: left;
+width: 84%;
+height: 30px;
+border-left: 1px solid #a8c7ce;
+overflow: hidden;
+}.add_tr1_1 {
+float: left;
+width: 15%;
+height: 30px;
+overflow: hidden;
+text-align: right;
+line-height: 30px;
+font-size: 12px;
+}
+</style>
+<script>
+function ck(id) {
+	var e = document.getElementById("ck_all"+id);
+	if (e.checked) {
+		var objs = document.body.getElementsByTagName("input");
+		for (var i = 0; i < objs.length; i++) {
+			if (objs[i].type == "checkbox" && objs[i].id.indexOf("ck_ID" + id) != -1)
+				objs[i].checked = true;
+		}
+	}
+	else {
+		var objs = document.body.getElementsByTagName("input");
+		for (var i = 0; i < objs.length; i++) {
+			if (objs[i].type == "checkbox" && objs[i].id.indexOf("ck_ID" + id) != -1)
+				objs[i].checked = false;
+		}
+	}
+}
+</script>
+<div class="pageContent">
+	<form method="post" action="__URL__/updateqx/navTabId/listadmin/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$info.id}"/>
+		<div class="pageFormContent" layoutH="60" style="overflow-x:hidden !important;">
+			 <div class="list_main">
+
+    <div class="list_middle">
+    
+      <div class="add_main">
+      
+        <div class="add_tr">
+          <div class="add_tr1_1">用户信息：&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <div class="add_tr4_1">
+            <div style="margin:5px;margin-top:8px;">用户名：{$info.username}&nbsp;&nbsp;&nbsp;&nbsp;用户类型：管理员。</div>
+          </div>
+        </div>
+        <div class="add_tr" style="height:auto;">
+          <div class="add_tr1_1"style="height:auto;">城市版块：</div>
+          <div class="add_tr4_1" style="height:auto;">
+            <div style="margin:5px;">
+              <input type="checkbox" id="ck_all999" onClick="ck(999);" />
+              <span>全选</span></div>
+			<volist name="city" id="vo">
+            <div style="margin:5px;width:150px;float:left;height:20px;lien-height:20px;">
+              <input type="checkbox"  name="ck_IDc[]" id="ck_ID999" value="{$vo['ID']}"  <in name="vo['ID']" value="$info['cid']">checked</in> />
+              {$vo["NAME"]}</div> 
+              </volist>
+          </div>
+        </div>
+		<volist name="level" id="vol"  key="n">
+        <div class="add_tr" style="height:auto;">
+          <div class="add_tr1_1"style="height:auto;">{$vol['cate']}：</div>
+          <div class="add_tr4_1" style="height:auto;">
+            <div style="margin:5px;">
+              <input type="checkbox" id="ck_all{$vol['id']}" onClick="ck({$vol['id']});" />
+              <span>全选</span></div>
+           
+			<volist name="vol['list']" id="vos">
+            <div style="margin:5px;width:150px;float:left;height:20px;lien-height:20px;">
+              <input type="checkbox"  name="ck_IDl[]" id="ck_ID{$vol['id']}" value="{$vos['id']}"  <in name="vos['id']" value="$info['lid']">checked</in> />
+              {$vos['name']}</div>
+          </volist>  
+          </div>
+        </div>
+		</volist>
+       
+      </div>
+    </div>
+		</div>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

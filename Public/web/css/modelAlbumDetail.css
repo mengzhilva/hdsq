@@ -1,0 +1,524 @@
+.modelAlbumDetail{
+	width: 100%;
+	margin-top:10px;
+	padding-bottom:20px;
+	position: relative;
+}
+
+.modelAlbumDetail{
+	width:880px;
+	height:auto;
+	margin:0 auto;
+	position:relative;
+	zoom:1;
+}
+
+/*模特相册的轮播部分*/
+.modelAlbumDetail .btn{
+	position:absolute;
+	width:25px;
+	height:80px;
+	top:336px;
+	cursor:pointer;
+	z-index:99;
+	font-size:50px;
+	font-weight:bold;
+}
+.modelAlbumDetail .prev{
+	width:438px;
+	height:650px;
+	left:0;
+	/*cursor:url(images/arrowLeft.png),auto;*/
+}
+.modelAlbumDetail #prev{
+	width:438px;
+	height:650px;
+	top:20px;
+	z-index:999;
+}
+.modelAlbumDetail #next{
+	width:438px;
+	height:650px;
+	top:20px;
+	z-index:999;
+	left:438px;
+	/*cursor:url(images/arrowRight.png),auto;*/
+}
+.modelAlbumDetail #prevTop,.modelAlbumDetail #nextTop{
+	top:693px;
+	width:25px;
+	height:100px;
+}
+.modelAlbumDetail #prevTop{
+	background:url(images/modlePhotoUI.png) no-repeat;
+	width: 25px;
+	height:100px;
+	margin-left:0px;
+	margin-top:-7px;
+}
+.modelAlbumDetail #prevTop:hover{
+	background:url(images/prevHover.png) no-repeat;	
+}
+.modelAlbumDetail #nextTop{
+	background:url(images/next.png) no-repeat;
+	width: 25px;
+	height:100px;
+	float: right;
+	right:0px;
+	margin-top:-7px;
+}
+.modelAlbumDetail #nextTop:hover{
+	background: url(images/nextHover.png) no-repeat;
+}
+
+.modelAlbumDetail li{
+	float:left;
+}
+.modelAlbumDetail .cf li{
+	position:relative;
+	color:#fff;
+	width: 100%;
+	zoo
+}
+.modelAlbumDetail .cf a{
+	display:block;
+	width:680px;
+	height:330px;
+	position:absolute;
+	color:#fff;
+}
+.modelAlbumDetail .cf li span{
+	display:block;
+	width:640px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	padding:10px 20px;
+	line-height:22px;
+	text-align:left;
+	}
+.modelAlbumDetail .picBox{
+	height:675px;
+	position:relative;
+	overflow:hidden;
+	width:876px;
+}
+.modelAlbumDetail .picBox ul{
+	height:652px;
+	position:absolute;
+	width:100%;
+	margin-top:5px;
+}
+.modelAlbumDetail .picBox li{
+	width:876px;
+	height:675px;
+	line-height:675px;
+    vertical-align:middle;
+	text-align:center;
+}
+.modelAlbumDetail .picBox li a{
+	width:876px;
+	height:675px;
+	line-height:675px;
+    vertical-align:middle;
+	text-align:center;
+	display: block;
+	position: relative;
+}
+
+.modelAlbumDetail .picBox li img{
+    vertical-align:middle;
+	padding: 2px;
+	max-width:876px;
+	max-height:675px;
+	margin:1px 1px;
+}
+.modelAlbumDetail .listBox{
+	width:825px;
+	height:100px;
+	margin:0 auto;
+	position:relative;
+	padding:6px 0 10px;
+	overflow:hidden;
+	margin-top:9px;
+	margin-left: 25px;
+}
+.modelAlbumDetail .listBox ul{
+	height:100px;
+	position:absolute;
+	width:10000000000000px;!important
+	overflow:hidden;
+	margin-top:-5px;
+}
+.modelAlbumDetail .listBox li{
+	cursor:pointer;
+	height:100px;
+	line-height:100px;
+	width:100px;
+	text-align:center;
+	float:left;
+	margin:0 2px;
+	overflow:hidden;
+}
+.modelAlbumDetail .listBox li i{
+	display:none;
+}
+.modelAlbumDetail .listBox li a{
+	width:100px;
+	height:100px;
+	line-height:100px;
+    vertical-align:middle;
+	text-align:center;
+}
+.modelAlbumDetail .listBox li img{
+	width: 98px;
+	height: 98px;
+	margin:0 auto;
+	vertical-align:middle;
+}
+.modelAlbumDetail .listBox .on{
+	/*border:1px solid #ea477c;*/
+}
+.modelAlbumDetail .listBox .on i{
+	display:block;
+}
+.modelAlbumDetail .listBox .on img{
+	border:2px solid #f00;
+}
+
+/*.picLeft{
+	width:50%;
+	height:100%;
+	float:left;
+	z-index:222;
+	position:relative;
+}
+.picRight{
+	width:50%;
+	height:100%;
+	float:right;
+	z-index:222;
+	position:relative;
+}*/
+/*模特相册轮播部分结束*/
+
+.modelalbumDetailInfor{
+	width: 260px;
+	height:90px;
+	float:right;
+}
+.modelAlbumDetailInforTop{
+	width: 245px;
+	height:70px;
+	border-bottom:1px solid #ccc;
+	margin-top:5px;
+}
+.modelAlbumDetailModelHead{
+	width: 56px;
+	height: 56px;
+	float: left;
+}
+.modelAlbumDetailModelHead img{
+	width: 56px;
+	height: 56px;
+}
+.modelAlbumDetailModelInfor{
+	width: 180px;
+	height: 56px;
+	float: left;
+	margin-left:5px;
+}
+.modelAlbumModelNameStyle{
+	width: 100%;
+	height: 25px;
+	line-height:25px;
+}
+.modelAlbumModelName{
+	max-width:80px;
+	height:30px;
+	line-height: 30px;
+	overflow: hidden; 
+	color:#494949;
+	font-size: 14px;
+	float: left;
+	font-weight: bold;
+	text-align: center;
+}
+.modelAlbumModelStyle{
+	width: 38px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	padding-left:10px;
+}
+.modelAlbumModelStyle img{
+	width:38px;
+	height:16px;
+	margin-top:3px;
+}
+.modelAlbumModelPopAttention{
+	width: 100%;
+	height:25px;
+	line-height: 25px;
+	padding-top:5px;
+}
+.modelAlbumModelPop{
+	width: 114px;
+	height: 25px;
+	line-height: 25px;
+	color:#999999;
+	font-size: 14px;
+	float:left;
+}
+.modelAlbumModelAttention{
+	width: 60px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	padding-top:1px;
+}
+.modelAlbumLabel{
+	width: 243px;
+	height:auto;
+	padding-bottom:15px;
+	border-bottom:1px solid #ccc;
+}
+.modelAlbumLabelTit{
+	width: 100%;
+	height:25px;
+	line-height: 25px;
+	color:#666666;
+	font-size: 14px;
+	padding-top:10px;
+}
+.modelAlbumLabelCon{
+	width: 100%;
+	height:auto;
+	margin: 0 auto;
+}
+.modelAlbumLabelCon ul{
+	width: 100%;
+	height:auto;
+}
+.modelAlbumLabelCon ul li{
+	width: 50px;
+	height:30px;
+	line-height: 30px;
+	color:#fff;
+	text-align: center;
+	font-size: 14px;
+	background: url(images/photoLable.png) no-repeat left center;
+	margin-left:10px;
+	margin-top:10px;
+}
+.modelAlbumRelated{
+	width: 100%;
+	height:auto;
+}
+.modelAlbumRelatedTit{
+	width: 100%;
+	height:25px;
+	line-height: 25px;
+	color:#666666;
+	font-size: 14px;
+	padding-top:10px;
+}
+.modelAlbumRelatedTitle{
+	width: 60px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+}
+.modelAlbumRelatedA{
+	width: 45px;
+	height: 25px;
+	line-height: 25px;
+	float: right;
+	margin-right:10px;
+	text-align: center;
+}
+.modelAlbumRelatedA a {
+	color: #666;
+	text-decoration: underline;
+}
+.modelAlbumRelatedA a:hover{
+	color:#ea477c;
+} 
+.modelAlbumRelatedCon{
+	width: 100%;
+	height:auto;
+	margin-top: 5px;
+}
+.modelAlbumRelatedCon ul{
+	width: 100%;
+}
+.modelAlbumRelatedCon ul li{
+	width: 75px;
+	height: 75px;
+	line-height: 70px;
+	float: left;
+	margin-left:5px;
+	margin-top:5px;
+	text-align: center;
+	border:1px solid #ccc;
+	padding: 0;
+}
+.modelAlbumRelatedCon ul li img{
+	max-width: 75px;
+	max-height: 75px;
+	line-height: 75px;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+}
+.modelAlbumRelatedCon ul li:hover{
+	border:1px solid #ea477c;
+}
+.modelAlbumPhoto{
+	clear: both;
+	width: 976px;
+	height:215px;
+	margin:0 auto;
+	padding-top:10px;
+}
+.modelAlbumPhotoTit{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	color:#ea477c;
+	font-size: 14px;
+	padding-bottom:2px;
+	border-bottom:1px solid #ccc;
+}
+.modelAlbumPhotoCon{
+	width: 100%;
+	height:190px;
+}
+
+/*************Ta的相册轮换效果***************/
+.blk_29 {	
+	 PADDING-RIGHT: 0px;  
+	 PADDING-LEFT: 0px; 
+	 PADDING-BOTTOM: 10px; 
+	 OVERFLOW: hidden;  
+	 PADDING-TOP: 10px;
+	 ZOOM: 1; 
+	 height:170px;
+	 POSITION: relative;
+	 width: 100%;
+}
+.blk_29 .LeftBotton {	
+	BACKGROUND: url(images/modlePhotoUI.png) no-repeat left center;
+	FLOAT: left; 
+	WIDTH: 25px; 
+	CURSOR: pointer; 
+	POSITION: absolute; 
+	top: 19px; 
+	HEIGHT: 135px;
+	background-position: 0px -280px;
+	left:0px;
+}
+.blk_29 .RightBotton {	
+	RIGHT: 0px; 
+	BACKGROUND: url(images/modlePhotoUI.png) no-repeat left center; 
+	FLOAT: right; 
+	WIDTH: 25px; 
+	CURSOR: pointer; 
+	POSITION: absolute; 
+	TOP: 19px; 
+	HEIGHT: 135px;
+	background-position: 0px -417px;
+}
+.blk_29 .Cont {	
+	MARGIN: 0px auto; 
+	OVERFLOW: hidden; 
+	WIDTH: 800px; 
+	PADDING-TOP: 10px;
+}
+.blk_29 .box {	
+	FLOAT: left; 
+	WIDTH: 110px; 
+	height:160px;
+	line-height:110px;
+	margin-right:4px;
+	TEXT-ALIGN: center;
+}
+.blk_29 .box a.imgBorder{
+	width:100px;
+	height:134px;
+	display:block;
+	line-height:134px;
+	text-align:center;
+}
+.blk_29 .box p a{
+	color:#666;
+}
+.blk_29 .box IMG {	
+	max-width: 110px;
+	max-height: 134px;
+	vertical-align:middle;
+	border:1px solid #ddd;
+}
+.rollphotos {	
+	MARGIN-TOP: 10px;
+	WIDTH: 972px;
+}
+.comment_list{
+	padding-left:10px;
+	padding-right:10px;
+	width:980px;
+}
+..comment_list .floor{
+	margin-right:10px;
+	display:block;
+	width:30px;
+	height:25px;
+	line-height:25px;
+}
+.blk_29 .box:hover img{
+	border:1px solid #ea477c;
+}
+.blk_29 .box:hover p a{
+	color:#ea477c;
+}
+.scJbImgInfo{
+	width: 872px;
+	height: 72px;
+	position: absolute;
+	top: 593px;
+	left: 3px;
+	background: #000;
+	opacity: 0.7;
+}
+.scJbImgInfo p{
+	width: 860px;
+	height: 50px;
+	line-height: 25px;
+	overflow: hidden;
+	color:#ffffff;
+	font-size: 14px;
+	margin-left: 8px;
+	margin-top:9px;
+	font-family: Microsoft YaHei;
+	text-align: left;
+}
+.ImgPrev{
+	position: absolute;
+	top: 50%;
+	width: 44px;
+	height: 87px;
+	margin-top: -40px;
+	cursor: pointer;
+	background: url(images/arrowLeft.png) no-repeat;
+	left: 10px;
+}
+.ImgNext{
+	position: absolute;
+	top: 50%;
+	width: 44px;
+	height: 87px;
+	margin-top: -40px;
+	cursor: pointer;
+	background: url(images/arrowRight.png) no-repeat;
+	right:10px;
+}

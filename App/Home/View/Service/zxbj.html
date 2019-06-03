@@ -1,0 +1,153 @@
+<include file="Common/header" />
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title> -->
+<script type="text/javascript" src="__PUBLIC__/web/zxbj/js/jquery-1.9.1.min.js"></script>
+<link href="__PUBLIC__/web/zxbj/css/common.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/web/zxbj/css/nav.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/web/zxbj/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/web/zxbj/css/bj.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+  p.bj-map-h{text-align:left;}
+</style>
+<body>
+ <div class="bj-con">
+   <div class="bj-map">
+      <p class="bj-map-h">装修报价</p>
+       <?php foreach ($map_citys as $k => $v): ?>
+          <dl>
+          <dt>{$v.AreaName}</dt>
+           <dd>
+                <?php foreach ($v['area'] as $i => $r): ?>
+                    <a href="{$r.baojia_url}" target="_blank">{$r.NAME}装修报价</a>
+                <?php endforeach ?> 
+        </dl>
+        <dl>
+      <?php endforeach ?>
+   </div>
+   <div class="bj-map">
+      <p class="bj-map-h">理想装</p>
+         <?php foreach ($map_citys as $k => $v): ?>
+          <dl>
+          <dt>{$v.AreaName}</dt>
+           <dd>
+                <?php foreach ($v['area'] as $i => $r): ?>
+                    <a href="{$r.lxz_url}" target="_blank">{$r.NAME}装修套餐</a>
+                <?php endforeach ?> 
+        </dl>
+        <dl>
+      <?php endforeach ?>
+   </div>
+     <div class="gonglue-table left">
+        <div class="gonglue-tc-title"><p><span class="left gonglue-tc-title-span">最新图册</span> <a href="http://zhuangxiuxiaoguotu.sc.cc/tuce/" target="_blank" class="gonglue-tc-title-a right">更多 >></a></p></div>
+     </div>
+     <div class="xgt-pic">
+        <?php foreach ($cased as $k => $v): ?>
+            <div class="xgt-pic-left-05 xgt-hover-animate left">
+                <a href="{$v.url}" target="_blank"><img src="http://www.sc.cc{$v.IMAGE}" width="280" height="210" /><span>{$v.NAME}装修效果图</span></a>
+            </div> 
+        <?php endforeach ?>
+      </div>
+      <div class="gonglue-table left">
+                       <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                          <tr class="gonglue-table-tr">
+                            <td height="40" colspan="4" class="gonglue-table-td gonglue-table-td1"  align="left"><p><span class="left gonglue-tc-title-span">最新问题</span> <a href="http://www.sc.cc/wenda/" target="_blank" class="gonglue-tc-title-a right">更多 >></a></p></td>
+                          </tr>
+                          <?php foreach ($question as $k => $v): ?>
+                            <tr class="gonglue-table-tr1">
+                                <td width="50%" ><span class="gonglue-table-span"><a href="{$v.url}" target="_blank">{$v.SeoTitle}</a></span></td>
+                                <td width="20%"><span>[{$v.ClassName}]</span></td>
+                                <td width="10%"><span>{$v.answer}</span></td>
+                                <td width="20%"><span>{$v.UpdateTime}</span></td>
+                            </tr>
+                          <?php endforeach ?>
+                        </table>
+
+                       
+                     </div>
+     <div class="gonglue-table left">
+        <div class="gonglue-tc-title"><p><span class="left gonglue-tc-title-span">最新文章</span> <a href="http://gonglue.sc.cc/" target="_blank" class="gonglue-tc-title-a right">更多 >></a></p></div>
+     </div>
+     <div class="bj-map">
+     <?php foreach ($article as $k => $v): ?>
+        <div class="bj-map-wz left">
+         <a href="{$v.url}" target="_blank"><img src="http://www.sc.cc{$v.DefaultPicUrl}" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="{$v.url}" target="_blank">{$v.Title}</a></span><span class="bj-map-wz-span1 left">{$v.UpdateTime}</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left" style="text-align:left;">{$v.Intro}
+         </p>
+       </div>
+     <?php endforeach ?>
+      
+
+
+
+       <!-- <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div>
+       <div class="bj-map-wz left">
+         <a href="" target="_blank"><img src="images/index-zx-06.jpg" width="120" height="90" class="left"/></a>
+         <p class="bj-map-wz-p left"><span class="bj-map-wz-span left"><a href="" target="_blank">文章标题文章标题文章标题文章标题文章标题文章标题</a></span><span class="bj-map-wz-span1 left">2016-04-12 11:02:53</span></p>
+         <p class="bj-map-wz-p bj-map-wz-p2 left">文章摘要很多人努力工作就是能够让自己和家人过上更加安定和谐的生活，其中拥有自己的房子是其中的一个生活指标，有了自己的房子，家才会更像一个家，家人对
+于居住也会更加的安心。有了房子之后是一定要进行装修的，只有把房子装修好，那么居住的才会更舒
+</p>
+       </div> -->
+       
+     </div>
+   
+ </div>
+  <script type="text/javascript">
+   $(function(){
+	   $(".xgt-pic-left-05:nth-child(4n)").css({"float":"right","margin-right":"0px"});
+	   
+		
+	   });
+  </script>
+
+  
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+</body>
+</html>

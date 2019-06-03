@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-size:12px;}
+li{ list-style-type:none;}
+a{ text-decoration:none; }
+.clear{ clear:both;}
+.left{ float:left}
+.right{ float:right}
+img{border:none;}
+.newTop{width: 100%;height:53px;background:#fff;}
+.newTopMain{width: 1200px;height: 53px;position: relative;margin: 0 auto;}
+.banner{ width:100%; height:450px; background:url(images/demo_01.jpg) top center no-repeat; margin:0 auto;}
+.con{width:960px; margin:0 auto; margin-top:20px; height:auto; border:#dcdcdc solid 1px; padding:20px; font-family:"微软雅黑"; overflow:hidden}
+.con_left{ width:460px; position:relative; height:450px;}
+.con_left h3{ font-size:36px; color:#fa4c06; border-bottom:#dcdcdc solid 1px; line-height:65px;margin-bottom:15px;}
+.p1{ font-size:14px; }
+.p1 font{ font-size:24px; color:#ff0000}
+.con_bottom{position: absolute;top: 305px;left: 0px;width: 400px;}
+.con_bottom .sp1{ font-size:18px; color:#666666; line-height:24px;}
+.con_bottom .sp1 font{color:#ff0000; font-size:18px; }
+.con_bottom .btn1{  text-align:center; color:#ffffff; display:block; background:#fa4c06; width:188px; height:44px; line-height:44px; margin-top:15px; margin-bottom:15px;}
+.con_bottom .btn1 a{ color:#ffffff;font-size:18px;}
+.con_bottom .p2{ background:url(images/demo_07.jpg) left center no-repeat; padding-left:60px; font-size:14px; line-height:50px; width:380px;}
+.con_bottom .p2 font{ font-size:18px; color:#ff0000}
+.con_right{ width:480px;}
+.con_right .sp4{ float:right; margin-top:10px; color:#666666; font-size:14px;}
+.btn2{
+-webkit-transition:all 0.3s ease-in; -moz-transition:all 0.3s ease-in; -o-transition:all 0.3s ease-in; -ms-transition:all 0.3s ease-in; transition:all 0.3s ease-in;
+ }
+.btn2:hover{background:#cc9966;width:188px; height:44px; display:block }
+.foo{ height:40px; width:100%}
+a { -webkit-transition:color 0.3s ease-out; -moz-transition:color 0.3s ease-out; -o-transition:color 0.3s ease-out; -ms-transition:color 0.3s ease-out; transition:color 0.3s ease-out;}
+.nav{
+    position: absolute;
+    top: 20px;
+    left:322px;
+    color: #4c4c4c;
+    font-size: 14px;
+    height: 18px;
+    line-height: 16px;
+    font-family: "微软雅黑";
+}
+.nav span{ padding:0 10px;}
+.nav span a{ color:#4c4c4c; font-size:14px;}
+.nav span a:hover{ color:#e75605;}
+
+.zt_ph{ position:absolute; top:8px; left:710px; font-family: "微软雅黑"; font-size:14px;  color:#4c4c4c;}
+.zt_ph span{ font-size:24px; font-weight:bold;}

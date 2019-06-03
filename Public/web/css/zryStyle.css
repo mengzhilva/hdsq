@@ -1,0 +1,54 @@
+h3{
+	margin:0px;
+	padding: 0px;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+	
+
+.picon{clear:both;height:504px;overflow:hidden;position:relative;}
+.picon ul{position:absolute;top:0;left:0;height:504px;width:1180px;padding: 0px;margin:0px;}
+.picon li{float:left;height:504px;border-right:2px solid #fff;width:124px;position:relative;overflow:hidden;}
+.picon li.cur div{display:none;}
+.picon li div:hover{display: block;}
+.picon li div{display:none;position:absolute;top:50%; margin-top:-75px;left:0;z-index:9;height:150px;width:320px;color:#fff;display:none;}
+/*.picon li div h3{padding:15px 0 10px 20px;line-height:30px;font-size:26px;}
+*/.picon li div p{
+	line-height:20px;
+	font-size:13px;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+.picon li div a{color:#fff;text-decoration:none;}
+.picon .btns{color:#c14b50; background:#fff; border-radius:0px; height:30px; display:inline-block; line-height:30px; padding:0px 20px; margin-top:10px;}
+.picon .btns:hover{ opacity:0.8; filter:alpha(opacity=80)}
+.picon li img{
+	border:none!important;
+}
+/*#slider .slide a.bdr{ border-left:5px solid #fff;}*/
+.picon a img { width:500px; height:500px;}
+.area .hover { width:320px; height:150px; position:absolute; top:310px; left:0;}
+.bg { width:100%; height:100%; background:#000; filter:alpha(opacity:40);opacity:0.4; position:absolute; left:0; top:0; z-index:0;}
+.textbg { position:relative; z-index:10; padding:20px 0 0 20px;}
+.textbg h3 {text-align: left!important; display:block;font-family:Microsoft YaHei;font-size:18px; color:#fefefe; font-weight:bold;}
+.textbg p { font-size:14px; color:#eee;font-family: Microsoft YaHei;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	margin-top:10px;
+	text-align: left!important;
+}
+.textbg .btn-ar { margin-top:10px;}
+.textbg .btn-ar a {margin-left:20px;font-size:12px;font-family:Microsoft YaHei;display:block; width:100px; height:30px; line-height:30px;text-align:center!important; color:#fff; background:#fa4c06; float:left; border:none; line-height:30px;}
+.textbg .btn-ar span { font-size:18px; color:#fefefe; float:left; font-weight:bold; margin-left:10px;}
+.dinwidth{
+	width: 1180px;
+	height: 550px;
+	margin:0 auto;
+}

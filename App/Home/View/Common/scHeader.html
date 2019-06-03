@@ -1,0 +1,48 @@
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/hd_nav.css" /><div style="background-color: #fff;width:100%;">
+        <div class="spNav">
+            <a href="{:C('scurl')['INDEX_INDEX']}" target="_blank"><div class="spLogo"><img src="__PUBLIC__/images/hd_top.png"></div></a>
+            <ul>
+                <li><a href="{:C('scurl')['INDEX_INDEX']}" target="_blank" class="cur">首 页</a></li>
+                <li><a href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}{:C('scurl')['GHOUZHUI']}" target="_blank">理想装</a></li>
+                <li><a href="{:C('scurl')['XIAOGUOTU_MEITU']}" target="_blank">家装案例</a></li>
+                <li><a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a></li>
+                <li><a href="{:C('scurl')['DESIGNER_INDEX']}" target="_blank">设计师</a></li>
+                <li><a href="{:C('scurl')['CASES_INDEX']}" target="_blank">小区装修</a></li>
+                <li><a href="{:C('scurl')['GONGLUE_INDEX']}{:C('scurl')['GHOUZHUI']}" target="_blank">装修知识</a></li>
+                <li><a href="{:C('scurl')['ABOUT_INDEX']}" target="_blank">关于实创</a></li>
+            </ul>
+            <div class="spRight"><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></div>
+        </div>
+    </div>
+        <!-- Gridsum tracking code begin. -->
+        <script type='text/javascript'>
+          (function(){
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = (location.protocol == 'https:' ? 'https://ssl.' : 'http://static.') + 'gridsumdissector.com/js/Clients/GWD-002245-DBD993/gs.js';
+            var firstScript = document.getElementsByTagName('script')[0];
+            firstScript.parentNode.insertBefore(s, firstScript);
+          })();
+
+        </script>
+        <script type="text/javascript">
+var _py = _py || [];
+_py.push(['a', 'tG..Q7Fx4-PNjuKaCidlzwGtc0']);
+_py.push(['domain','stats.ipinyou.com']);
+_py.push(['e','']);
+-function(d) {
+    var s = d.createElement('script'),
+    e = d.body.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e),
+    f = 'https:' == location.protocol;
+    s.src = (f ? 'https' : 'http') + '://'+(f?'fm.ipinyou.com':'fm.p0y.cn')+'/j/adv.js';
+}(document);
+</script>
+<noscript><img src="//stats.ipinyou.com/adv.gif?a=tG..Q7Fx4-PNjuKaCidlzwGtc0&e=" style="display:none;"/></noscript>
+        <style>
+.lineKefu { width:75px; height:89px; position:fixed; top:287px; right:5px; z-index:5; }
+</style>
+        <!--Gridsum tracking code end. -->
+
+        <div class="lineKefu"><a target="_blank"   rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}"><img src="__PUBLIC__/web/images/kf.png" width="75" height="89" /></a></div>

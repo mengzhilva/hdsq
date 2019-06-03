@@ -1,0 +1,114 @@
+a{
+	text-decoration: none;
+}
+.main{
+	width: 100%;
+	height: auto;
+	background: url(../images/bg.jpg) no-repeat center top;
+}
+.mainBody{
+	width: 1180px;
+	height: auto;
+	position: relative;
+	margin: 0 auto;
+}
+.tou{
+	width: 100%;
+	height: 53px;
+}
+.hdTop{
+	width: 1200px;
+	height: 53px;
+	position: relative;
+}*/
+.hdTopMain{
+	width: 1180px;
+	height: 53px;
+	position: absolute;
+	margin: 0 auto;
+	border:1px solid red;
+}
+.nav{
+	/*right: 540px!important; 883 693*/
+	right: 350px!important;
+}
+.zt_ph {
+left: 883px !important;
+}
+.fx{
+	position: absolute;
+	top: 322px;
+	right: 95px;
+	width: 100px;
+	height: 100px;
+	z-index:222;
+}
+.bdshare-button-style0-16 a, .bdshare-button-style0-16 .bds_more{
+	width: 100px!important;
+	height: 100px!important; 
+	background: none!important;
+}
+
+
+@charset "utf-8";
+/* CSS Document */
+.nav{
+	position: absolute;
+	top: 17px;
+	right: 142px;
+	color: #4c4c4c;
+	font-size: 14px;
+	height: 18px;
+	line-height: 16px;
+	font-family: "微软雅黑";
+}
+.nav span{ padding:0 10px;}
+.nav span a{ color:#4c4c4c; font-size:14px;}
+.nav span a:hover{ color:#e75605;}
+
+.zt_ph{ position:absolute; top:8px; left:710px; font-family: "微软雅黑"; font-size:14px;  color:#4c4c4c;background:url(../images/telBg.png) no-repeat 10px center;}
+.zt_ph span{ font-size:24px; font-weight:bold;padding-left: 40px;color: #fa4c06;}
+.baomingFd{
+	width: 199px;
+	height: 292px;
+	position: fixed;
+	top:35%;
+	left:0px;
+	z-index:9999;
+	background: url(../images/fd.png) no-repeat left center;
+}
+.baomingFd form{/*
+	padding-top: 80px;*/
+	width: 168px;
+	margin: 0 auto;
+	position: absolute;
+	right:17px;
+	top:80px;
+}
+.baomingFd form tr{
+	border:1px solid green;
+}
+.baoming{
+	padding-top:10px;
+}
+.bm_num{
+	color: #CB0101;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	float: left;
+	width: 39px;
+	text-align: center;
+	margin: 0 auto;/*
+	margin-left: 64px;
+	margin-top: 46px;*/
+	position: absolute;
+	left: 67px;
+	top: 43px;
+}
+.input {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 0px 0px 4px;
+    border:1px solid #dcdcdc;
+}

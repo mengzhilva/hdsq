@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<script src="__PUBLIC__/dwz/js/jquery-1.7.1.js" type="text/javascript"></script>
+  <title>生成推广员链接</title>
+ </head>
+ <body>
+
+<link href="__PUBLIC__/dwz/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="__PUBLIC__/dwz/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="__PUBLIC__/dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="__PUBLIC__/dwz/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
+<h2 class="contentTitle">生成推广员链接</h2>
+<style>
+.pageFormContent dd{width:200px;}
+</style>
+
+<div class="pageContent">
+
+		<form method="post" action="__URL__/makeurl/">
+			<div class="pageFormContent nowrap" layoutH="97" style="padding:0 !important;">
+
+				<input type="hidden" name="DOMAIN" value="{$cityinfo['DOMAIN']}"/>
+				<input type="hidden" name="id" value="{$info['Id']}"/>
+				<input type="hidden" name="action" value="action"/>
+
+				<dl>
+					<dt>链接：</dt>
+					<dd>
+						<textarea  name="url" style="width:280px" ><if condition="$url eq ''">http://{$cityinfo['DOMAIN']}.sc.cc/<else/>{$url}</if></textarea>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+					生成后链接：</dt>
+					<dd>
+						<textarea id="yao_txt"  style="width:280px">{$returnurl}</textarea>
+					</dd>
+				</dl>
+				<dl>
+					<dt >
+					二维码：</dt>
+					<dd>
+					<iframe style="height: 200px;width: 190px;border: 0px;" src="http://www.sc.cc/erwm/tt.php?url={$mreturnurl}"></iframe>
+				
+					</dd>
+				</dl>
+				<script>
+				$(function(){
+					  $("#d_clip_button").click(function(){
+					    var Url=$("#yao_txt").html();
+					    copyToClipboard(Url);
+					 });
+				});
+
+				function copyToClipboard(txt) {    
+				    if(window.clipboardData) {    
+				        window.clipboardData.clearData();    
+				        window.clipboardData.setData("Text", txt);    
+				    } else if(navigator.userAgent.indexOf("Opera") != -1) {    
+				        window.location = txt;    
+				    } else if (window.netscape) {    
+				        try {    
+				            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");    
+				        } catch (e) {    
+				            alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");    
+				        }    
+				    var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);    
+				    if (!clip)    
+				        return;    
+				    var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);    
+				    if (!trans)    
+				        return;    
+				    trans.addDataFlavor('text/unicode');    
+				    var str = new Object();    
+				    var len = new Object();    
+				    var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);    
+				    var copytext = txt;    
+				    str.data = copytext;    
+				    trans.setTransferData("text/unicode",str,copytext.length*2);    
+				    var clipid = Components.interfaces.nsIClipboard;    
+				    if (!clip)    
+				        return false;    
+				    clip.setData(trans,null,clipid.kGlobalClipboard);    
+				    }    
+
+				    alert("复制成功")
+				}   
+
+				</script>
+			</div>
+			<div class="formBar">
+				<ul>
+					<li><div class="buttonActive"><div class="buttonContent"><button type="submit">生成</button></div></div></li>
+				</ul>
+			</div>
+		</form>
+
+</div>
+

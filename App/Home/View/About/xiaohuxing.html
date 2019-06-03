@@ -1,0 +1,191 @@
+<include file="Common/header" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/oldhouse/css/styleLf.css" />
+        <script type="text/javascript" src="__PUBLIC__/web/oldhouse/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/web/oldhouse/js/placeholder.min.js"></script>
+        <script src="__PUBLIC__/web/oldhouse/js/scrollReveal.js"></script> 
+        <script type="text/javascript">
+                $(function(){
+                    $('input, textarea').placeholder();
+                         $(".lfZxxztCon ul li:nth-child(4n)").css({"margin-right":"0px"});
+                    $(".lfZxwz ul.clearfix li:last-child").css({"margin-right":"0px"});
+                    $(".lfZxzx ul.clearfix li:last-child").css({"margin-right":"0px"});
+                });
+        </script>
+    <div class="lfMain">
+        <div class="lfBbx"><a href="http://www.sc.cc/" target="_blank">实创装饰首页</a>  >  <a>小户型装修</a></div>
+        <div class="lfInfoMs">
+            <div class="lfInfoMsM">
+                <h2>小户型装修</h2>
+                <p>导读：小户型并不意味着档次低、标准低，小户型也可以装修的更为精致、玲珑。如果设计合理布置得当小空间也能释放出无穷的想象。小户型装修专题提供30平米、40平米、50平米、60平米、90平米等小户型装修案例、小户型装修效果图以及小户型装修设计等相关知识，供大家参考。</p>
+            </div>
+        </div>
+        <div class="lfZxxgt">
+            <div class="lfZxxgtTit">
+                <h2>小户型装修最新效果图</h2><a href="http://zhuangxiuxiaoguotu.sc.cc/" target="_blank">更多 >></a>
+            </div>
+            <div class="lfZxxztCon">
+                <ul class="clearfix">
+                    <?php foreach ($tuce as $k => $v): ?>
+                        <li>
+                        <a href="{$v.url}" target="_blank">
+                            <img src="http://www.sc.cc{$v.IMAGE}" alt="{$v.SID|getstyletype}{$v.TYPEID|gethousetype}{$v.AREA}㎡装修效果图" />
+                            <div class="lfZxConTit">{$v.SID|getstyletype}{$v.TYPEID|gethousetype}{$v.AREA}㎡装修效果图</div>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+                </ul>
+            </div>
+        </div>
+        <div class="lfZxxgt">
+            <div class="lfZxxgtTit">
+                <h2>小户型装修文章推荐</h2>
+            </div>
+            <div class="lfZxwz">
+                <ul class="clearfix">
+                    <li>
+                        <a href="http://zhuangxiuxiaoguotu.sc.cc/tuce/90pingmi/" target="_blank">
+                            <div class="lfZxWzImg">
+                                <img src="__PUBLIC__/web/oldhouse/images_xhx/wztj1.jpg" />
+                                <div class="lfZxWzTit"><span>01</span><i>小户型装修案例</i></div>
+                            </div>
+                        </a>
+                        <div class="lfZxWzCon">
+                            <ul>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/6485.html" target="_blank">• 50㎡温馨古典小户型卫浴装修实例</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/1280.html" target="_blank">• 45㎡小户型粉色魅惑</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/3898.html" target="_blank">• 小户型收纳式电视背景墙</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/6472.html" target="_blank">• 北欧古典田园风小户型装修实例</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lfZxWzCon">
+                            <ul>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/zhuangxiuliucheng/sj/4400.html" target="_blank">• 小户型客厅空间设计</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/keting/4609.html" target="_blank">• 20㎡小户型客厅装修</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/keting/4605.html" target="_blank">• 40㎡小户型客厅装修全攻略</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/6009.html " target="_blank">• 50㎡小户型客厅style</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="http://zhuangxiuxiaoguotu.sc.cc/keting/ " target="_blank">
+                            <div class="lfZxWzImg">
+                                <img src="__PUBLIC__/web/oldhouse/images_xhx/wztj2.jpg" />
+                                <div class="lfZxWzTit"><span>02</span><i>小户型客厅设计</i></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://zhuangxiuxiaoguotu.sc.cc/woshi/ " target="_blank">
+                            <div class="lfZxWzImg">
+                                <img src="__PUBLIC__/web/oldhouse/images_xhx/wztj3.jpg" />
+                                <div class="lfZxWzTit"><span>03</span><i>小户型卧室设计</i></div>
+                            </div>
+                        </a>
+                        <div class="lfZxWzCon">
+                            <ul>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/woshi/2699.html" target="_blank">• 小户型卧室装修看这一篇就够了！</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/woshi/3185.html" target="_blank">• 小户型卧室榻榻米设计</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/woshi/4261.html" target="_blank">• 令人一见倾心的简约小户型卧室设计</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/kongjian/woshi/3198.html" target="_blank">• 温馨体面的小户型卧室设计</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="lfZxWzCon">
+                            <ul>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/6990.html" target="_blank">• 小户型装修误区集锦</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/9452.html" target="_blank">• 小户型装修搭配注意事项</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/1926.html " target="_blank">• 小户型装修施工注意事项</a>
+                                </li>
+                                <li>
+                                    <a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/6333.html" target="_blank">• 小户型装修常见误区</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="http://gonglue.sc.cc/zxzysx/" target="_blank">
+                            <div class="lfZxWzImg">
+                                <img src="__PUBLIC__/web/oldhouse/images_xhx/wztj4.jpg" />
+                                <div class="lfZxWzTit"><span>04</span><i>小户型装修注意事项</i></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="lfZxxgt">
+            <div class="lfZxxgtTit">
+                <h2>小户型装修最新文章</h2><a href="http://gonglue.sc.cc/huxingmianji/xiaohuxing/" target="_blank">更多 >></a>  
+            </div>
+            <div class="lfZxzx">
+                    <ul class="clearfix">
+                       <?php foreach ($xhxarticle as $k => $v): ?>
+                        <li>
+                            <a href="{$v.url}" target="_blank">
+                                <img src="http://www.sc.cc{$v.DefaultPicUrl}" alt="{$v.Title|msubstr=0,22}"/>
+                                <div class="lfZxzxCon">
+                                    <h3>{$v.Title|msubstr=0,22}</h3>
+                                    <p>{$v.Intro|msubstr=0,65}</p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                    </ul>
+                </div>
+        </div>
+        <div class="lfZxxgt">
+            <div class="lfZxxgtTit">
+                <h2>小户型装修报价</h2>
+            </div>
+            <div class="lfZxbj">
+                    
+            <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="lfZxbjBar clearfix">
+                    <div class="lfZxbjL">{$v.AreaName}</div>
+                    <div class="lfZxbjR">
+                     <?php foreach ($v['area'] as $i => $r): ?>
+                           <a href="http://{$r.baojia_url}" target="_blank">{$r.NAME}装修报价</a>
+                    <?php endforeach ?>
+                    </div>
+                </div>
+            <?php endforeach ?>
+          
+
+            </div>
+        </div>
+    </div>
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+</body>
+</html>

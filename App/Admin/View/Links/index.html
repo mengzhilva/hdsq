@@ -1,0 +1,229 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+    <input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" />
+    <input type="hidden" name="_order" value="{$Think.request._order}"/>
+    <input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+        <input type="hidden" name="numPerPage" value="{$numPerPage}" />
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                        <b>搜索</b>&nbsp;频道
+                    </td>
+                    <td>
+                        <select name="pindaoid" class="combox required" id="pdindex" ref="w_combox_class" refUrl="__CONTROLLER__/getsonclass/id/{value}">
+                            <option value="0">请选择</option>
+                            <volist name="pindaolist" id="vo">
+                                <option value="{$vo.id}" <eq name="Think.request.pindaoid" value="$vo.id">selected</eq>>{$vo.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+
+                    <td  <if condition="$Think.request.cid GT 0">class="csindexs"<else />class="csindex"</if> >
+                        &nbsp;城市
+                    </td>
+                    <td <if condition="$Think.request.cid GT 0">class="csindexs"<else />class="csindex"</if>> 
+                        <select name="cid" class="combox">
+                            <option value="">全部</option>
+                            <volist name="city" id="cityvo">
+                                <option value="{$cityvo.ID}" <if condition="$Think.request.cid eq $cityvo['ID']">selected</if>>{$cityvo.NAME}</option>
+                            </volist>
+                        </select>
+                    </td>
+                    <td>
+                        &nbsp;子分类
+                    </td>
+                    <td >
+                        <select name="canshu" class="combox" id="w_combox_class">
+                            <option value="0">--请选择--</option>
+                            <volist name="canshu" id="vo">
+                                <option value="{$vo.id}" <eq name="Think.request.canshu" value="$vo.id">selected</eq> >{$vo.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+
+                    <td>
+                        &nbsp;链接类型
+                    </td>
+                    <td>   
+                        <select name="is_pic" >
+                            <option value="">全部</option>
+                            <option value="1">友情链接</option>
+                            <option value="2">合作伙伴</option>
+                            <option value="3">热点标签</option>
+                        </select>
+                    </td>
+
+                    <td>
+                        &nbsp; 关键字：<input type="text" name="keyword" value="{$Think.post.keyword}" />  
+                    </td>
+                    <td>
+                        <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li><a class="add" href="__URL__/add" target="navTab"  rel="addlinks" title="添加友情链接"><span>添加</span></a></li>
+            <li><a class="delete" href="__URL__/delete_tag/link_id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/listlinks" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+            <li><a class="edit" href="__URL__/edit/link_id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}" rel="editlinks" target="navTab" title="编辑友情链接"><span>编辑</span></a></li>
+            <li class="line">line</li>
+            <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+        </ul>
+    </div>
+    <table class="list" width="100%" layoutH="90">
+        <thead>
+            <tr>
+                <!--  <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th> -->
+                <th width="30" orderField="link_id" <if condition="$Think.request._order eq 'link_id'">class="{$Think.request._sort}"</if>>ID</th>
+        <th width="100" orderField="pindaoid">频道</th>
+        <th width="100" orderField="cid">城市</th>
+        <th width="100" orderField="is_pic">链接类型</th>
+        <th width="100" orderField="link_name">链接名</th>
+        <th width="100" orderField="url">链接地址</th>
+        <th width="100" orderField="pic">链接图片(缩略图)</th>
+        <th width="100" orderField="addtime" <if condition="$Think.request._order eq 'addtime'">class="{$Think.request._sort}"</if>>添加时间</th>
+        <th width="80">操作</th>  
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="list" id="vo">
+            <tr target="item_id" rel="{$vo.link_id}">
+                <!-- <td><input name="ids" value="{$vo.link_id}" type="checkbox"></td> -->
+                <td>{$vo.link_id}</td>
+                <td>{$vo.pindaoid|getpindaonamebyid}({$vo.canshu|getpindaonamebyid})</td>
+                <td><empty name="vo.cid">与城市无关<else />{$vo.cid|getcityname}</empty></td>
+            <td><switch name="vo.is_pic"><case value="1">友情链接</case><case value="2">合作伙伴</case><case value="3">热点标签</case><case value="4">同行业网站</case><case value="5">综合性网站</case><case value="6">地方性网站</case></switch></td>
+            <td>{$vo.link_name}</td>
+            <td>{$vo.url}</td>
+            <td><empty name="vo.pic">没有图片<else /><img src="{$vo.pic}" width="60"></empty></td>
+            <td>{$vo.addtime|date="Y-m-d  H:i:s",###}</td>    
+            <td>
+                <a href="__URL__/edit/link_id/{$vo.link_id}/navTabId/ads_link" class="edit" target="navTab" rel="editlinks" title="编辑链接"><span>编辑</span></a>&nbsp;
+                <a href="__URL__/delete_tag/link_id/{$vo.link_id}" class="delete" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+
+            </td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+
+    <div class="panelBar">
+        <div class="pages">
+            <span>显示</span>
+            <select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+                <option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+                <option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+                <option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+                <option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+                <option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+            </select>
+            <span>共{$totalCount}条</span>
+        </div>
+        <div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+    </div>
+</div>
+<script type="text/javascript">
+            if ($("#pdindex").val() !== 2){
+            $(".csindex").val(0).hide();
+            }
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+            $("#pdindex").change(function(){
+    if ($("#pdindex").val() == 2){
+        $(".csindex").show();
+    } else if ($("#pdindex").val() == 6){
+    var str = "<option value=''>全部</option>\n";
+            str += "<option value='4'>同行业网站</option>\n";
+            str += "<option value='5'>综合性网站</option>\n";
+            str += "<option value='6'>地方性网站</option>\n";
+            $("select[name='is_pic']").html(str);
+            $(".csindexs").attr("class", "csindex");
+            $(".csindex").hide();
+    } else if ($("#pdindex").val() == 7){
+    $(".dtstyle").show();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 8){
+    $(".dtkong").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 9){
+    $(".dtjubu").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 10){
+    $(".tucestyle").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 11){
+    $(".baojia").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 12){
+    $(".lixiangzhuang").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".gonglue").val(0).hide();
+    } else if ($("#pdindex").val() == 13){
+    $(".gonglue").show();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+    } else{
+    var str = "<option value=''>全部</option>\n";
+            str += "<option value='1'>友情链接</option>\n";
+            str += "<option value='2'>合作伙伴</option>\n";
+            str += "<option value='3'>热点链接</option>\n";
+            $("select[name='is_pic']").html(str);
+            $(".csindexs").attr("class", "csindex");
+            $(".csindex").hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+    }
+
+    })
+</script>

@@ -1,0 +1,127 @@
+@charset "utf-8";
+/*环保主材开始*/
+.hbzc{ background:url(../images/hbzc_banner.jpg) top center no-repeat; height:420px; font-family:"微软雅黑";}
+.hhbzzc img{vertical-align:top; display:block}
+.hbzc_p,.xftm_p0 {
+	position: absolute;
+	font-size: 22px;
+	color: #ffffff;
+	width: 255px;
+}
+.p1{top: 60px;left: 20px;}
+.h_div{position: absolute;font-family: "微软雅黑";width: 928px;}
+.h_div_1{left: 117px;top: 175px;}
+.h3_1{ font-size:26px; color:#484848; line-height:30px;}
+.p_p1{ font-size:36px; color:#000000; line-height:60px;}
+.span_1{ font-size:16px; color:#000000}
+.h_div_2{ right:134px; top:430px; width:326px;}
+.h_div_3{ right:134px; top:563px; width:326px;}
+.h_div_4{ left:117px; top:1180px; width:269px;}
+.h_div_5{ left:117px; top:1300px; width:269px;}
+.p_p2{ color:#484848; padding-left:13px;  font-size:26px;}
+.span_2{ background:url(../images/hbzc_dian.jpg) left center no-repeat; padding-left:13px; line-height:20px;}
+.p_p3{ color:#999999}
+.h_fb{ top:1475px; left:117px; font-size:14px;}
+.h_fb p span{ padding:0px 2px;font-size:14px;}
+.h_fb p{font-size:14px;}
+.span_3{ padding-left:54px !important;}
+.span_4{ line-height:26px;}
+.p2{top: 1627px;left: 20px;}
+.h_div_6{left: 117px;top: 1783px;}
+.h_div7{ right:234px; top:2125px; color:#ffffff; width:350px;}
+.h_div7 b{ font-size:26px; line-height:52px; font-weight:normal}
+.h_div7 span{ font-size:14px;}
+.h_div8{ left:183px; top:2643px; width:249px;}
+.span_5{ line-height:26px;}
+.h_div9{ left:515px; top:2643px; width:249px;}
+.h_div10{ left:860px; top:2643px; width:249px;}
+.h_div11{ left:117px; top:2945px; color:#ffffff; width:350px;}
+.h_div12{ left:183px; top:3416px; width:249px;}
+.h_div13{ left:515px; top:3416px; width:249px;}
+.h_div14{ left:860px; top:3416px; width:249px;}
+.span_none{ background:none; }
+.h_div15{right:74px; top:3673px; color:#3c3c3c; width:350px;}
+.h_div16{ left:183px; top:4182px; width:249px;}
+.h_div17{ left:515px; top:4182px; width:249px;}
+.h_div18{ left:860px; top:4182px; width:249px;}
+.h_div19{ right:234px; top:4440px; color:#ffffff; width:350px;}
+.h_div20{ left:183px; top:4950px; width:249px;}
+.h_div21{ left:515px; top:4950px; width:249px;}
+.h_div22{ left:860px; top:4950px; width:249px;}
+.p3{top: 5103px;left: 20px;}
+.h_div_23{left: 117px;top: 5192px;}
+.h_div_24{left: 117px;top: 5854px;}
+.span_6{ width:1000px;}
+.h_div_25{ right:48px; top:6122px; width:269px;}
+.p4{top: 6450px;left: 20px;}
+.h_div_26{left: 117px;top: 6610px;}
+.h_div_27{right:263px; top:7351px; color:#393939; width:257px;}
+.h_div_28{right:35px; top:7411px; color:#ffffff; width:195px;}
+.h_div_28 b{ font-size:20px; line-height:28px; color:#ffffff; padding-left:54px;}
+.h_div_28 b a{color:#ffffff}
+
+
+/*环保主材结束*/
+
+
+/*消费透明开始*/
+.xftm{ background:url(../images/xftm_banner.jpg) top center no-repeat;height:420px;}
+.xftm_p1{ left:218px; top:282px; font-size:22px;}
+.xftm_p1 font{ font-size:28px;}
+.xftm_p2{ left:532px;}
+.xftm_p3{ left:850px;}
+.xftm_p4{ color:#333333; font-size:15px; width:285px; line-height:26px;}
+.xftm_p5{top:420px; left:28px;}
+.xftm_p6{top:420px; left:334px; width:270px;}
+.xftm_p7{top:420px; left:623px; width:530px;}
+.xftm_p8{top:497px; left:623px; width:550px; line-height:24px;}
+.xftm_p9{top:570px; left:623px; width:530px;}
+.title_p1{top:634px;left: 20px;}
+.xftm_p10{top:1125px; left:28px; width:400px;}
+.xftm_p11{top:1125px; left:480px; width:400px;}
+.xftm_p12{top:1125px; left:957px; width:160px;}
+.xftm_p12 span{ float:left; display:block; width:85px;}
+.title_p2{top:1329px;left: 20px;}
+.xftm_p13{top:1822px; left:28px; width:400px;}
+.xftm_p14{top:1822px; left:480px; width:400px;}
+.xftm_p15{top:1822px; left:957px; width:160px;}
+.xftm_p16{ top:2112px; left:115px; font-size:16px; color:#666666; width:400px; line-height:30px}
+.xftm_p16 b{ font-size:22px; color:#000000; font-weight:normal}
+.xftm_p16 span{ padding:0px 3px; color:#ff8453}
+.xftm_p17{ top:2645px; left:774px; width:321px;}
+.xftm_p18{ top:3155px; left:140px; width:321px;}
+.ljzx{ display:block; background:#ff8453; width:140px; height:36px; position:absolute; right:8px; text-align:center; line-height:36px;}
+.ljzx a{ color:#ffffff; font-size:16px; width:140px; height:36px;display:block; }
+.ljzx_1{ top:60px;}
+.ljzx_2{ top:634px;}
+.ljzx_3{ top:1329px;}
+.xftm_form{ position:absolute; top:3480px; left:150px; width:860px; height:95px;}
+.xftm_th{ font-size:16px; color:#fa4c06; font-weight:normal; text-align:center; line-height:26px;}
+.xftm_input{ border:1px #dbdbdb solid; width:228px; height:37px; line-height:37px; padding-left:5px;}
+.xftm_btn{ width:160px; height:82px; line-height:83px; display:block; background:#ea4d16; color:#ffffff; border:none; margin-top:6px; margin-left:15px; float:left; font-size:14px; font-weight:bold}
+/*轮播效果*/
+/* sub_box */
+.sub_box{width:1180px;height:400px;margin:0 auto;position:relative;overflow:hidden;}
+.sub_box img{width:1180px;height:400px;}
+#bd1lfimg{position:relative;width:1180px;height:400px;overflow:hidden;}
+#bd1lfimg div{width:100000px;margin-left:1175px;}
+#bd1lfimg dl{width:1180px;height:400px;position:relative;overflow:hidden;float:left;}
+#bd1lfimg dt{width:1180px;height:400px;position:absolute;left:0px;top:0px;}
+#bd1lfimg dd{width:1180px;height:80px;background:#000000;filter:alpha(Opacity=70);Opacity:0.7;position:absolute;left:0px;bottom:0px;padding:0 20px;}
+#bd1lfimg dd h2{height:25px;padding:8px 0 4px 0;line-height:25px;overflow:hidden;}
+#bd1lfimg dd h2 a{font-size:14px;font-weight:bold;color:#ffffff;}
+#bd1lfimg dd a{color:#ffffff;text-decoration:none;}
+#bd1lfimg dd a:hover{text-decoration:none;color:#cccccc;}
+#bd1lfimg dd tt{color:#dddddd;line-height:1.2em;}
+#bd1lfimg dd tt a:hover{text-decoration:underline;}
+
+.sub_nav{width:1180px;height:70px;bottom:0px;position:absolute;color:#999999;z-index:200;}
+.sub_no{height:70px;float:left;}
+.sub_no li{display:block;width:234px;height:70px;float:left;overflow:hidden;line-height:70px;vertical-align:middle;text-align:center;background:#000000;filter:alpha(Opacity=70);Opacity:0.7;font-family:Arial;font-size:11px;color:#999999;cursor:pointer; margin-right:2px; font-size:16px}
+.sub_no li.show{background:#ffffff;color:#000000;}
+.sub_more{float:right;width:50px;height:25px;background:#000000;filter:alpha(Opacity=70);Opacity:0.7;color:#999999;text-align:center;line-height:25px;}
+.sub_more a{color:#999999;}
+.sub_more a:hover{color:#cccccc;text-decoration:none;}
+#showw{ width:234px;}
+.xftm_lb{ position:absolute; top:692px; left:0px;}
+/*消费透明结束*/

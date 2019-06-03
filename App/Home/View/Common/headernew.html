@@ -1,0 +1,333 @@
+<!--*********************header 引入区*********************-->
+<div class="header-wrap clearfix">
+    <div class="sc-ui-topbar ui-top-gray-bar">
+        <div class="layout clearfix">
+            <div class="sc-ui-topbar-l f_l">
+                <span class="sc-page" onclick="show_Favorite(window.location,document.title);"><i></i>收藏实创</span>
+                <span class="sc-location"><i></i><strong class="pr-address">{$cityinfo.NAME}</strong></span>
+                <span class="ct"><a href="javascript:void(0);" onclick="change();"> [查看全国直营公司]</a></span>
+                <div class="city_name" id="city_select" style="display: none;">
+                    <!--城市弹出层始-->
+                      <dl>
+                        <dt>东北</dt>
+                    <dd>
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '东北'">
+                        <a href="__APP__/{$vo.DOMAIN}"  <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+                        </if>
+                    </volist>
+                                         
+                    </dd></dl>
+                      <dl style="height: 60px;">
+                        <dt>华北</dt>
+                    <dd>
+
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '华北'">
+                        <a href="__APP__/{$vo.DOMAIN}"  
+                        <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>
+                        <if condition="$vo.DOMAIN eq 'bj'">style=" font-weight: bold;"</if>
+                        >{$vo.NAME}</a>
+                        </if> 
+                    </volist>                                       
+                    </dd></dl>
+                       <dl>
+                        <dt>华东</dt>
+                    <dd>
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '华东'">
+                        <a href="__APP__/{$vo.DOMAIN}"  <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>
+                        <if condition="$vo.DOMAIN eq 'sh'">style=" font-weight: bold;"</if>>{$vo.NAME}</a>
+                        </if>  
+                    </volist>                                        
+                    </dd></dl>
+                      <dl>
+                        <dt>中南</dt>
+
+                    <dd>
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '中南'">
+                        <a href="__APP__/{$vo.DOMAIN}"  <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>
+                        <if condition="$vo.DOMAIN eq 'gz'">style=" font-weight: bold;"</if>>{$vo.NAME}</a>
+                        </if>  
+                    </volist>                                       
+                    </dd></dl>
+                      <dl>
+                        <dt>西南</dt>
+                    <dd>
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '西南'">
+                        <a href="__APP__/{$vo.DOMAIN}"  <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+                        </if>  
+                    </volist>                     
+                    </dd></dl>
+                      <dl>
+                        <dt>西北</dt>
+                    <dd>
+                    <volist name="citys" id="vo">
+                        <if condition="$vo.AreaName eq '西北'">
+                        <a href="__APP__/{$vo.DOMAIN}"  <if condition="$vo.DOMAIN eq $city">style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+                        </if> 
+                    </volist>                                       
+                    </dd></dl>
+                    <!--弹出层末-->
+            </div>
+          </div>
+          <!--left end-->
+          <div class="sc-ui-topbar-r f_r">
+                <if condition="$user eq ''">
+                <span class="sc-wel">欢迎来到实创！</span>
+                    <span class="sc-t-login"><i></i><a  href="__APP__/{$city}/login.html">[登录]</a> <a  href="__APP__/{$city}/register.html">[免费注册]</a></span>
+                    <span class="sc-t-gj sc-ui-topbar-y"><a target="_blank"  href="__APP__/{$city}/service.html">免费服务</a></span>
+                </if>
+                <if condition="$user neq ''">
+                  <div class="sc-ui-topbar-r f_r">
+                    <span class="sc-wel"><i><if condition="$user.username neq ''">{$user.username}</if><if condition="$user.username eq ''">{$user.mobilephone}</if>，</i>欢迎来到实创！</span>
+                    <span class="sc-t-login"><i></i><a href="__APP__/{$city}/user/logout.html">[退出]</a> <a href="__APP__/{$city}/vip.html">[个人中心]</a></span>
+                    <span class="sc-t-gj"><a href="__APP__/{$city}/vip/bdht">家装管家</a></span>
+                  </div>
+                </if>
+          </div>
+          <!--right end-->
+        </div>
+    </div>
+   
+    <div class="sc-ui-header-bg">
+        <div class="sc-logo-wrap">
+            <div class="sc-logo-alpha"><!--背景颜色是否透明，如果透明添加 样式 opcity50--></div>
+            <div class="sc-logo-container">
+                <div class="layout clearfix">
+                   <a href="__APP__/{$city}" class="sc-logo"><img src="__PUBLIC__/web/images/logo.png" width="165" height="40"></a>
+                    <div class="sc-slogan"><img src="__PUBLIC__/web/images/slogan.jpg" width=""></div>
+                   <!--sc-main-nav end-->
+                   <!-- <h2 class="sc-call"><i></i><strong><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></strong></h2>
+                                       -->
+
+                    <div class="sc-call">
+                        <h2><i></i><strong><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></strong></h2>
+                        <span class="scTimefw">周一至周日 8:00-18:00</span>
+                    </div>
+                                                          
+                </div>
+                <!--end-->
+            </div>
+        </div>
+        <div class="sc-ui-index-mainav">
+            <div class="layout clearfix">
+                <div class="m-nav-left" style="text-align:left;">
+                    <a href="__APP__/{$city}">首  页</a>
+                    <div class="index-nav">
+                        <if condition="$cityinfo.PTYPE eq 1">
+                        <a href="__APP__/{$city}/package/three.html" target="_blank" class="select">家装套餐<i></i></a>
+                        </if>
+                        <if condition="$cityinfo.PTYPE eq 2">
+                        <a href="__APP__/{$city}/package/sthree.html" target="_blank" class="select">整体家装<i></i></a>
+                        </if>
+                        <div class="nalist-wrap">
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/three.html"><img src="__PUBLIC__/web/temp/3.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/three.html">3系</a></dd>
+                                    <dd>
+                                        实用 住宜居之所
+                                    </dd>
+                                </dl>
+                                
+                                
+                        <if condition="$cityinfo.NAME neq '北京'">
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/six.html"><img src="__PUBLIC__/web/temp/6.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/six.html">6系</a></dd>
+                                    <dd>
+                                        品质 创乐活之居
+                                    </dd>
+                                </dl>
+                                <if condition="$cityinfo.NAME neq '秦皇岛' && $cityinfo.NAME neq '合肥'">
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/nine.html"><img src="__PUBLIC__/web/temp/9.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/nine.html">9系</a></dd>
+                                    <dd>
+                                        格调 享成就之宅
+                                    </dd>
+                                </dl>
+                                </if>
+                            </if>
+                            <if condition="$Promoter.PromoterTel neq ''">
+                                <?php 
+                                $specurl="http://www.sc.cc/special/150112/";
+                                    if(strpos($specurl,'?')){
+                                        $url = $specurl.'&utm_source=%E7%BD%91%E9%94%80&Promoterid='.$Promoter['Id'].'&utm_campaign='.$Promoter['PromoterName'].'&utm_term=';
+                                    }else{
+                                        $url = $specurl.'/?utm_source=%E7%BD%91%E9%94%80&Promoterid='.$Promoter['Id'].'&utm_campaign='.$Promoter['PromoterName'].'&utm_term=';
+                                    }
+                                ?>
+                                <dl>
+                                    <dt><a href="<?php echo $url; ?>"><img src="__PUBLIC__/web/temp/imgWy.png"/></a></dt>
+                                    <dd><a href="<?php echo $url; ?>">实景样板间</a></dd>
+                                    <dd>
+                                        全屋定制实景样板间
+                                    </dd>
+                                </dl>
+                                <else/>
+                                    <dl>
+                                    <dt><a href="http://www.sc.cc/special/150112/"><img src="__PUBLIC__/web/temp/imgWy.png"/></a></dt>
+                                    <dd><a href="http://www.sc.cc/special/150112/">实景样板间</a></dd>
+                                    <dd>
+                                        全屋定制实景样板间
+                                    </dd>
+                                </dl>
+                                
+
+                            </if>
+                            <if condition="$cityinfo.PTYPE eq 2">
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/sthree.html"><img src="__PUBLIC__/web/temp/s3.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/sthree.html">S3系</a></dd>
+                                    <dd>
+                                        实用至上 住宜居之所
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/ssix.html"><img src="__PUBLIC__/web/temp/s6.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/ssix.html">S6系</a></dd>
+                                    <dd>
+                                       品质至上 创乐活之居
+                                    </dd>
+                                </dl>
+                                <if condition="$cityinfo.NAME neq '西安'">
+                                <dl>
+                                    <dt><a href="__APP__/{$city}/package/snine.html"><img src="__PUBLIC__/web/temp/s9.png"/></a></dt>
+                                    <dd><a href="__APP__/{$city}/package/snine.html">S9系</a></dd>
+                                    <dd>
+                                        格调至上 享成就之宅
+                                    </dd>
+                                </dl>
+                                </if>
+                            </if>
+                        </div> 
+                    </div>
+                    
+
+                    <div class="index-nav">
+                        <a href="__APP__/{$city}/xiaoguotu/meitu.html" target="_blank" class="select">装修案例<i></i></a>
+                        <div class="nalist-wrap">
+                            <dl>
+                                <dt><a href="__APP__/{$city}/xiaoguotu/meitu.html"><img src="__PUBLIC__/web/temp/tkJmxc.png"/></a></dt>
+                                <dd><a href="__APP__/{$city}/xiaoguotu/meitu.html">精美相册</a></dd>
+                                <dd>
+                                    看图片找家装灵感
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="__APP__/{$city}/xiaoguotu/three.html"><img src="__PUBLIC__/web/temp/tk3d.png"/></a></dt>
+                                <dd><a href="__APP__/{$city}/xiaoguotu/three.html">3D效果图</a></dd>
+                                <dd>
+                                    3D画面所见即所得
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="__APP__/{$city}/xiaoguotu/best.html"><img src="__PUBLIC__/web/temp/tkZdfa.png"/></a></dt>
+                                <dd><a href="__APP__/{$city}/xiaoguotu/best.html">镇店方案</a></dd>
+                                <dd>
+                                    族群定位 对号入座
+                                </dd>
+                            </dl>
+                        </div> 
+                    </div>
+                    
+
+                    <div class="index-nav">
+                        <a href="__APP__/{$city}/designer/djys.html" target="_blank" class="select">家装服务<i></i></a>
+                        <div class="nalist-wrap">
+                            <dl>
+                                <dt><a target="_blank" href="__APP__/{$city}/designer/djys.html"><img src="__PUBLIC__/web/temp/scDjys.png"/></a></dt>
+                                <dd><a target="_blank" href="__APP__/{$city}/designer/djys.html">独家优势</a></dd>
+                                <dd>
+                                 解读实创为何而牛
+                                </dd>
+                            </dl>
+
+                            <dl>
+                                <dt><a target="_blank" href="__APP__/{$city}/designer.html"><img src="__PUBLIC__/web/temp/scSjs.png"/></a></dt>
+                                <dd><a target="_blank" href="__APP__/{$city}/designer.html">设计师</a></dd>
+                                <dd>
+                                 找他们设计我家
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a target="_blank" href="__APP__/{$city}/service.html"><img src="__PUBLIC__/web/temp/scMffw.png"/></a></dt>
+                                <dd><a target="_blank" href="__APP__/{$city}/service.html">免费服务</a></dd>
+                                <dd>
+                                    更多服务的快捷通道
+                                </dd>
+                            </dl>
+                           
+
+                        </div> 
+                    </div>
+                    
+                    <div class="index-navs">
+                        <a href="__APP__/{$city}/gonglue.html" target="_blank" class="select">装修攻略<i></i></a>
+
+                    </div>
+
+                    <div class="index-navs">
+                        <a href="__APP__/{$city}/Gonglue/zhuanti" target="_blank" class="select">热点活动<i></i></a>
+
+                    </div>
+                    <div class="index-navs">
+                        <a href="__APP__/{$city}/about.html" target="_blank" class="select">了解实创<i></i></a>
+
+                    </div>
+
+                </div>
+                <h2 class="m-nav-right" id="m-nav-right"><!-- <a style="color:#fff" target="_blank" href="__APP__/{$city}/threeminute">3分钟看装修</a> --><div class="scTOPright">
+      <a href="javascript:lijibaoming()" class="scTOPyuding"><img src="__PUBLIC__/web/images/newindex/yuding.jpg" width="81" height="32" /></a>
+      </div></h2>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/zDialog.js"></script>
+
+ <script type="text/javascript">
+ function lijibaoming()
+{
+  var diag = new Dialog();
+  diag.Width = 620;
+  diag.Height = 300;
+  diag.Title = "马上预定";
+  diag.URL = "__APP__/{$city}/package/baoming/";
+  diag.show();
+}
+
+ function show_Favorite(sURL, sTitle){
+        sURL = encodeURI(sURL);
+        try{
+                window.external.addFavorite(sURL, sTitle);
+            }catch(e) {
+                try{window.sidebar.addPanel(sTitle, sURL, "");
+            }catch (e) 
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+            }
+    }
+
+}
+function  showList(id,num){
+    if(num==1){
+        document.getElementById(id).style.display="block"
+    }else{
+        document.getElementById(id).style.display="none"}
+    }
+function show_index(url){
+    if (document.all) {
+        document.body.style.behavior='url(#default#homepage)';
+        document.body.setHomePage(url);
+    }else{
+        alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");}
+}
+
+    </script>
+    <div id="whitebg"></div>
+<!--*********************header 引入区 end*********************-->

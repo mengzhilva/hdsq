@@ -1,0 +1,468 @@
+@charset "utf-8";
+/*** CSS 实创标准 Document ***/
+		
+	/*** 口碑工程style ***/
+	.kbgc-ban { min-width:1180px; height:420px; background:url(../images/bz_00.jpg) no-repeat center top; }
+		.kbgc-con { position:relative; }
+		
+			.kbgc-temp-tit { font-size:22px; color:#ffffff; }
+			.kt-1 { position:absolute; top:60px; left:19px; } .kt-2 { position:absolute; top:644px; left:19px; } .kt-3 { position:absolute; top:1227px; left:19px; }
+			.kt-4 { position:absolute; top:1812px; left:19px; } .kt-5 { position:absolute; top:3101px; left:19px; } .kt-6 { position:absolute; top:3686px; left:19px; }
+			.kt-7 { position:absolute; top:4962px; left:19px; } .kt-8 { position:absolute; top:5547px; left:19px; }
+			
+			.kbgc-list span{ font-size:26px; display:block; padding-bottom:10px; }
+			.kbgc-list ul li { list-style-type:disc; font-size:14px; line-height:26px; }
+			.col-1 span { color:#999999; }
+			.col-1 ul li { color:#666666; }
+			.col-2 { color:#ededed; }
+			.pos-1 { position:absolute; top:275px; left:105px; } .pos-2 { position:absolute; top:777px; left:280px; } .pos-3 { position:absolute; right:84px; top:1411px; width:280px; }
+			.pos-4 { position:absolute; top:1920px; left:430px; } .pos-5 { position:absolute; top:2895px; left:199px; width:285px; } .pos-6 { position:absolute; top:2895px; left:709px; width:355px; }
+			.pos-7 { position:absolute; top:3233px; left:105px; width:290px; } .pos-8 { position:absolute; top:3775px; left:418px; }
+			.pos-9 { position:absolute; top:4730px; left:199px; width:285px; } .pos-10 { position:absolute; top:4730px; left:709px; width:308px; }
+			.pos-11 { position:absolute; right:84px; top:5143px; width:265px; } .pos-12 { position:absolute; top:5710px; left:430px; }
+			.pos-13 { position:absolute; top:6600px; left:199px; width:278px; } .pos-14 { position:absolute; top:6600px; left:709px; width:308px; }
+			.col-3 { color:#393939; } .pos-15 { position:absolute; top:6896px; right:255px; width:255px; }
+			.col-3 p { font-size:14px; }
+			.line-time { position:absolute; top:6980px; right:95px; color:#ffffff; }
+			
+	/*** 口碑工程style end***/
+	
+	
+	/*** 全责售后style ***/
+	.scQzshTop{
+		width:100%;
+		height: 420px;
+		overflow:hidden;
+		text-align: center;
+		background: url(../images/qzsh.jpg) no-repeat center top;
+	}
+	.scQzsh{
+		width: 100%;
+		height: auto;
+		padding-top: 54px;
+	}
+	.scQzshBz{
+		width: 100%;
+		height: auto;
+		padding-top: 55px;
+	}
+	.scShbxbzTit{
+		width: 100%;
+		height: 60px;
+		background:url(../images/shbzBg.png) no-repeat left center;
+	}
+	.scShbxbzTit h2{
+		width: 100%;
+		height: 48px;
+		line-height: 48px;
+		color: #ffffff;
+		font-size: 22px;
+		font-family: Microsoft YaHei;
+		font-weight: normal;
+		text-indent: 1em;
+	}
+	.scShbxbzTit span{
+		height: 48px;
+		line-height: 48px;
+		color: #ffffff;
+		font-size: 22px;
+		font-family: Microsoft YaHei;
+		font-weight: normal;
+		margin-left: 10px;
+	}
+	.scShbxbzCon{
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-top:45px;
+		padding-bottom: 40px;
+	}
+	.scShbxzLeft{
+		width: 310px;
+		height: auto;
+		float: left;
+		padding-top: 60px;
+	}
+	.scShbxzLeft h2{
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 26px;
+		font-family: Microsoft YaHei;
+		color: #999999;
+		font-weight: normal;
+		text-indent: 15px;
+	}
+	.scShbxzLeft ul{
+		padding: 0px;
+		margin: 0px;
+	}
+	.scShbxzLeft ul li{
+		background: url(../images/dot.png) no-repeat left center;
+		width: 100%;
+		height: 24px;
+		line-height: 24px;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		text-indent: 15px;
+		color: #666666;
+	}
+	.scShbxzRight{
+		width: 654px;
+		height: auto;
+		float: right;
+	}
+	.scShbxzRight table{
+		border-bottom: #dbdbdb solid 1px;
+		border-right: #dbdbdb solid 1px;
+		margin-bottom: 10px;
+	}
+	.scShbxzRight table tr{
+		height: 36px;
+		line-height: 36px;
+	}
+	.scShbxzRight table th{
+		border-top: #dbdbdb solid 1px;
+		border-left: #dbdbdb solid 1px;
+		height: 36px;
+		line-height: 36px;
+		text-align: center;
+		background: #ededeb;
+		color: #696969;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+	}
+	.scShbxzRight table td{
+		height: 46px;
+		line-height: 46px;
+		text-indent: 20px;
+		border-top: #dbdbdb solid 1px;
+		border-left: #dbdbdb solid 1px;
+	}
+	td.scBxbzTd{
+		font-size: 18px;
+		color: #5b6c71;
+		font-family: Microsoft YaHei;
+	}
+	td.scBxbzSj{
+		font-size: 24px;
+		color: #ff623f;
+		font-family: Microsoft YaHei;
+	}
+	.scBxbzTs{
+		height: auto;
+		padding-left: 18px;
+	}
+	.scBxbzTs h3{
+		width: 100%;
+		height: 24px;
+		line-height: 24px;
+		color: #585858;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		padding-bottom: 5px;
+	}
+	.scBxbzTs p{
+		width: 100%;
+		line-height: 24px;
+		color: #585858;
+		font-size: 14px;
+		padding-top: 5px;
+		font-family: Microsoft YaHei;
+	}
+	/*售后服务通道部分*/
+	.scShfwtd{
+		width: 100%;
+		height: auto;
+		padding-bottom: 50px;
+		position: relative;
+	}
+	.scShfwtd .scShbxbzTit{
+		position: absolute;
+		top:0px;
+		left: 0px;
+	}
+	.scShfwtd table{
+		width: 994px;
+		margin:0 auto;
+		margin-top:55px;
+		border-bottom: #dbdbdb solid 1px;
+		border-right: #dbdbdb solid 1px;
+	}
+	.scShfwtd table tr{
+		height: 36px;
+		line-height: 36px;
+	}
+	.scShfwtd table tr th{
+		border-top: #dbdbdb solid 1px;
+		border-left: #dbdbdb solid 1px;
+		height: 36px;
+		line-height: 36px;
+		text-align: center;
+		background: #ededeb;
+		color: #696969;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+	}
+	.scShfwtd table tr td{
+		border-top: #dbdbdb solid 1px;
+		border-left: #dbdbdb solid 1px;
+		color: #585858;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		line-height: 20px;
+		padding-left: 15px;
+		padding-right: 15px;
+	
+	}
+	.scShfwtd table tr td p{
+		padding-left: 20px;
+		color: #585858;
+		font-family: Microsoft YaHei;
+		font-size: 14px;
+		padding-bottom: 10px;
+		line-height: 24px;
+		text-align: left;
+	}
+	.scFwtdTs{
+		width:956px;
+		height: auto;
+		margin: 0 auto;
+		margin-top:10px;
+	}
+	.scFwtdTs h3{
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		color: #585858;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	.scFwtdTs p{
+		width: 100%;
+		height: 24px;
+		line-height: 24px;
+		font-family: Microsoft YaHei;
+		color:#585858;
+		font-size: 14px;
+	}
+	/*常见维修问题*/
+	.scWxwt{
+		width: 100%;
+		height: auto;
+	}
+	.scWxwtCon{
+		width: 956px;
+		height: auto;
+		margin:0 auto;
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+	.scWxwtTit{
+		width: 100%;
+		height:34px; 
+		border:1px solid #dbdbdb;
+		background: #ededeb;
+		text-indent: 20px;
+		line-height: 34px;
+		color: #696969;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		font-weight: bold;
+		margin-top:20px;
+	}
+	.scWxwtDa{
+		height: auto;
+		padding-left: 35px;
+		padding-right: 25px;
+		padding-top: 10px;
+	}
+	.scWxwtDa p{
+		width: 100%;
+		line-height: 20px;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		color: #585858;
+	}
+	/*不负责售后维修*/
+	.scBshwx{
+		width: 956px;
+		height: auto;
+		margin: 0 auto;
+		background: #ededeb;
+		color: #dbdbdb;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-bottom: 45px;
+	}
+	.scBshwxC{
+		width: 885px;
+		height: auto;
+		margin:0 auto;
+	}
+	.scBshwxC h2{
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		font-size: 24px;
+		color: #696969;
+		font-family: Microsoft YaHei;
+		border-bottom: 1px dashed #7d7d7d;
+	}
+	.scBshwxCon{
+		width: 100%;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom:1px dashed #7d7d7d;
+	}
+	.scBshwxCon p{
+		width: 100%;
+		line-height: 24px;
+		color: #585858;
+		font-size: 14px;
+		font-family: Microsoft YaHei; 
+	}
+	.scWtLxkf{
+		width: 940px;
+		height: auto;
+		padding-left: 16px;
+		margin: 0 auto;
+	}
+	.scWtLxkf h2{
+		width: 100%;
+		height: 45px;
+		line-height: 45px;
+		color: #999999;
+		font-size: 26px;
+		font-family: Microsoft YaHei;
+		font-weight: normal;
+	}
+	.scWtLxkf p{
+		width: 100%;
+		line-height: 20px;
+		font-size: 14px;
+		color: #666666;
+		font-family: Microsoft YaHei;
+		padding-bottom: 20px;
+	}
+	.scKfdh{
+		padding-left: 74px;
+		height: 60px;
+		background: url(../images/phoneBg.png) no-repeat left center;
+		margin-bottom: 50px;
+	}
+	.scKfdh h2{
+		width:100%;
+		height: 30px;
+		line-height: 40px;
+		color: #fa4c06;
+		font-family: Microsoft YaHei;
+		font-size: 36px;
+		font-weight: bold;
+	}
+	.scKfdh p{
+		width: 100%;
+		height: 25px;
+		line-height: 25px;
+		color: #535353;
+		font-size: 14px;
+		font-family: Microsoft YaHei;
+		padding-top: 10px;
+	}
+	.scKfFoot{
+		width: 100%;
+		height: 220px;
+		background: url(../images/kf.jpg) no-repeat left center;
+		margin-bottom: 50px;
+	}
+	.scKfFootC{
+		width: 255px;
+		height: 130px;
+		float: right;
+		padding-right: 255px;
+		margin-top:50px;
+		webkit-box-sizing: content-box; 
+		-moz-box-sizing: content-box;
+		box-sizing: content-box; 
+	}
+	.scKfFootC h2{
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		font-size: 30px;
+		font-family: Microsoft YaHei;
+		color: #393939;
+		font-weight: normal;
+	}
+	.scKfFootC p{
+		width: 100%;
+		line-height: 22px;
+		font-family: Microsoft YaHei;
+		font-size: 14px;
+		color: #393939;
+	}
+	/*** 全责售后style end***/
+	
+	
+	/*** 环保主材style ***/
+	.hbzc{ background:url(../images/hbzc_banner.jpg) top center no-repeat; height:420px; font-family:"微软雅黑";}
+	.hhbzzc img{vertical-align:top; display:block}
+	.hbzc_p{ position:absolute; font-size:22px; color:#ffffff}
+	.p1{top: 60px;left: 20px;}
+	.h_div{position: absolute;font-family: "微软雅黑";width: 928px;}
+	.h_div_1{left: 117px;top: 175px;}
+	.h3_1{ font-size:26px; color:#484848; line-height:30px;}
+	.p_p1{ font-size:36px; color:#000000; line-height:60px;}
+	.span_1{ font-size:16px; color:#000000}
+	.h_div_2{ right:134px; top:430px; width:326px;}
+	.h_div_3{ right:134px; top:563px; width:326px;}
+	.h_div_4{ left:117px; top:1180px; width:269px;}
+	.h_div_5{ left:117px; top:1300px; width:269px;}
+	.p_p2{ color:#484848; padding-left:13px;  font-size:26px;}
+	.span_2{ background:url(../images/hbzc_dian.jpg) left center no-repeat; padding-left:13px; line-height:20px;}
+	.p_p3{ color:#999999}
+	.h_fb{ top:1475px; left:117px; font-size:14px;}
+	.h_fb p span{ padding:0px 2px;font-size:14px;}
+	.h_fb p{font-size:14px;}
+	.span_3{ padding-left:54px !important;}
+	.span_4{ line-height:26px;}
+	.p2{top: 1627px;left: 20px;}
+	.h_div_6{left: 117px;top: 1783px;}
+	.h_div7{ right:234px; top:2125px; color:#ffffff; width:350px;}
+	.h_div7 b{ font-size:26px; line-height:52px; font-weight:normal}
+	.h_div7 span{ font-size:14px;}
+	.h_div8{ left:183px; top:2643px; width:249px;}
+	.span_5{ line-height:26px;}
+	.h_div9{ left:515px; top:2643px; width:249px;}
+	.h_div10{ left:860px; top:2643px; width:249px;}
+	.h_div11{ left:117px; top:2945px; color:#ffffff; width:350px;}
+	.h_div12{ left:183px; top:3416px; width:249px;}
+	.h_div13{ left:515px; top:3416px; width:249px;}
+	.h_div14{ left:860px; top:3416px; width:249px;}
+	.span_none{ background:none; }
+	.h_div15{right:74px; top:3673px; color:#3c3c3c; width:350px;}
+	.h_div16{ left:183px; top:4182px; width:249px;}
+	.h_div17{ left:515px; top:4182px; width:249px;}
+	.h_div18{ left:860px; top:4182px; width:249px;}
+	.h_div19{ right:234px; top:4440px; color:#ffffff; width:350px;}
+	.h_div20{ left:183px; top:4950px; width:249px;}
+	.h_div21{ left:515px; top:4950px; width:249px;}
+	.h_div22{ left:860px; top:4950px; width:249px;}
+	.p3{top: 5103px;left: 20px;}
+	.h_div_23{left: 117px;top: 5192px;}
+	.h_div_24{left: 117px;top: 5854px;}
+	.span_6{ width:1000px;}
+	.h_div_25{ right:48px; top:6122px; width:269px;}
+	.p4{top: 6450px;left: 20px;}
+	.h_div_26{left: 117px;top: 6610px;}
+	.h_div_27{right:263px; top:7351px; color:#393939; width:257px;}
+	.h_div_28{right:35px; top:7411px; color:#ffffff; width:195px;}
+	.h_div_28 b{ font-size:20px; line-height:28px; color:#ffffff; padding-left:54px;}
+	.h_div_28 b a{color:#ffffff}
+	/*** 环保主材style end***/

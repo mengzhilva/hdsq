@@ -1,0 +1,103 @@
+/* 公用部分 */
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family:Microsoft YaHei;
+    box-sizing:border-box;
+}
+
+h2,h3{
+    margin:0px;
+    padding:0px;
+    font-family:Microsoft YaHei;
+}
+input:focus{
+    outline: none;
+}
+.clearfix:after {
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+ line-height: 0px;
+}
+li{
+    list-style: none;
+}
+a{
+    color: #666666;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+}
+a:hover{
+    color: #fa4c06;
+}
+/* map部分 */
+.mapNew{
+    width: 1180px;
+    height: auto;
+    margin:0 auto;
+    margin-bottom: 40px;
+}
+.mapNav{
+    color: #fa4c06;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.mapLine{
+    width: 100%;
+    height: 3px;
+    background: #e6e6e6;
+    font-family: 宋体;
+}
+.mapBar{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.mapTr{
+    margin-top: 10px;
+}
+.mapTr a .mapTrLeft:hover{
+    color: #fa4c06;
+}
+.mapTrLeft{
+    float: left;
+    width: 138px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border:1px solid #e6e6e7;
+    color: #333333;
+    font-size: 12px;
+    margin-right: 9px;
+}
+.mapTrH2{
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    background: #fa4c06;
+    color: #fff;
+    border:1px solid #fa4c06;
+}
+.mapTr a .mapTrH2:hover{
+    color: #fff;
+}
+.mapTrRight{
+    width: 1032px;
+    height: auto;
+    float: right;
+    line-height: 28px;
+}
+.mapTrRight ul li{
+    height: 28px;
+    line-height: 28px;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}

@@ -1,0 +1,298 @@
+/*共用部分*/
+@charset "utf-8";
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family:Microsoft YaHei;
+}
+a{
+	text-decoration: none;
+	color: #555;
+}
+a div,a li,a p,a span{
+	cursor:pointer;
+	font-family:Microsoft YaHei;
+}
+img {
+	border-width: 0px;
+}
+.clear{
+	clear:both;
+}
+p{
+	line-height:25px;
+	font-size:12px;
+}
+input{
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	border:none;
+}
+a:hover{
+	cursor: pointer;
+}
+td, th {
+	display: table-cell;
+	vertical-align: inherit;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
+}
+li{
+	list-style-type: none;
+}
+.clearfix:after {
+	 content: ".";
+	 display: block;
+	 height: 0;
+	 clear: both;
+	 visibility: hidden;
+	 line-height: 0px;
+}
+.banner{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	overflow: hidden;
+}
+.banner img{
+	width: 100%;
+	margin:0 auto;
+}
+.voteTit{
+	width: 100%;
+	height: auto;
+	margin-top:10px;
+	text-align: center;
+}
+.voteTit img{
+	width: 1344px;
+	height: auto;
+	margin: 0 auto;
+}
+.voteMain{
+	width:1180px;
+	height: auto;
+	margin:0 auto;
+	margin-bottom: 30px;
+}
+.voteMain ul li{
+	width: 380px;
+	height: 513px;
+	float: left;
+	margin-right: 13px;
+}
+.voteNMain ul li{
+	width: 380px;
+	height: 513px;
+	float: left;
+	margin-right: 13px;
+	margin-bottom:20px;
+}
+.voteMain ul li .voteListTit{
+	width: 100%;
+	height: 64px;
+	line-height: 46px;
+	margin-bottom: 10px;
+}
+.voteNMain ul li .voteListTit{
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	margin-bottom: 10px;
+}
+.voteListTit img{
+	width: 46px;
+	height: 46px;
+	float: left;
+	margin-right: 5px;
+}
+.voteListTit span{
+	width: 246px;
+	height: 46px;
+	line-height: 46px;
+	display: block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	color: #333333;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	float: left;
+	text-align: left;
+}
+.voteNum{
+	width: 63px;
+	height: 63px;
+	float: right;
+}
+.voteNum img{
+	width: 63px;
+	height: 63px;
+}
+.voteListCon{
+	width: 378px;
+	height: auto;
+	border:1px solid #ccc;
+}
+.voteListImg{
+	width: 378px;
+	height: 285px;
+	overflow: hidden;
+}
+.voteListImg img{
+	width: 378px;		
+}
+.voteImgTit{
+	width: 100%;
+	height: 78px;
+}
+.voteImgTitL{
+	width: 145px;
+	height: 78px;
+	float: left;
+	margin-left: 10px;
+}
+.voteImgTitL p{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	color: #fa4c06;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	margin:0px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;	
+}
+.voteImgTitL span{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-top:15px;
+	display: block;
+	color: #666666;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.voteImgTitC{
+	width: 70px;
+	height: 78px;
+	float: left;
+	text-align: center;
+}
+.voteImgTitC img{
+	width: 47px;
+	height: 48px;
+	margin:0px;
+	padding: 0px;
+	margin:0 auto;
+	margin-top:5px;
+}
+.voteImgTitC p{
+	width: 70px;
+	height: 25px;
+	line-height: 25px;
+	color: #f52200;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+}
+.voteImgTitR{
+	width: 100px;
+	height: 78px;
+	float: right;
+}
+.voteImgTitR p{
+	padding-right: 5px;
+	height: 25px;
+	line-height: 25px;
+	text-align: right;
+	color: #666666;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.voteImgTitRF{
+	width: 100%;
+	height: 30px;
+	margin-top:20px;
+}
+.voteImgTitRF span{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	color: #666666;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+}
+.votePl{
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	margin-right: 5px;
+}
+.voteImgTitRF .votePl img{
+	margin-top:5px;
+	margin-right: 3px;
+}
+.voteImgCom{
+	width: 376px;
+	height: 60px;
+	padding-top: 10px;
+	background: #f5f5f5;
+}
+.voteImgCom div{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	color: #666666;
+	font-family: Microsoft YaHei;
+	text-indent: 10px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	text-align: left;
+}
+.voteImgCom div span{
+	color: #333333;
+	font-weight: bold;
+}
+.clickMore{
+	width: 376px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #eeeeee;
+	color: #666666;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	margin:0 auto;
+}
+.canyu{
+	width: 60px;
+	height: 50px;
+	padding-top: 8px;
+	background: #fa4c06;
+	position: fixed;
+	bottom: 300px;
+	right: 50px;
+	text-align: center;
+	line-height: 20px;
+	color: #ffffff;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+}

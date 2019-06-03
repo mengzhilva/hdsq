@@ -1,0 +1,95 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b>
+					&nbsp; 类别名称：<input type="text" name="keyword" value="{$Think.post.keyword}" /> 
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="navTab" width="550" height="380" rel="user_msg" title="添加"><span>添加</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}"  width="550" height="380" target="navTab"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li> 
+			<li><a class="icon"   onclick="doSelect(0)" ><span>全选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(1)" ><span>全不选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(2)" ><span>反选</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/del" target="selectedTodo" postType="string" title="确定要删除吗?"><span>批量删除</span></a></li>
+			
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+            <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+				<th width="40" orderField="ID" <if condition="$Think.request._order eq 'ID'">class="{$Think.request._sort}"</if>>ID</th>
+				<th width="150" orderField="ClassName" <if condition="$Think.request._order eq 'ClassName'">class="{$Think.request._sort}"</if>>应聘类别名称</th>
+				<th width="150" orderField="ClassNote" <if condition="$Think.request._order eq 'ClassNote'">class="{$Think.request._sort}"</if>>应聘类别描述</th>
+				<th width="150">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.ClassID}">
+                    <td><input name="ids" value="{$vo.ClassID}" type="checkbox"></td>
+					<td>{$vo.ClassID}</td>
+					<td>{$vo.ClassName}</td>
+					<td>{$vo.ClassNote}</td>
+					<td>
+					<a class="edit" href="__URL__/edit/id/{$vo.ClassID}"  width="550" height="380" target="navTab"><span>修改</span></a>
+					<a class="del" href="__URL__/del/ids/{$vo.ClassID}"  width="550" height="380" target="ajaxTodo"  title="确定要删除吗?"><span>删除</span></a>
+					</td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+	<script type="text/javascript">
+function display(id){
+	//alert(img.width());
+	//alert(image);
+	var url = "__URL__/editDisplay/id/"+id;
+     var xpwidth=window.screen.width-10;
+        var xpheight=window.screen.height-105;
+       // alert(xpheight);
+        //window.open('map/mapview.aspx', '_blank', 'resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+	window.open(url,'newWindow','scrollbars=yes, resizable=yes,resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+
+	
+}
+
+
+ </script>
+</div>

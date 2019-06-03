@@ -1,0 +1,157 @@
+<h2 class="contentTitle">添加新闻</h2>
+
+
+<div class="pageContent">
+    
+    <form method="post" action="__CONTROLLER__/insert/navTabId/listnewsyg/callbackType/closeCurrent"  
+    enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="97">
+           
+            <dl>
+                <dt>城市：</dt>
+                <dd>
+                        <select class="combox required" name="CityID" >
+                            <option value="">-选择-</option>
+                            <volist name="city" id="ctname">
+                            <option value="{$ctname.ID}">{$ctname.NAME}</option>
+                            </volist>
+                        </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>新闻类型：</dt>
+                <dd>
+                        <select class="combox" name="ClassID" >
+                            <volist name="newsclass" id="necl">
+                            <option value="{$necl.ClassID}">{$necl.ClassName}</option>
+                            </volist>
+                        </select>
+                        
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>新闻标题：</dt>
+                <dd>
+                    <input type="text" name="Title" maxlength="100"  style="width:100%" class="required" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+            
+            <dl>
+                <dt>作者：</dt>
+                <dd>
+                    <input type="text" name="Author" maxlength="20" style="width:100%" class="" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>来源：</dt>
+                <dd>
+                    <input type="text" name="CopyFrom" maxlength="20" style="width:100%" class="" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>外链新闻：</dt>
+                <dd>
+                    <label><input type="radio" name="IsLink" checked value="1"/>是</label>
+                    <label><input type="radio" name="IsLink" value="0"/>否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>外链地址：</dt>
+                <dd>
+                    <input type="text" name="LinkUrl" maxlength="100" style="width:100%"  placeholder="例如：http://www.baidu.com" class=" url" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>新闻简介：</dt>
+                <dd><textarea name="Intro" class="" cols="90" rows="2"></textarea></dd>
+            </dl>
+
+            <dl>
+                <dt>默认图片：</dt>
+                <dd>
+                    <div style="display:blodk;width:500px;">
+                        <img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src=""/>
+                        <a class="button"   href="__CONTROLLER__/upindex"  target="dialog"><span>上传图片</span></a>
+                    </div>
+                    <input type="hidden" style="width:100%" name="DefaultPicUrl" id="background">
+                </dd>
+            </dl>
+            
+            <dl>
+                <dt>新闻内容：</dt>
+                <dd>
+                    <textarea class="editor" upImgUrl="__CONTROLLER__/doUpload" upImgExt="jpg,jpeg,gif,png" name="Content" rows="15" cols="100"></textarea>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>SEO标题：</dt>
+                <dd>
+                    <input type="text" name="SeoTitle" maxlength="50" style="width:100%" class="" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>SEO关键字：</dt>
+                <dd>
+                    <input type="text" name="SeoKeywords" maxlength="50" style="width:100%" class="" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>HTML文件地址：</dt>
+                <dd>
+                    <input type="text" name="HtmlFileUrl" maxlength="50" style="width:100%" class="" />
+                    <span class="info"></span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>首页显示：</dt>
+                <dd>
+                    <label><input type="radio" name="InIndex" value="1"/>是</label>
+                    <label><input type="radio" name="InIndex" checked value="0"/>否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>热点新闻：</dt>
+                <dd>
+                    <label><input type="radio" name="Hot" checked value="1"/>是</label>
+                    <label><input type="radio" name="Hot" value="0"/>否</label>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>等级：</dt>
+                <dd>
+                    <label><input type="radio" name="Stars"  value="0"/>1</label>
+                    <label><input type="radio" name="Stars" value="1"/>2</label>
+                    <label><input type="radio" name="Stars" value="1"/>3</label>
+                    <label><input type="radio" name="Stars" value="1"/>4</label>
+                    <label><input type="radio" name="Stars" value="1"/>5</label>
+                </dd>
+            </dl>
+   
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+

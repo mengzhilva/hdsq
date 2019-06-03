@@ -1,0 +1,97 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<!--页面独立css和js引入区-->
+
+<link href="__CSS__/about.css" type="text/css" rel="stylesheet"><!--页脚服务支持导航等页面独立样式-->
+<!--<script src="__JS__/sc-ui-control.js" type="text/javascript"></script>-->
+
+<!--*********************contanier 内容区 *********************-->
+<div class="layout">
+	<!--Breadcrumb -->
+    <div class="web-step">
+          <a href="{:C('scurl')['INDEX_INDEX']}">首页 ></a>
+         <a href="{:C('scurl')['ABOUT_INDEX']}">关于实创 > </a>
+         <a>招聘详情</a>
+     </div>
+     <!--Breadcrumb  end-->
+</div>
+
+<div class="about-employee-nav-bg about-join-us-nav-bg ">
+	<div class="layout container-minheight clearfix">
+		<div class="about-nav txt-center about-nav-2">
+        	<ul>
+<include file="left_menu_joinus" shzp='  class="active"' />
+             </ul>
+        </div>
+	</div>
+</div>
+
+<div class="layout container-minheight clearfix">
+
+    <div class="inside-contanier-l-wrap padding-none f_r ">
+    <h2 class="h-s-title about-news-list-title txt-center">招聘详情</h2>
+        	<div class="xq_tab">
+        	<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#e6e6e6">
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td width="20%">招聘部门</td>
+                    <td width="20%">采购</td>
+                    <td width="60%"></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td>详细信息</td>
+                    <td>信息发布日期</td>
+                    <td align="left"><span>{$show.AddTime}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>招聘截止日期</td>
+                    <td align="left"><span>{$show.EndTime}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>招聘职位</td>
+                    <td align="left"><span>{$show.Title}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>工作地点</td>
+                    <td align="left"><span>{$show.CityName}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>招聘人数</td>
+                    <td align="left"><span>{$show.JobNum}人</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>职责描述</td>
+                    <td align="left"><span>{$show.JobNote}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>应聘要求</td>
+                    <td align="left"><span>{$show.JobRequire}</span></td>
+                  </tr>
+                  <tr height="30" bgcolor="#f7f8f8">
+                    <td></td>
+                    <td>联系方式</td>
+                    <td align="left"><span>{$show.JobEmail}</span></td>
+                  </tr>
+                </table>
+
+        </div>
+           
+        
+    </div>
+        
+</div>
+
+<!--*********************contanier 内容区 end *********************-->
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+</body>
+</html>

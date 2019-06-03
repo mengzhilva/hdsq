@@ -1,0 +1,346 @@
+
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family:Microsoft YaHei;
+}
+
+h2,h3{
+    margin:0px;
+    padding:0px;
+    font-family:Microsoft YaHei;
+}
+input:focus{
+    outline: none;
+}
+.clearfix:after {
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+ line-height: 0px;
+}
+.wapM{
+    position: relative;
+}
+.city-title{
+    margin-left: 20px;
+    font-size:16px;
+    font-family: Microsoft YaHei;
+}
+.xgtBanner{
+    width: 100%;
+    height: auto;
+}
+.xgtBanner img{
+    width: 100%;
+    height: auto;
+}
+.xgtMdNav{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.xgtMdNavMain{
+    width: 93.75%;
+    height: 40px;
+    margin:0 auto;
+}
+.xgtMdNavMain ul li{
+    float: left;
+    width: 33.3333%;
+    height: 40px;
+    text-align: center;
+}
+.xgtMdNavMain ul li a{
+    display:inline-block;
+    color: #333333;
+    font-size:14px;
+}
+.xgtMdNavMain ul li a.cur{
+    border-bottom: 2px solid #fa4c06; 
+    color: #fa4c06;
+}
+.gonglue-r { width:10% ;  position:fixed; bottom:50px; right:0%}
+.gonglue-r a { display:inline-block; width:57.14286%; margin:10px 0 0 9px; } 
+.gonglue-r a img{ width:100%; }
+.xgtFoot{
+    width: 100%;
+    height: 50px;
+    margin-top:20px;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    bottom:0px;
+    left: 0px;
+}
+.xgtFootMain{
+    width: 93.75%;
+    height: 50px;
+    margin: 0 auto;
+}
+.closeBar{
+    width:12px;
+    height: 12px;
+    float: left;
+    margin-top:2px;
+    cursor: pointer;
+}
+.closeBar img{
+    width: 12px;
+    height: 12px;
+}
+.xgtFootMain{
+    margin-left: 10px;
+}
+.xgtFootMains{
+    width: 58.33%;
+    height: 50px;
+    float: left;
+    margin-left: 10px;
+}
+.xgtFootMain h2{
+    color: #fa4c06;
+    font-size: 18px;
+    height: 50px;
+    line-height: 30px;
+    font-family: Microsoft YaHei;
+    font-weight: normal;
+    float: left;
+    margin-top:3px;
+}
+.xgtFootMain h3{
+    float: left;
+    color: #fefefe;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 15px;
+    font-weight: normal;
+}
+a.qlbBtn{
+    width: 80px;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+    text-align: center;
+    background: #fa4c06;
+    display: block;
+    margin-top:10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size:12px;
+    font-family: Microsoft YaHei;
+    font-weight: normal;
+}
+.xgtFtX{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 0px;
+    bottom:0px;
+    background-color: rgba(0,0,0,0.7);
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px; 
+    display: none;
+    cursor: pointer;
+}
+.xgtFtX h2{
+   margin-top:6px;
+    text-indent: 5px;
+    color: #fa4c06;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: Microsoft YaHei;
+}
+.xgtFtX span{
+    line-height: 20px;
+    color: #fefefe;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+}
+ .mCaseNav{
+    border:none;
+    border-bottom: 4px solid #f0f0f0;
+ }
+ .mCaseNav > ul li{
+    border-right:none;
+    background:url(../images/sq.png) no-repeat 80.47% center;
+    background-size: 20% 20%;
+ }
+ .navAll li{
+ }
+ .navAll li span{
+    float: right;
+ }
+ .mCase{
+    margin-top: 5px;
+    border-top:4px solid #f0f0f0;
+ }
+ .mXgtList{
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+    background: #fff;
+    padding-top:47px;
+ }
+ .mXgtListMain{
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+   /*  border-top:4px solid #f0f0f0; */
+ }
+ .mXgtListsMain{
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+    /* border-top:4px solid #f0f0f0; */
+ }
+ .mXgtListMain ul{
+    width: 93.75%;
+    height: auto;
+    margin:0 auto;
+    padding-top:10px;
+    padding-bottom: 10px;
+ }
+ .mXgtListMain ul li{
+    width: 49%;
+    height: auto;
+    float: left;
+    border:1px solid #ccc;
+    margin-bottom: 10px;
+ }
+ .mXgtListMain ul li img{
+    width: 100%;
+ }
+ .mXgtListMain ul li h2{
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    color: #666666;
+    font-family: Microsoft YaHei;
+    font-size: 12px;
+    text-align: center;
+    font-weight: normal;
+ }
+ .mXgtListMain ul li:nth-child(odd){
+    float: right;
+ }
+ .doc-ck a{
+    height: auto;
+    border:none;
+    color: #fa4c06;
+    height: 38px;
+ }
+ .mMoreBtns{
+    height: 41px;
+ }
+ section{
+    background: #fff;
+    padding-bottom: 40px;
+ }
+.mCaseNav > ul.navAllAl li{
+    width: 33.33%;
+    height: 42px;
+    line-height: 42px;
+    float: left;
+    list-style-type: none;
+    text-indent: 8%;
+    cursor: pointer;
+}
+.mZxalBar{
+    width: 100%;
+    height: auto;
+    margin: 0 auto; 
+    padding-top: 10px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.mZxalBarM{
+    width: 93.75%;
+    height: auto;
+    margin: 0 auto;
+}
+.mZxalBarTop{
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+}
+.mZxalBarTop img{
+    border:1px solid #dcdcdc;
+    width:25%;/* 
+    height: 75px; */
+    float: left;
+}
+.mZxalBarR{
+   /*  float: right; */
+    width: 100%;
+    padding-top: 8px;
+}
+.mZxalBarLine{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;/* 
+    margin-left: 75px; */
+}
+.mZxalBarLine h2{
+    color: #fa4c06;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: normal;
+    display: inline-block;
+    text-indent: 10px;
+    height: 20px;
+    line-height: 20px;
+}
+.mZxalBarLine span{
+    color: #999999;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    margin-left: 10px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+}
+.mZxalBarLine a p{
+    color: #333333;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    text-indent: 10px;
+}
+.mZxalBarBt{
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+}
+.mZxalBarBt ul li{
+    width: 32.16%;
+    height: auto;
+    float: left;
+    margin-right: 1.7%;
+}
+.mZxalBarBt ul li:last-child{
+    margin-right: 0px;
+    float: right;
+}
+.mZxalBarBt ul li a img{
+    width: 100%;
+
+}
+.tMain{
+    padding-bottom: 0px;
+    border-bottom: 4px solid #f0f0f0;
+}
+.tDoc{
+    margin-top:0px;
+}
+.sSearch, .sDoc-con, .tDoc{
+    margin-bottom: 4px;
+}

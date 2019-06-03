@@ -1,0 +1,64 @@
+<h2 class="contentTitle">编辑友情链接</h2>
+
+<div class="pageContent">
+    <form method="post" action="__URL__/update/navTabId/listlinks/callbackType/closeCurrent"  class="pageForm required-validate" 
+        onsubmit="return iframeCallback(this,navTabAjaxDone);" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$vo.id}"/>
+        <div class="pageFormContent nowrap" layoutH="97">
+
+            <dl>
+                <dt>链接名：</dt>
+                <dd><input type="text" name="name"  value="{$vo.name}" class="required"></dd>
+            </dl>
+            
+            <dl>
+                <dt>链接地址</dt>
+                <dd><input type="text" name="url" value="{$vo.url}" class="url required"></dd>
+            </dl>
+
+            <dl>
+                <dt>排序</dt>
+                <dd><input type="text" name="orderby" value="{$vo.orderby}" class=" " value="0" ></dd>
+            </dl>
+            <dl>
+                <dt>是否是新页面</dt>
+                <dd>
+                    <input type="radio" name="isblank"  value="0"  <if condition="$vo.isblank eq 0">checked</if> />否
+                    <input type="radio" name="isblank" value="1" <if condition="$vo.isblank eq 1">checked</if> />是
+                </dd>
+            </dl>
+            
+        </div>
+        
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script>
+        if($("#pdid").val() !== 2){
+             $(".csedit").hide();
+             $(".csedit").val(0);
+         }
+       
+        $("#pdid").change(function(){
+            if($("#pdid").val() ==2){
+                $(".csedit").show();
+            }else if($("#pdid").val() ==6){
+                var str=' <input type="radio" name="is_pic"  value="4"  checked />同行业网站<input type="radio" name="is_pic" value="5"  />综合性网站<input type="radio" name="is_pic" value="6"  />地方性网站';
+                $('dd.linkType').html(str);
+                 $(".cs").val(0).hide();
+            }else{
+
+                 var str=' <input type="radio" name="is_pic"  value="1"  checked />友情链接<input type="radio" name="is_pic" value="2"  />合作链接<input type="radio" name="is_pic" value="3"  />热点标签';
+                $('dd.linkType').html(str);
+                 $(".csedit").hide();
+                 $(".csedit").val(0);
+            }
+            
+        })
+</script>
+

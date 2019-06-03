@@ -1,0 +1,200 @@
+<style>
+.input{
+width: 239px;
+height: 30px;
+line-height: 30px;
+border: 0px;
+padding: 0px 0px 0px 6px;
+/* background: url(__PUBLIC__/images/Home/input.jpg) no-repeat; */
+border:1px solid #ccc;/* 
+margin-bottom: 10px; */
+}
+.linkbmk tr td{font-size:14px;color: #666;height:30px;line-height: 30px; padding-bottom: 16px;}
+.bmInfo{
+  color: #666666;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+input.LpNamem{
+  background: url(__PUBLIC__/images/Home/mjBg.png) no-repeat 95% center;
+}
+</style>
+ <div class="bmInfo">为了能够给您提供最优质的服务，请您填写真实信息！
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/newhd/js/placeholder.min.js"></script>
+<script src="__JS__/jquery.validate.js"></script>
+<script src="__JS__/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/zDialog.js"></script>
+<link rel="stylesheet" href="__CSS__/jquery-ui.min.css" media="screen"/>
+
+<form action="{:C('scurl')['HD_INDEX']}bm/" method="post" name="form999999" id="form999999" >
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-left:22px;">
+  <tbody class="linkbmk">
+  <tr style="height:0px;display:none;">
+    <td colspan="2">
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+</td>
+    </tr>
+
+  <tr>
+    <td width="24%" height="30" align="right">您的称呼:&nbsp;      </td>
+    <td width="76%" height="30"><input name="UserName" type="text" class="input" size="5" placeholder="请输入您的姓名" /></td>
+    </tr>
+  <tr>
+    <td height="30" align="right">联系电话:&nbsp;</td>
+    <td height="30"><input type="text" class="input" name="TelePhone" size="5" maxlength="11" placeholder="请输入您的手机号"></td>
+    </tr>
+  <tr>
+    <td height="30" align="right">房屋面积:&nbsp;    </td>
+    <td height="30"><input name="LpNamem" type="text" class="input LpNamem" size="1" placeholder="请输入您的房屋面积">
+     </td>
+  </tr>
+  <tr>
+    <td height="44" colspan="2"><div style="margin-left:92px;">
+    <a href="javascript:tijiaos(999999);">
+    <img src="__PUBLIC__/images/Home/ljbmCj.jpg" border="0"></a></div></td>
+    </tr>
+</tbody></table>
+    </form>
+    
+<script type="text/javascript">
+<!--
+
+//-->
+function tijiaos(i){
+	if(i!=0){
+		var form = $("#form"+i);
+			form.submit();
+		
+	}
+}
+
+function bmok(){
+
+	var diag = new Dialog();
+	diag.Width = 500;
+	diag.Height = 180;
+	diag.Title = "我要报名";
+	diag.URL = "{:C('scurl')['HD_INDEX']}bmok?is1=1";
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+function bmsb(msg){
+
+	var diag = new Dialog();
+	diag.Width = 500;
+	diag.Height = 180;
+	diag.Title = "我要报名";
+	diag.URL = "{:C('scurl')['HD_INDEX']}bmsb?msg="+msg+'&is1=1';
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+</script>
+
+<script>
+
+$.validator.setDefaults({
+  submitHandler: function() {
+
+  },
+  showErrors: function(map, list) {
+    // there's probably a way to simplify this
+    var focussed = document.activeElement;
+    if (focussed && $(focussed).is("input, textarea")) {
+      $(this.currentForm).tooltip("close", {
+        currentTarget: focussed
+      }, true)
+    }
+    this.currentElements.removeAttr("title").removeClass("ui-state-highlight");
+    $.each(list, function(index, error) {
+      $(error.element).attr("title", error.message).addClass("ui-state-highlight");
+    });
+    if (focussed && $(focussed).is("input, textarea")) {
+      $(this.currentForm).tooltip("open", {
+        target: focussed
+      });
+    }
+  }
+});
+// 手机号码验证
+jQuery.validator.addMethod("isMobile", function(value, element) {
+  var length = value.length;
+  var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+  return this.optional(element) || (length == 11 && mobile.test(value));
+}, "请正确填写您的手机号码");
+
+(function() {
+  // use custom tooltip; disable animations for now to work around lack of refresh method on tooltip
+  $("#form999999").tooltip({
+    show: false,
+    hide: false
+  });
+
+//横、纵报名框报名
+
+  $("#form999999").validate({
+    submitHandler: function(form){  
+
+        var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+        $.ajax({    
+            type:'post',        
+            url:"{:C('scurl')['HD_INDEX']}bm/",    
+            data:formParam,    
+            cache:false,    
+            dataType:'json',    
+            success:function(data){ 
+            	if(data.state == 1){
+            		bmok();
+          window.parent.Dialog.getInstance('0').close();
+            	}else{
+            		bmsb(data.msg);
+          window.parent.Dialog.getInstance('0').close();
+            	}
+            	//alert(data.info);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //alert('提交失败');
+            },
+            complete:function(){
+            }  
+        });  
+        //alert("formParam");    
+    },     
+    rules: {
+        UserName: "required",
+        TelePhone: { 
+            required:true, 
+            isMobile:true 
+        },
+
+    },
+    messages: {
+        UserName: "请输入您的姓名",
+        TelePhone: {
+            required: "请输入您的联系电话",
+            isMobile: "您输入的电话号码有误！"
+        },
+    }
+  });
+
+
+})();
+
+</script>

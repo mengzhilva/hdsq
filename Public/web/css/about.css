@@ -1,0 +1,328 @@
+@charset "utf-8";
+/*** CSS 关于实创 Document ***/
+	.txt-center { text-align:center; } .txt-r { text-align:right; } .txt-l { text-align:left; }
+	
+	/*** about-news-style ***/
+	.about-news-nav-bg { min-width:1180px; background:url(../images/about-news-01.jpg) no-repeat center top; }
+		.about-nav { width:280px; }
+		.about-nav ul li { margin-top:1px; font-size:14px; line-height:40px; background-color:rgba(184, 184, 184, 0.7);  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70b8b8b8',endColorstr='#70b8b8b8'); /* IE6,IE7 */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#70b8b8b8',endColorstr='#70b8b8b8')"; /* IE8 */ zoom: 1;  }
+		.about-nav ul li a { color:#000; display:block; height:38px;line-height:38px;_height:38px; _line-height:38px; }
+		.about-nav ul li a:hover, .about-nav ul li a:focus, .about-nav ul li.active a, .about-nav ul li.active a:hover, .about-nav ul li.active a:focus { background-color:rgba(255, 255, 255, 0.7); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70ffffff',endColorstr='#70ffffff'); /* IE6,IE7 */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#70ffffff',endColorstr='#70ffffff')"; /* IE8 */ zoom: 1; }
+	
+	.about-news-list-title { font-size:24px; padding:0 0 40px; border-bottom:4px solid #dbdbdb; margin-bottom:20px; }
+		/* news-list copy14版 */
+		.ljsc_right{width:100%; float:right; background:#000; height:auto; background:#FFF; margin-bottom:40px;}
+		.ljsc_ul{float:left; margin-bottom:30px; display:inline}
+		.ljsc_ul li{width:100%; float:left; line-height:30px; line-height:30px; background:url(../images/mtbd_07.jpg) 195px center no-repeat; font-size:14px; }
+		.ljsc_span_01{float:left; background-color:#ffffff; padding-right:20px; height:30px; max-width:660px; overflow:hidden;}
+		.ljsc_span_01 a{color:#666;}
+		.ljsc_span_01 a:hover{color:#eb6100}
+		.ljsc_span_02{float:right; color:#9fa0a0}
+		/* news-list copy14版 end */
+	/*** about-news-style end ***/
+	
+	/*** about-employee-style ***/
+	.about-employee-nav-bg { min-width:1180px; background:url(../images/about-employee-01.jpg) no-repeat center top; }
+	.about-nav-2 ul li { line-height:64px; margin-top:2px; }
+	.about-nav-2 ul li a { _height:60px; _line-height:60px; }
+	
+	.about-employee-list { background:url(../images/about-employee-02.png) no-repeat 363px top; height:270px; overflow:hidden; }
+	.about-employee-list .employee-pic { width:288px; height:203px; margin-bottom:40px; }
+	.p-bg-1 { background:url(../images/about-employee-03.png) no-repeat 273px center; } .p-bg-2 { background:url(../images/about-employee-04.png) no-repeat 0px center; }
+	.about-employee-list .m-r { margin-right:75px; } .about-employee-list .m-r-2 { margin-right:63px; }
+	.about-employee-list .employee-pic img { border:3px solid #fc4a04; }
+	.about-employee-list span.employee-list-title { font-size:16px; line-height:240px; display:block; width:131px; padding:0 5px; overflow:hidden; }
+	.about-employee-list span.employee-list-title a { color:#f24e07; }
+	.about-employee-list .employee-des { width:300px; height:203px; padding:20px 0; line-height:23px; color:#656565; text-overflow:ellipsis; overflow:hidden; }
+	.about-employee-list .employee-des span { display:block; font-weight:bold; font-size:16px;}
+	
+	.about-employee-ad { padding:30px 0 50px 0; }
+	.ad-title { border-bottom:2px dashed #cdcdcd; height:30px; line-height:20px; font-size:20px; color:#636363; margin-bottom:20px; }
+	.about-employee-ad ul { margin-left:-20px; }
+	.about-employee-ad ul li { float:left; margin:0 0 0 20px; _margin:0 0 0 10px; width:280px; height:175px; }
+	
+	/*** about-employee-style end ***/
+	
+	
+	/*** about--news && about-employee show-style ***/
+	.video-detail .video-main { width:100%; position:relative;}
+	.video-detail .video-main .video-left { width:884px; float:left; _width:800px;}
+	.video-detail .video-main .video-right { width:283px; float:right; }
+	.video-detail .video-main .video-left .v-area { border:1px solid #dbdbdb; padding:50px 20px 40px 20px; _width:800px;}
+	.video-left h3 { font-size:20px; color:#666;font-family:"microsoft yahei"; margin:30px auto 15px;text-align: center; font-weight:bold;}
+	.video-detail .video-main .video-left .title-info { text-align:center;}
+	.video-detail .video-main .video-left .title-info ul { padding-left:232px; border-bottom:1px solid #dbdbdb; height:40px; line-height:40px; width:840px;*width:600px;_width:600px; +padding-left:200px;}
+	.video-detail .video-main .video-left .title-info ul li { float:left; margin-right:15px;}
+	.video-detail .video-main .video-left .video-area { margin-top:40px; text-align:left;}
+	.video-detail .video-main .video-left .video-area p { font-size:14px; color:#666; margin-top:40px;font-family:"microsoft yahei"; /*font-weight:bold;*/ text-indent:2em;}
+	#video-area2 p > strong{  font-weight: bolder !important;}
+	.video-detail .video-main .video-left .video-area img{max-width: 755px;}
+	.video-left .title-tab { _width:840px; height:40px; line-height:40px; background:#f5f5f5; margin:20px auto;}
+	.video-detail .video-main .video-left .title-tab .title-last { width:30%; float:left; text-align:left; padding-left:20px;text-overflow: ellipsis;white-space: nowrap; overflow:hidden}
+	.video-detail .video-main .video-left .title-tab .title-next { width:30%; float:right; text-align:right; padding-right:20px;text-overflow: ellipsis;white-space: nowrap; overflow:hidden}
+	.red { color:#fa4c06;}
+	/*** about--news && about-employee show-style end***/
+	
+	/*** introduce-style copy14版 ***/
+	.ljsc_right{width:100%; float:right; margin-top:20px; height:auto; padding-bottom:70px; margin-bottom:40px; }
+	.ljsc_right_title{ float:left; color:#222; margin:0px 0px 0px 0px; display:inline; font-size:18px; line-height:28px; width:100%; }
+	.ljsc_right_nr{ float:left; margin:15px 0px 0px 0px; display:inline; font-size:14px; line-height:26px; color:#676767; width:100%; text-indent: 2em;}
+	/*** introduce-style copy14版 end ***/
+	
+/**join_us  begin copy14版  **/
+.about-join-us-nav-bg{ background:url(../images/about-join_02.jpg) no-repeat top  center}
+.zp_con{ width:880px; height:auto; margin-bottom:10px;}
+		.con_xq_1{ font-size:14px; color:#595757; line-height:26px; margin-bottom:25px; border-bottom:#dddddd dashed 1px; padding:10px 0px;}
+		.con_xq_1 .xq_p1{ display:block; font-weight:bold; float:left; }
+		.con_xq_1 .xq_p2{ display:block; float:left; width:34px; height:26px; margin-right:5px;  }
+		.con_xq_1 .xq_p2 a{display:block; width:34px; height:26px; background-color:#fc4700; color:#ffffff; text-align:center;}
+		.xq_1_ct{ width:774px; /*height:50px;*/ float:left; }
+		.xq_1_ct a{ display:inline-block; padding:0 6px; height:26px; color:#595757; }
+		.xq_1_ct a:hover{ color:#ea5404;}
+.zp_tab{ width:880px; height:auto; margin-bottom:30px; text-align:center; color:#595757; letter-spacing:2px; display:inline}
+	.zp_tab tr a{ color:#444444;}
+	.zp_tab tr a:hover{ color:#ea5404;}
+	.zp_tab td{border-right:1px solid #ffffff;border-bottom:1px solid #ffffff; padding:0px;  text-align:center}
+	.xq_tab{width:880px; height:auto; margin-bottom:30px; text-align:center; color:#595757; letter-spacing:1px; line-height:24px;}
+	.xq_tab span{ margin-left:5px; display:block; line-height:24px;}
+	.lc_p{float:left; margin-left:70px; display:inline}
+	.ppry_con{ width:658px; height:auto; float:left;}
+	.ppry_conn{ width:650px; height:auto; float:left; margin-top:40px; margin-left:30px; padding-bottom:70px; display:inline}
+	.con_1{ width:650px; height:auto; margin-bottom:30px;}
+	.con_1_txt{ line-height:26px; color:#444444; padding-top:20px;}
+	.con_pp{font-size:24px; color:#ea5404}
+	.con_2{margin-top:15px; float:left; display:inline}
+	.con_3{ float:left; _margin-top:-10px;}
+	.xq_tab td{border-right:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6; padding:0px; }
+	.xq_tab table{border-left:1px solid #e6e6e6;border-top:1px solid #e6e6e6;}
+.about-campus-us-nav-bg{background:url(../images/about-campus_03.jpg) no-repeat top  center}	
+/**join_us   copy14版 end  **/
+/**corporate_culture  begin copy14版  **/
+.corporate_culture-nav-bg{ background:url(../images/about-corporate_culture02.jpg) no-repeat top center}
+.ljsc_right_pic01{width:661px; border:0; float:left}
+.ljsc_right_pic01 img{float:left}
+.ljsc_right_pic02{float:right; height:444px;}
+.ljsc_right_pic03{width:880px; border:0; float:left; margin-bottom:40px;}
+.ljsc_right_pic03 img{float:left; padding:0; margin:0}	
+/**corporate_culture  end copy14版  **/
+/**salary-style ---begin **/
+.about-salary-nav-bg{ background:url(../images/abtou-salary_02.jpg) no-repeat top center}
+.about-salary-nav-bg{ background:url(../images/abtou-salary_02.jpg) no-repeat top center}
+.abtou-salary-p,.abtou-salary-p p{color: #676767; display: inline; float: left; font-size: 14px;line-height: 26px; margin: 15px 0px; width: 100%; }
+.abtou-salary-p span{ padding:6px 0px; display:block; text-indent:30px;}
+.abtou-salary-p p{ font-size:16px;}
+/**salary-style ---end **/
+/*品牌历程*/
+
+.about-pplcBg{
+	background: url(../images/about-pplc.png) no-repeat center 1px;
+}
+.scAboutPplc{
+	width: 100%;
+	height: auto;
+	background: url(../images/pplcLeft.jpg) no-repeat 30px top;
+}
+.scAboutPplcMain{
+	width: 745px;
+	height: auto;
+	float: right;
+	margin-right:10px;
+}
+.scAboutPplcMain h2{
+	font-size: 18px;
+	text-align: left;
+	padding: 0;
+	color: #494a4b;
+	margin-bottom: 6px;
+	height: 35px;
+	line-height: 35px;
+	font-family: Microsoft YaHei;
+}
+.scAboutPplcMain p{
+	font-size: 14px;
+	line-height: 22px;
+	font-family: Microsoft YaHei;
+	color: #494a4b;
+}
+.scAboutPplcs{
+	margin-bottom: 20px;
+}
+/* .scAboutPplcMain .scAboutPplc1 p{
+	padding-bottom: 20px;
+}
+.scAboutPplcMain .scAboutPplc4 p{
+	padding-bottom: 22px;
+}
+.scAboutPplcMain .scAboutPplc5 p{
+	padding-bottom: 28px;
+}
+.scAboutPplcMain .scAboutPplc9 p{
+	padding-bottom: 26px;
+} */
+/*法律声明*/
+.about-flsmBg{
+	background:url(../images/about-flsmBg.jpg) no-repeat center top;
+}
+.scAboutFlsm{
+	padding-right: 10px; 
+}
+.scAboutFlsmBar{
+	padding-bottom: 20px;
+}
+.scAboutflTit{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: #333;
+	font-size: 20px;
+	text-align: center;
+}
+.scAboutFlsm h2{
+	font-size: 18px;
+	color: #fa4c06;
+	font-weight: 500;
+	height: 30px;	line-height: 30px;
+	font-family: Microsoft YaHei;
+}
+.scAboutFlsm h3{
+	font-size: 18px;
+	color: #494a4b;
+	font-weight: 500;
+	font-family: Microsoft YaHei;
+	height: 30px;	line-height: 30px;
+}
+.scAboutFlsm p{
+	width: 100%;
+	line-height: 25px;
+	color: #494a4b;
+	font-size: 14px;
+	padding-top: 20px;
+}
+.scAboutFlsm p.scAboutNb{
+	padding-left: 20px;
+}
+.scAboutFlsm p img{
+	max-height: 12px;
+}
+/*社会责任*/
+.about-shzrBg{
+	background: url(../images/about-shzrBg.jpg) no-repeat center top;
+}
+.scAboutShzr{
+	width: 100%;
+	height: auto;
+}
+.scAboutShzr h3{
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	color: #494a4b;
+	font-weight: 500;
+	font-family: Microsoft YaHei;
+}
+.scAboutShzr p{
+	width: 100%;
+	line-height: 25px;
+	color: #494a4b;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.scAboutShzr img{
+	margin-bottom: 20px;
+	padding-top: 10px;
+	max-width: 880px;
+}
+/*品牌荣誉*/
+.about-ppryBg{
+	background: url(../images/aboutPpryBg.jpg) no-repeat center top;
+}
+.scAboutPpry{
+	width: 100%;
+	height: auto;
+	background: url(../images/ppryLeftBg.jpg) no-repeat left top;
+}
+.scAboutPpryM{
+	width: 740px;
+	height: auto;
+	float: right;
+	margin-right: 10px;
+	padding-top: 3px;
+}
+.scAboutPpryM h2{
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	color: #494a4b;
+}
+.scAboutPpryCon{
+	width: 100%;
+	height: auto;
+	padding-top:20px;
+	padding-bottom: 10px;
+}
+.scAboutPpryM p{
+	width: 100%;
+	line-height: 25px;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+	color: #494a4b;
+}
+.scAboutPpry1 .scAboutPpryCon{
+	padding-bottom: 18px;
+}
+.scAboutPpry2 .scAboutPpryCon{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.scAboutPpry3 .scAboutPpryCon{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+/*企业创始人*/
+.about-qycsrBg{
+	background: url(../images/qycsrBg.jpg) no-repeat center top;
+}
+.scAboutQycsr{
+	width: 100%;
+	height: auto;
+}
+.scAboutQycsr h2{
+	font-size: 18px;
+	font-family: Microsoft YaHei;
+	color: #494a4b;
+	line-height: 30px;
+	text-indent: 2em;
+}
+.scAboutQycsr p{
+	padding-top: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #494a4b;
+	font-family: Microsoft YaHei;
+	text-indent: 2em;
+}
+.scAboutQycsr img{
+	margin-top:30px;
+	max-width: 880px;
+}
+h2.scAboutGr{
+	padding-top: 25px;
+}
+p.scAboutSwRy{
+	padding-top: 20px;
+}
+/*---------------网站地图style开始---------------*/
+.site-map{ height:auto; padding-top:100px; padding-bottom:80px; overflow:hidden}
+.site-map h3{ border-bottom:4px #dbdbdb solid; font-size:14px; color:#ea4d16; line-height:33px;}
+.site-map dl{ float:left; width:1180px;}
+.site-map dl,.site-map dd{ float:left}
+.site-map dd,.site-map dt{ width:138px; height:28px; border:#dbdbdb 1px solid;text-align:center; line-height:27px; font-size:14px; color:#666666; margin-top:10px; }
+.site-map dd a,.site-map dt a{ color:#666666; display:block; width:138px; height:28px;}
+.site-map dd{ margin-right:10px;}
+.site-map-dt{ background:#fa4c06; }
+.site-map-dt a{color:#ffffff !important}
+.site-map-dd{ background:#cc9966}
+/*---------------网站地图style结束---------------*/

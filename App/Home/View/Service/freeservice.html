@@ -1,0 +1,230 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<script src="__PUBLIC__/web/js/Component.js" type="text/javascript"></script>
+<!--页面独立css和js引入区-->
+<link href="__PUBLIC__/web/css/self-service.css" type="text/css" rel="stylesheet"><!--我的小区等页面独立样式-->
+<script src="__PUBLIC__/web/js/func.js" type="text/javascript"></script>
+<!--*********************contanier 内容区 *********************-->
+<script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/zDialog.js"></script>
+<script type="text/javascript">
+function tel()
+{
+  var diag = new Dialog();
+  diag.Width = 566;
+  diag.Height = 300;
+  diag.Title = "电话客服";
+  diag.URL = "{:C('scurl')['SERVICE_INDEX']}tel/";
+  diag.show();
+}
+function weixin()
+{
+  var diag = new Dialog();
+  diag.Width = 566;
+  diag.Height = 300;
+  diag.Title = "微信客服";
+  diag.URL = "{:C('scurl')['SERVICE_INDEX']}weixin/";
+  diag.show();
+}
+</script>
+<div class="header-step-box">
+		 <h1 class="h-s-title">免费服务</h1>
+	   </div>
+<div class="layout container-minheight clearfix">
+  <div class="web-step">
+	 <a target='_blank'  href="{:C('scurl')['INDEX_INDEX']}">首页 ></a>
+	 <a href="{:C('scurl')['DESIGNER_INDEX']}djys.html">实创特色></a>
+	 <a target='_blank'>免费服务</a>
+   </div>
+   <div class="self-wrap clearfix">
+		<div class="inside-left">
+			<ul class="demo-TabName">
+				<li class="t-active">自助服务</li>
+				<li>帮助中心</li>
+				<li>联系客服</li>
+			</ul>
+			<div class="demo-TabWrap">
+				<div class="demo-TabBody t-1">
+					<ul>
+						<li>
+							<a target='_blank'  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}"><img src="__PUBLIC__/web/temp/icon-01.png"/></a>
+							<p><a target='_blank'  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}">在线咨询</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service.html"><img src="__PUBLIC__/web/temp/icon-02.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service.html">自助预约</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service/b/1"><img src="__PUBLIC__/web/temp/icon-03.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service/b/1">装修报价</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}shoplist.html"><img src="__PUBLIC__/web/temp/icon-04.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}shoplist.html">查询门店</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service/e/1"><img src="__PUBLIC__/web/temp/icon-05.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service/e/1">申请参观工地</a></p>
+						</li>
+						<?php if(empty($_SESSION[C('SESSION_USER_KEY')])){ ?>
+						<li>
+							<a target='_blank' href="{:C('scurl')['USER_LOGIN']}.html"><img src="__PUBLIC__/web/temp/icon-06.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['USER_LOGIN']}.html">会员服务</a></p>
+						</li>
+						<?php }else{ ?>
+						<li>
+							<a target='_blank' href="{:C('scurl')['INDEX_INDEX']}vip.html"><img src="__PUBLIC__/web/temp/icon-06.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['INDEX_INDEX']}vip.html">会员服务</a></p>
+						</li>
+						<?php } ?>
+						<li>
+							<a target='_blank' href="{:C('scurl')['GROUP_INDEX']}"><img src="__PUBLIC__/web/temp/icon-07.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['GROUP_INDEX']}">小区团购</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['USER_REGISTER']}"><img src="__PUBLIC__/web/temp/icon-08.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['USER_REGISTER']}">会员注册</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['INDEX_INDEX']}user/findpsw"><img src="__PUBLIC__/web/temp/icon-09.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['INDEX_INDEX']}user/findpsw">找回密码</a></p>
+						</li>
+						<li>
+							<a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}company.html"><img src="__PUBLIC__/web/temp/icon-10.png"/></a>
+							<p><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}company.html">企业客户</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="demo-TabBody t-2">
+					<ul>
+						<li class="clearfix">
+							<p class="t-l">账户管理</p>
+							<ul class="t-r">
+								<li><a target='_blank' target="_blank" href="{:C('scurl')['INDEX_INDEX']}user/register">会员注册</a></li>
+								<li><a target='_blank' target="_blank" href="{:C('scurl')['INDEX_INDEX']}user/findpsw">找回密码</a></li>
+							</ul>
+						</li>
+						<li class="clearfix">
+							<p class="t-l">装修前</p>
+							<ul class="t-r">
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(20)</php>.html">一站式服务 </a></li>
+								<li><a target='_blank'  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$ci.LEYUCID}&f={$ci.LEYUFID}&{$leyurl}">在线咨询</a></li>
+								<li><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service.html">自助预约</a></li>
+								<li><a target='_blank' href="{:C('scurl')['SERVICE_INDEX']}service/b/1">装修报价</a></li>
+								<li><a target='_blank' target="_blank" href="{:C('scurl')['SERVICE_INDEX']}shoplist">查询门店</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(2277)</php>.html">原装正品假一赔三</a></li>
+							</ul>
+						</li>
+						<li class="clearfix">
+							<p class="t-l">装修中</p>
+							<ul class="t-r">
+								<li><a target='_blank' href="{:C('scurl')['INDEX_INDEX']}user/login.html">全过程管理</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(24)</php>.html">首期款</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(25)</php>.html">工程交底</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(2281)</php>.html">物流配送</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(27)</php>">隐蔽验收</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(28)</php>">中期验收</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(29)</php>">中期款 </a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(30)</php>">尾期验收</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(31)</php>">尾期款</a></li>
+								<!-- <li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}32">产品断货无理由升级</a></li> -->
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(2278)</php>.html">发票说明</a></li>
+							</ul>
+						</li>
+						<li class="clearfix">
+							<p class="t-l">装修后</p>
+							<ul class="t-r">
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(33)</php>.html">绿色通道</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(34)</php>.html">8小时快速反应</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(35)</php>.html">全责售后</a></li>
+								<li><a target='_blank' href="{:C('scurl')['GONGLUE_INFO_ID']}<php>echo gonglue_pinyin_id(2280)</php>.html">十年保修</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="demo-TabBody t-3">
+					<ul>
+						<li>
+							<a target='_blank'  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$ci.LEYUCID}&f={$ci.LEYUFID}&{$leyurl}"><img src="__PUBLIC__/web/temp/icon-11.png"/></a>
+							<p>
+						   
+							<a target='_blank'  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}">在线客服</a></p>
+							<p>高效服务</p>
+							<p>沟通 0 距离</p>
+						</li>
+						<li>
+							<a  href="javascript:tel()"><img src="__PUBLIC__/web/temp/icon-12.png"/></a>
+							<p><a  href="javascript:tel()">电话客服</a></p>
+							<p>温馨关怀</p>
+							<p>快速响应</p>
+						</li>
+						<?php if(!empty($Promoter['PromoterTel'])) {?>
+						<li>
+							<a  href="#"><img src="__PUBLIC__/web/temp/icon-13.png"/></a>
+							<p><a  href="#">微信客服</a></p>
+							<p>随时随地</p>
+							<p>服务在手</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/web/temp/icon-14.png"/>
+							<p>微博客服</p>
+							<p>微问题</p>
+							<p>博服务</p>
+						</li>
+						<?php }else{ ?>
+						<li>
+							<a  href="javascript:weixin()"><img src="__PUBLIC__/web/temp/icon-13.png"/></a>
+							<p><a  href="javascript:weixin()">微信客服</a></p>
+							<p>随时随地</p>
+							<p>服务在手</p>
+						</li>
+						<li>
+							<a target='_blank' href="http://weibo.com/i28800"><img src="__PUBLIC__/web/temp/icon-14.png"/></a>
+							<p><a target='_blank'  href="http://weibo.com/i28800">微博客服</a></p>
+							<p>微问题</p>
+							<p>博服务</p>
+						</li>
+						<?php } ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="inside-right">
+			<!-- <div class="ui-search diary-search-box clearfix"><input type="text" value="" class="ui-search-input"><a target='_blank' href="designer-list.html" class="yellow-btn btn-animate w-120">查找</a></div> -->
+			<div class="r-list">
+				<div class="list-title">
+					常见问题
+				</div>
+				<div class="scroll-list">
+					<ul>
+					<volist name="newslists" id="news">
+					  <li><a target='_blank' target="_blank" href="{:C('scurl')['GONGLUE_INFO_ID']}{$news.ID}">{$news.Title}</a></li>
+					</volist>
+
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+   </div>
+</div>
+<!--*********************contanier 内容区 end *********************-->
+
+
+
+
+<!--*********************footer 引入区*********************-->
+<include file="common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+
+<script type="text/javascript">
+//设计师列表【tab切换】
+ $('.demo-TabName li').on('click',function(){
+	tabDemo($(this));
+ });
+</script>
+
+
+</body>
+</html>

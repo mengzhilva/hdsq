@@ -1,0 +1,62 @@
+
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<!--页面独立css和js引入区-->
+
+<link href="__CSS__/link.css" type="text/css" rel="stylesheet"><!--页脚服务支持导航等页面独立样式-->
+<!--<script src="__JS__/sc-ui-control.js" type="text/javascript"></script>-->
+<div class="link">
+    <div class="linkTit">友情链接</div>
+    <div class="linkBar clearfix">
+        <div class="linkBarL left">同行业网站：</div>
+        <div class="linkBarR right">
+            <ul>
+                <?php foreach ($tonghang as $k => $v): ?>
+                 <li>
+                    <a href="{$v.url}" target="_blank">{$v.link_name}</a>
+                </li>
+            <?php endforeach ?>
+            </ul>
+        </div>
+    </div>
+    <div class="linkBar clearfix">
+        <div class="linkBarL left">综合性网站：</div>
+        <div class="linkBarR right">
+            <ul>
+            <?php foreach ($zonghe as $k => $v): ?>
+                 <li>
+                    <a href="{$v.url}" target="_blank">{$v.link_name}</a>
+                </li>
+            <?php endforeach ?>
+               
+              
+            </ul>
+        </div>
+    </div>
+    <div class="linkBar clearfix linkBarLast">
+        <div class="linkBarL left">地方性网站：</div>
+        <div class="linkBarR right">
+            <ul>
+                  <?php foreach ($difang as $k => $v): ?>
+                 <li>
+                    <a href="{$v.url}" target="_blank">{$v.link_name}</a>
+                </li>
+            <?php endforeach ?>
+            </ul>
+        </div>
+    </div>
+    <div class="linkTit">友链合作说明</div>
+    <div class="linkH2">衷心感谢您对本站的关注和支持，本站欢迎与各优秀网站互换链接，以便相互推广，共同提高网站竞争力。</div>
+    <h2>友链申请步骤：(暂时只接受文字链接申请) </h2>
+    <div class="linkBz">
+        <p>1、请先将“实创网站”加入贵站友情链接。<span>链接文字：装修 或者 装修网；链接地址： http://www.sc.cc / </span></p>
+        <p>2、做好链接后可直接在线申请或者将贵站的网站名称、网站地址、联系方式等信息通过Email: 2087605121@qq.com 提交给我们！ (本邮箱只负责友情链接相关事宜)</p>
+        <p>3、已经开通我站友情链接且内容键康，符合本站友情链接要求的网站，经实创管理员审核后，可以显示在此友情链接页面。</p>
+        <p>4、友情链接联系<span><a style="font-size:14px;color:#fa510c;" href="http://wpa.qq.com/msgrd?v=3&uin=2087605121&site=qq&menu=yes"  target="_blank" rel="nofollow">QQ: 2087605121</a></span></p>
+    </div>
+</div>
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->

@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+<style>
+.input{
+width: 135px;
+height: 24px;
+line-height: 24px;
+border: 0px;
+padding: 0px 0px 0px 6px;
+background: url(__PUBLIC__/images/Home/input.jpg) no-repeat;
+}
+.linkbmk tr {
+  margin-bottom: 10px;
+}
+.linkbmk tr td{font-size:14px;}
+.linkbmk tr td input{
+  width: 238px;
+  height: 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.linkbmk tr td input#ok{
+  width: 240px;
+  height: 36px;
+ background: url(__PUBLIC__/images/Home/fsdsj.jpg) no-repeat;
+ border:none;
+}
+</style>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/newhd/js/placeholder.min.js"></script>
+<script src="__JS__/jquery.validate.js"></script>
+<script src="__JS__/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/zDialog.js"></script>
+<link rel="stylesheet" href="__CSS__/jquery-ui.min.css" media="screen"/>
+
+   </head>
+   <body>
+<form id="form9999990" name="form9999990" method="post" action="{:C('scurl')['HD_INDEX']}send/">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody class="linkbmk"><tr>
+      <td height="15" colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;您的称呼：</td>
+      <td height="30"><input name="UserName" type="text" id="UserName" size="10" maxlength="4" onblur="check()" placeholder="请输入您的姓名" /></td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;您的电话：</td>
+      <td height="30"><input name="TelePhone" id="TelePhone" maxlength="11"  class="tt" placeholder="请输入您的电话
+" /> 
+        <!--<input name="Sex" type="hidden" id="Sex" value="未知" />-->
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+  </td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;</td>
+      <td height="30">
+      <input type="button" name="ok" onclick="tijiaos(9999990);" id="ok" value=""  >
+      </td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;</td>
+      <td height="30"><span style="color:#666">注：活动地址将以短信的形式发送到您的手机！</span></td>
+    </tr>
+  </tbody></table>
+</form>
+<script type="text/javascript">
+<!--
+
+//-->
+function tijiaos(i){
+	if(i!=0){
+		  $("#form9999990").submit();
+	}
+}
+
+function bmok(){
+
+	var diag = new Dialog();
+	diag.Width = 500;
+	diag.Height = 180;
+	diag.Title = "获取活动地址";
+	diag.URL = "{:C('scurl')['HD_INDEX']}bmok?msg=发送成功！&is1=1";
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+function bmsb(msg){
+
+	var diag = new Dialog();
+	diag.Width = 500;
+	diag.Height = 180;
+	diag.Title = "获取活动地址";
+	diag.URL = "{:C('scurl')['HD_INDEX']}bmsb?msg="+msg+"！&is1=1";
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+</script>
+
+<script>
+
+$.validator.setDefaults({
+  submitHandler: function() {
+
+  },
+  showErrors: function(map, list) {
+    // there's probably a way to simplify this
+    var focussed = document.activeElement;
+    if (focussed && $(focussed).is("input, textarea")) {
+      $(this.currentForm).tooltip("close", {
+        currentTarget: focussed
+      }, true)
+    }
+    this.currentElements.removeAttr("title").removeClass("ui-state-highlight");
+    $.each(list, function(index, error) {
+      $(error.element).attr("title", error.message).addClass("ui-state-highlight");
+    });
+    if (focussed && $(focussed).is("input, textarea")) {
+      $(this.currentForm).tooltip("open", {
+        target: focussed
+      });
+    }
+  }
+});
+// 手机号码验证
+jQuery.validator.addMethod("isMobile", function(value, element) {
+  var length = value.length;
+  var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+  return this.optional(element) || (length == 11 && mobile.test(value));
+}, "请正确填写您的手机号码");
+
+(function() {
+  // use custom tooltip; disable animations for now to work around lack of refresh method on tooltip
+  $("#form9999990").tooltip({
+    show: false,
+    hide: false
+  });
+
+//横、纵报名框报名
+
+  $("#form9999990").validate({
+    submitHandler: function(form){  
+
+        var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+        $.ajax({    
+            type:'post',        
+            url:"{:C('scurl')['HD_INDEX']}send/",    
+            data:formParam,    
+            cache:false,    
+            dataType:'json',    
+            success:function(data){ 
+            	if(data.state == 1){
+            		bmok();
+                    window.parent.Dialog.getInstance('0').close();
+            	}else{
+            		bmsb(data.msg);
+                    window.parent.Dialog.getInstance('0').close();
+            	}
+            	//alert(data.info);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //alert('提交失败');
+            },
+            complete:function(){
+            }  
+        });  
+        //alert("formParam");    
+    },     
+    rules: {
+        UserName: "required",
+        TelePhone: { 
+            required:true, 
+            isMobile:true 
+        },
+
+    },
+    messages: {
+        UserName: "请输入您的姓名",
+        TelePhone: {
+            required: "请输入您的联系电话",
+            isMobile: "您输入的电话号码有误！"
+        },
+    }
+  });
+
+
+})();
+
+</script>
+ </body>   
+   </html>

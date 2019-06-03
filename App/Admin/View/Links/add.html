@@ -1,0 +1,180 @@
+<h2 class="contentTitle">添加友情链接</h2>
+<div class="pageContent">
+
+    <form method="post" action="__URL__/insert/navTabId/listlinks/callbackType/closeCurrent"  class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);" enctype="multipart/form-data">
+        <div class="pageFormContent nowrap" layoutH="97">
+
+            <dl>
+                <dt>频道：</dt>
+                <select name="pindaoid" class="combox required" ref="ahsdjklhasd" id='pd' refUrl="__CONTROLLER__/getsonclass/id/{value}">
+                    <option value="0">请选择</option>
+                    <volist name="pindaolist" id="pindaovo">
+                        <option value="{$pindaovo.id}">{$pindaovo.name}</option>
+                    </volist>
+                </select>
+            </dl>
+            <dl>
+                <dt>子分类：</dt>
+                <select name="canshu" class="combox" id="ahsdjklhasd">
+                    <option value="0">--请选择--</option>
+                    <volist name="dfw.SonClasslist" id="dlist">
+                        <option value="{$dlist.SonClassID}" selected >{$dlist.SonClassName}</option>
+                        <!--<option value="{$dlist.SonClassID}"<eq name="dfw.SonClassID" value="$dlist.SonClassID">selected</eq>>{$dlist.ClassName}</option>-->
+                    </volist>
+                </select>
+            </dl>
+            <dl class="cs">
+                <dt>城市：</dt>
+                <select name="cid" class="combox">
+                    <option value="0">请选择</option>
+                    <volist name="city" id="cityvo">
+                        <option value="{$cityvo['ID']}">{$cityvo['NAME']}</option>
+                    </volist>
+                </select>
+            </dl>
+            
+            <dl>
+                <dt>链接名：</dt>
+                <dd><input type="text" name="link_name[]" class="required" value="" ></dd>
+            </dl>
+
+            <dl>
+                <dt>链接地址</dt>
+                <dd><input type="text" name="url[]" class="required url" value="http://" ></dd>
+            </dl>
+            <div id="add"></div>
+            <dl style="width:15%;line-height:26px;height:26px;" class="adddivs">
+                <span id="adddiv" style="text-align:center;width:45%;background:#fa510c;color: #fff;cursor:pointer;line-height:26px;border-radius:2px;height:26px;display:block;">添加一个</span>
+            </dl>
+
+            <dl>
+                <dt>链接类型</dt>
+                <dd>
+                    <input type="radio" name="is_pic"  value="1"  checked />友情链接
+                    <input type="radio" name="is_pic" value="2"  />合作伙伴
+                    <input type="radio" name="is_pic" value="3"  />热点标签
+                </dd>
+            </dl>
+            <dl>
+                <dt>链接图片</dt>
+                <dd>
+                    <div style="display:blodk;width:500px;">
+                        <img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.pic}"/>
+                        <a class="button"  href="__MODULE__/Demo/add"  target="dialog"><span>上传图片</span></a>
+                    </div>
+                    <input type="hidden" style="width:100%" name="pic" id="background" class="valid">
+                </dd>
+            </dl>
+        </div>
+
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script>
+    $(".cs").val(0).hide();
+    $("#pd").change(function () {
+        if ($("#pd").val() == 2) {
+            $(".cs").show();
+        } else if ($("#pd").val() == 7) {
+            $(".dtstyle").show();
+            $(".cs").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 8) {
+            $(".dtkong").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 9) {
+            $(".dtjubu").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 10) {
+            $(".tucestyle").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 11) {
+            $(".baojia").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 12) {
+            $(".lixiangzhuang").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".gonglue").val(0).hide();
+        } else if ($("#pd").val() == 13) {
+            $(".gonglue").show();
+            $(".adddivs").show();
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+        } else if ($("#pd").val() == 6) {
+            var str = ' <input type="radio" name="is_pic"  value="4"  checked />同行业网站<input type="radio" name="is_pic" value="5"  />综合性网站<input type="radio" name="is_pic" value="6"  />地方性网站';
+            $('dd.linkType').html(str);
+            $(".cs").val(0).hide();
+        } else {
+            var str = ' <input type="radio" name="is_pic"  value="1"  checked />友情链接<input type="radio" name="is_pic" value="2"  />合作链接<input type="radio" name="is_pic" value="3"  />热点标签';
+            $('dd.linkType').html(str);
+            $(".cs").val(0).hide();
+            $(".dtstyle").val(0).hide();
+            $(".dtkong").val(0).hide();
+            $(".dtjubu").val(0).hide();
+            $(".tucestyle").val(0).hide();
+            $(".baojia").val(0).hide();
+            $(".lixiangzhuang").val(0).hide();
+            $(".gonglue").val(0).hide();
+        }
+
+    })
+</script>
+<script>
+    $(function () {
+        var index = 1;
+        $("#adddiv").click(function (e) {
+            if (index > 20) {
+                alert('一次最多添加20条内容');
+            } else {
+                var str = '<dl style="border-top:4px solid #b8d0d6;width:100%;margin-top:20px"></dl><dl><dt>链接名：</dt><dd><input type="text" name="link_name[]" class="required" value="" ></dd></dl><dl><dt>链接地址</dt><dd><input type="text" name="url[]" class="required url" value="http://" ></dd></dl>';
+                $('#add').append(str);
+                index += parseInt(1);
+            }
+        });
+    });
+</script>
+

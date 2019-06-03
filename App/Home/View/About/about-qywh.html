@@ -1,0 +1,62 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<!--页面独立css和js引入区-->
+
+<link href="__CSS__/about.css" type="text/css" rel="stylesheet"><!--页脚服务支持导航等页面独立样式-->
+<!--<script src="__JS__/sc-ui-control.js" type="text/javascript"></script>-->
+
+<!--*********************contanier 内容区 *********************-->
+<div class="layout">
+	<!--Breadcrumb -->
+    <div class="web-step">
+          <a href="http://{:C('scurl')['SEC_DOMAIN']}{:C('scurl')['DOMAIN']}">实创装饰首页 ></a>
+         <a href="{:C('scurl')['ABOUT_INDEX']}">关于实创 > </a>
+         <a>企业文化</a>
+     </div>
+     <!--Breadcrumb  end-->
+</div>
+
+<!--about-news-list-->
+<div class="about-news-nav-bg corporate_culture-nav-bg">
+	<div class="layout container-minheight clearfix">
+		<div class="about-nav txt-center">
+        	<ul>
+<include file="left_menu_about" qywh='  class="active"' />
+             </ul>
+        </div>
+	</div>
+</div>
+
+<div class="layout container-minheight clearfix">
+
+  <div class="inside-contanier-l-wrap padding-none f_r ">
+        <h2 class="h-s-title about-news-list-title txt-center">企业文化</h2>
+          <div class="ljsc_right_pic01">
+      <img src="__IMG__/about_culture_03.jpg" width="439" height="221">
+      <img src="__IMG__/about_culture_04.jpg" width="222" height="221">
+      <img src="__IMG__/about_culture_07.jpg" width="222" height="223"> 
+      <img src="__IMG__/about_culture_08.jpg" width="439" height="223"> 
+      </div>
+     <div class="ljsc_right_pic02"><img src="__IMG__/about_culture_05.jpg" width="219" height="444"></div>
+     <div class="ljsc_right_pic03">
+      <img src="__IMG__/about_culture_09.jpg" width="440" height="222"> 
+      <img src="__IMG__/about_culture_10.jpg" width="440" height="222">
+      <img src="__IMG__/about_culture_11.jpg" width="222" height="216">
+    <img src="__IMG__/about_culture_12.jpg" width="440" height="216">
+    <img src="__IMG__/about_culture_13.jpg" width="218" height="216"> 
+    </div>
+  </div>
+    
+    </div>
+        
+</div>
+
+<!--*********************contanier 内容区 end *********************-->
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+</body>
+</html>

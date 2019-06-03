@@ -1,0 +1,139 @@
+
+<!-- 问卷调查 -->
+<style>
+  .wjdc{
+    float: left;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+  }
+</style>
+<div class="wjdc"><a href="http://tp.sojump.cn/jq/9033179.aspx" rel="nofollow" target="_blank"><img src="__PUBLIC__/web/images/pcImg.jpg"></a></div>
+
+<!--消息弹出框-->
+<div class="message-tipx-layout">
+  <span class="close-m">×</span>
+  <dl class="mes-dl">
+    <dt><p class="mes-icon"><strong class="mes-num">1</strong></p></dt>
+    <dd>
+      <h2 class="mes-text">你新收到1条装修设计类的建议留言</h2>
+      <p class="mes-btn"><a target="_blank"  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" class="yellow-btn">点击查看</a></p>
+    </dd>
+  </dl>
+</div>
+
+<!--消息弹出框 结束-->
+
+<div class="footer_gg" <?php if ($SERVER_NAME=='www.sc.cc'): ?>
+                  style="display:none;"
+                <?php endif ?>>
+    <if condition="$footgglx eq 1"><a href="{$footgg.url}" target="_blank"><img src="{$footgg.image}"></a><else /> {$footgg.url|htmlspecialchars_decode}</if>    
+</div>
+
+<include file="common/yl" />
+
+   <!--主体部分结束-->
+     <!--footer-->
+    <div class="footer-box">
+        <div class="footer">
+        	<div class="footer-part1 left">
+            	<dl>
+                	<dt>帮助中心</dt>
+					<dd><a target="_blank" href="{:C('scurl')['STANDARD_QZSH']}">售后服务</a></dd>
+					<dd><a target="_blank" href="{:C('scurl')['SERVICE_COMPANY']}">企业客户入口</a></dd>
+					<dd><a target="_blank" href="{:C('scurl')['SERVICE_SITE_MAP']}">网站地图</a></dd>
+                </dl>
+            </div>
+            <div class="footer-part1 left">
+            	<dl>
+                	<dt>服务支持</dt>
+					<dd><a target="_blank" href="{:C('scurl')['DESIGNER_INDEX']}">设计师团队</a></dd>
+					<dd><a target="_blank" href="{:C('scurl')['SERVICE_CSHOPLIST']}">线下体验店</a></dd>
+					<dd><a target="_blank" href="{:C('scurl')['SERVICE_INDEX']}">自助服务</a></dd>
+                </dl>
+            </div>
+            <div class="footer-part1 left">
+            	<dl>
+                	<dt>关于实创</dt>
+					<dd><a target="_blank" href="{:C('scurl')['DESIGNER_DJYS']}">独家优势</a></dd>
+					<dd><a target="_blank" rel="nofollow" href="http://sc.hirede.com/CareerSite/EmployerBasic">加入我们</a></dd>
+					<dd><a target="_blank" href="{:C('scurl')['ABOUT_LEGAL']}">法律声明</a></dd>
+                </dl>
+            </div>
+            <div class="footer-part2 left">
+            	<dl>
+                	<dt>关注我们</dt>
+					<dd><a target="_blank" class="weibo" href="http://weibo.com/i28800" rel="nofollow">新浪微博</a></dd>
+					<dd><a target="_blank" class="qzone" href="http://user.qzone.qq.com/26800/main" rel="nofollow">QQ空间</a></dd>
+					<dd><a target="_blank" class="tmall" href="https://sitrust.tmall.com/index.htm?spm=a1z10.3.w5002-2886372590.2.MfuueF" rel="nofollow">天猫商城</a></dd>
+                </dl>
+            </div>
+            <div class="footer-part3 left">
+            	<dl>
+                	<dt>官方微信</dt>
+					<dd><img src="__PUBLIC__/2016/img/index_22.png" width="94" height="93" alt="实创装饰官方微信" /></dd>
+                </dl>
+            	
+            </div>
+            <div class="footer-part4 left">
+				    <dl>
+                	<dt>抢定热线</dt>
+                    <dd><p class="footer-part4-phone"><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></p></dd>
+                    
+             </dl>
+				<a target="_blank"  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" class="all-hover-animate" rel="nofollow">在线咨询</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <!--bottom-->
+    <div class="index-bottom">
+    	<div class="bottom-content">
+       	  <span class="left">Copyright @ 1999-2016北京实创装饰工程有限公司</span>
+       	  <span class="right">京ICP备09034105号 京公网安备110102000606</span>
+        </div>
+    </div>
+    <div class="index-xf">
+      <ul>
+        <li class="left index-xf-li1"><a  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" target="_blank" rel="nofollow">在线咨询</a></li>
+        <li class="left index-xf-li2"><a href="javascript:zdfs()" >预约装修</a></li>
+        <li class="left index-xf-li3"><a href="javascript:opin()" >售后电话</a></li>
+        <li class="left index-xf-li4" id="go_top"><a>返回顶部</a></li>
+      </ul>
+      <div class="xfTel"><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.PHONE}</if></div>
+    </div>
+  <script type="text/javascript" src="__PUBLIC__/web/2016/js/toggle.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/web/2016/js/gotop.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/web/2016/js/placeholder.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+        $('input, textarea').placeholder();
+        $(".index-xf-li3 a").mouseover(function(){
+         $(".xfTel").stop().show(300);
+        });
+        $(".index-xf-li3 a").mouseout(function(){
+           $(".xfTel").stop().hide(300);
+        });
+        
+        var h= document.documentElement.clientHeight || document.body.clientHeight;
+        var sTop=parseInt(h/2-291/2);
+        $(".index-xf").css({"top":sTop});
+    });
+ </script>
+ <script type="text/javascript" src="__PUBLIC__/web/2016/js/scrolltext.js"></script>
+ <script type="text/javascript">
+        
+        if(document.getElementById("jsfoot02")){
+            var scrollup = new ScrollText("jsfoot02");
+            scrollup.LineHeight = 22;        //单排文字滚动的高度
+            scrollup.Amount = 1;            //注意:子模块(LineHeight)一定要能整除Amount.
+            scrollup.Delay = 20;           //延时
+            scrollup.Start();             //文字自动滚动
+            scrollup.Direction = "up";   //默认设置为文字向上滚动
+        }
+        </script>
+
+<include file="Common/tongji" />
+</body>
+</html>

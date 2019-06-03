@@ -1,0 +1,108 @@
+<form id="pagerForm" action="__URL__/chajianlist" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b>城市 
+					<select name="CityID">
+					<option value="">全部</option>
+					<volist name="city" id="vo">
+						<option value="{$vo['ID']}" <if condition="$Think.post.CityID eq $vo['ID']">selected</if>>{$vo['NAME']}</option>
+					</volist>
+ 				</select>
+					&nbsp; 活动名称：<input type="text" name="keyword" value="{$Think.post.keyword}" /> 
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="edit" href="__URL__/chajianedit/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}"  width="550" height="380" target="dialog"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="40" orderField="chid" <if condition="$Think.request._order eq 'chid'">class="{$Think.request._sort}"</if>>ID</th>
+				<th width="150" orderField="Title" <if condition="$Think.request._order eq 'Title'">class="{$Think.request._sort}"</if>>活动名称</th>
+				<th width="150" orderField="Title" <if condition="$Think.request._order eq 'Title'">class="{$Think.request._sort}"</if>>城市</th>
+				<th width="150" orderField="CityID" <if condition="$Think.request._order eq 'CityID'">class="{$Think.request._sort}"</if>>插件标题</th>
+				<th width="150" orderField="name" <if condition="$Think.request._order eq 'name'">class="{$Think.request._sort}"</if>>字体颜色</th>
+				<th width="100" orderField="color" <if condition="$Think.request._order eq 'color'">class="{$Think.request._sort}"</if>>提交图片</th>
+				<th width="100" orderField="color" <if condition="$Think.request._order eq 'color'">class="{$Think.request._sort}"</if>>热点链接地址</th>
+				<th width="100" orderField="caseid" <if condition="$Think.request._order eq 'caseid'">class="{$Think.request._sort}"</if>>案例ID</th>
+				<th width="150" orderField="age" <if condition="$Think.request._order eq 'age'">class="{$Think.request._sort}"</if>>基本操作</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.chid}">
+					<td>{$vo.chid}</td>
+					<td>{$vo.Title}</td>
+					<td>{$vo.CityID|getcityname}</td>
+					<td>{$vo.name}{$vo.chid}</td>
+					<td>{$vo.color}</td>
+					<td><if condition="$vo['image'] neq ''"><img src="{$vo.image}" ></if></td>
+					<td>{$vo.curl}</td>
+                                        <td>{$vo.caseid}</td>
+					<td>
+					<if condition=" $vo['cjid'] neq 5 && $vo['cjid'] neq 6 && $vo['cjid'] neq 7">
+					<a class="edit" href="__URL__/chajianedit/id/{$vo.chid}"  width="550" height="380" target="navTab"><span>修改</span></a>
+					</if>
+					<if condition=" $vo['cjid'] eq 9 or $vo['cjid'] eq 19">
+					<a class="edit" href="__URL__/hdplist/id/{$vo.chid}"  width="550" height="380" target="navTab" rel="hdlist"><span>图片管理</span></a>
+					</if>
+					</td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+	<script type="text/javascript">
+function display(id){
+	//alert(img.width());
+	//alert(image);
+	var url = "__URL__/editDisplay/id/"+id;
+     var xpwidth=window.screen.width-10;
+        var xpheight=window.screen.height-105;
+       // alert(xpheight);
+        //window.open('map/mapview.aspx', '_blank', 'resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+	window.open(url,'newWindow','scrollbars=yes, resizable=yes,resizable=yes,directories=no,top=0,left=0,width='+xpwidth+',height='+xpheight);
+
+	
+}
+
+
+ </script>
+</div>

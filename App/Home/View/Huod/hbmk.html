@@ -1,0 +1,64 @@
+<style>
+<!--
+
+-->
+
+.baomingh table tr td{
+font-size:14px;color:{$vo['color']};
+}
+.bmrh{
+color:{$vo['color']};width:200px;
+}
+.bmrh span{
+color:{$vo['color']};
+}
+.bm_numh{
+	color: {$vo['color']};
+	font-family: Arial,Helvetica,sans-serif;
+	
+	text-align: center;
+	}
+</style>
+
+<div class="baomingh">
+<form action="__APP__/Huod/bm/" method="post" name="form{$i}" id="form{$i}">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-size:12px;">
+  <tbody><tr>
+      <td colspan="2">
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+      </td>
+  </tr>
+  <tr>
+    <td height="38" align="right" width="10%" style="color:{$vo['color']}">姓名:&nbsp;</td>
+    <td height="38"><input name="UserName" type="text" class="input i1"></td>
+    <td height="38" align="right" width="10%" style="color:{$vo['color']}">性别:&nbsp;</td>
+    <td height="38"><input type="radio" name="Sex" checked="checked" value="先生">&nbsp;男&nbsp;<input type="radio" name="Sex" value="女士">&nbsp;女</td>
+  </tr>
+  <tr>
+    <td height="38" align="right" style="color:{$vo['color']}">电话:&nbsp;</td>
+    <td height="38"><input type="text" class="input i2" name="TelePhone" size="5" maxlength="11"></td>
+     <td height="38" align="right" style="color:{$vo['color']}">楼盘:&nbsp;</td>
+    <td height="38"><input name="LpName" type="text" class="input" size="5"></td>
+  </tr>
+  <tr>
+   	<td height="38" align="right" style="color:{$vo['color']}">面积:&nbsp;</td>
+    <td height="38"><input name="LpNamem" type="text" class="input i1" size="1"></td>
+    <td height="40" colspan="2" align="center"><a href="javascript:tijiaos({$i});">
+    <if condition="$vo['image'] ==''">
+    	<img src="__PUBLIC__/images/Home/button_04.jpg" border="0" class="baoming" id="a4">
+    <else /> 
+		<img src="{$vo['image']}" border="0" class="baoming" id="a4">
+	</if>
+   </tr>
+</tbody></table>
+    </form>
+</div>

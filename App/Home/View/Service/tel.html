@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript" src="__PUBLIC__/web/js/zDialog.js"></script>
+    <!-- <script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script> -->
+    <script src="__PUBLIC__/web/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/web/css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+    
+    <div style="text-align: center;">
+    	<div class="scKfTel">
+			<!--<h2>电话客服</h2>-->
+    		<h1><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></h1>
+			<p>拨打费用：仅收市话费</p>
+			<p>服务时间：周一至周日9:00-18:00</p>
+			<h3>欢迎致电电话客服，为您提供保修等售后服务！</h3>
+    	</div>
+    </div>
+
+</body>
+</html>

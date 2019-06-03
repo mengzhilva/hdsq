@@ -1,0 +1,112 @@
+
+
+    
+<form id="pagerForm" action="__URL__/wxrefund" method="post">
+    <input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+    <input type="hidden" name="_order" value="{$Think.request._order}"/>
+    <input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+    <div class="searchBar">
+        <table class="searchContent">
+            <tr>
+                <td>
+                    <b>搜索</b> 
+                </td>
+                <td>
+                    城市 
+                </td>
+                <td>
+                    <select name="cid" class="combox">
+                        <option value="">全部</option>
+                        <volist name="city" id="vos">
+                            <option value="{$vos['ID']}" <if condition="$Think.request.cid eq $vos['ID']">selected</if>>{$vos['NAME']}</option>
+                        </volist>
+                    </select>
+                </td>
+                
+                <td>
+                    状态 
+                </td>
+                <td>
+                    <select name="status" class="combox">
+                        <option value="">全部</option>
+                            <option value="1" <if condition="$Think.request.status eq '1'">selected</if>>已退款</option>
+                            <option  value="0" <if condition="$Think.request.status eq '0'">selected</if>>未处理</option>
+                            <option  value="-1" <if condition="$Think.request.status eq '-1'">selected</if>>退款失败</option>
+                    </select>
+                </td>
+                <td>
+                    <div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li class="line">line</li>
+            <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+            <!-- <li><a class="icon"   onclick="doSelect(0)" ><span>全选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(1)" ><span>全不选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(2)" ><span>反选</span></a></li> -->
+            <!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="112">
+        <thead>
+            <tr>
+            <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                <th width="40" orderField="ID" <if condition="$Think.request._order eq 'ID'">class="{$Think.request._sort}"</if>>ID</th>
+                
+                <th width="150" >城市</th>
+                <th width="150" >用户昵称</th>
+                <th width="150" >姓名</th>
+                <th width="150" >电话</th>
+                <th width="150" >openid</th>
+                <th width="150" >申请时间</th>
+                <th width="150" >处理时间</th>
+                <th width="150" >处理状态</th>
+                <th width="150" >基本操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="vo">
+                <tr target="item_id" rel="{$vo.ID}">
+                    <td><input name="ids" value="{$vo.ID}" type="checkbox"></td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.cid|getcityname}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.truename}</td>
+                    <td>{$vo.mobilephone}</td>
+                    <td>{$vo.openid}</td>
+                    <td>{$vo.registertime}</td>
+                    <td>{$vo.handlingtime}</td>
+                    <td><if condition="$vo.status eq '-1'">退款失败</if><if condition="$vo.status eq 0">未处理</if><if condition="$vo.status eq 1">已退款</if></td>
+                    <td>
+                    <if condition="$vo.status eq 0"><a class="edit" href="__URL__/wxeditcheck/id/{$vo.id}" width="550" height="380" target="navTab"><span>处理</span></a></if>
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <div class="panelBar">
+        <div class="pages">
+            <span>显示</span>
+            <select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+                <option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+                <option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+                <option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+                <option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+                <option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+            </select>
+            <span>共{$totalCount}条</span>
+        </div>
+        <div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+    </div>
+</div>

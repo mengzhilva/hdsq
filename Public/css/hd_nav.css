@@ -1,0 +1,73 @@
+
+@charset "utf-8";
+a{
+    text-decoration: none;
+    font-weight: normal;
+}
+img{margin:0px;padding: 0px;}
+ul{margin:0px;padding: 0px;}
+ul li { list-style:none; }
+input { -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; }
+h1,h2,h3{
+    font-weight: normal;
+}
+input, select { -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; }
+
+h2,h3{
+    margin:0px;
+    padding:0px;
+    font-family:Microsoft YaHei;
+}
+/* 专题和活动的导航 */
+.spNav{
+    width: 1180px;
+    height: 55px;
+    margin:0 auto;
+    background-color: #FFF;
+}
+.spLogo{
+    width: 177px;
+    height: 50px;
+    float: left;
+    margin-right: 80px;
+}
+.spLogo img{
+    width: 177px;
+    height: 43px;
+    margin-top: 3px;
+}
+.spNav ul{
+    width: 681px;
+    height: 40px;
+    line-height: 40px;
+    margin-top:8px;
+    float: left;
+}
+.spNav ul li{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-right: 30px;
+}
+.spNav ul li a{
+    color: #333333;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+}
+.spNav ul li a:hover{
+    color: #fa4c06;
+}
+.spNav ul li a.cur{
+    color: #fa4c06;
+}
+.spRight{
+    width: 240px;
+    height: 55px;
+    line-height: 55px;
+    float: right;
+    background:url(../images/telBg.png) no-repeat 10px center;
+    color: #fa4c06;
+    font-size: 24px;
+    font-weight: bold;
+    text-indent: 40px;
+}

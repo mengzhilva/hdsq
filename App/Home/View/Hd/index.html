@@ -1,0 +1,587 @@
+<html>
+    <head>
+        <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <if condition="$chajiantyle eq '1'">
+        <link href="__PUBLIC__/css/hddisplay.css" rel="stylesheet" type="text/css" />
+        <else/>
+        <link href="__PUBLIC__/css/hddisplaynew.css" rel="stylesheet" type="text/css" />
+    </if>
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/hd_nav.css" />
+    <link href="__PUBLIC__/css/hd.css" rel="stylesheet" type="text/css" />
+
+    <title>{$list['Title']} — {$webset.NAME}</title>
+
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/zDialog.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/zDialogdzp.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/newhd/js/placeholder.min.js"></script>
+    <script src="__JS__/jquery.validate.js"></script>
+    <script src="__JS__/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="__CSS__/jquery-ui.min.css" media="screen"/>
+    <script>
+
+        $.validator.setDefaults({
+            submitHandler: function () {
+
+            },
+            showErrors: function (map, list) {
+                // there's probably a way to simplify this
+                var focussed = document.activeElement;
+                if (focussed && $(focussed).is("input, textarea")) {
+                    $(this.currentForm).tooltip("close", {
+                        currentTarget: focussed
+                    }, true)
+                }
+                this.currentElements.removeAttr("title").removeClass("ui-state-highlight");
+                $.each(list, function (index, error) {
+                    $(error.element).attr("title", error.message).addClass("ui-state-highlight");
+                });
+                if (focussed && $(focussed).is("input, textarea")) {
+                    $(this.currentForm).tooltip("open", {
+                        target: focussed
+                    });
+                }
+            }
+        });
+        // 手机号码验证
+        jQuery.validator.addMethod("isMobile", function (value, element) {
+            var length = value.length;
+            var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+            return this.optional(element) || (length == 11 && mobile.test(value));
+        }, "请正确填写您的手机号码");
+
+    </script>
+</head>
+
+<style>*{margin:0px;}
+    body{overflow-x:hidden;height:{$list['height']}px;background:{$list['backgroundcolor']};} 
+    .root{position: absolute;}
+    .img{z-index:-1; position:absolute;}
+    .tou{background:#fff;}
+    .lineKefu{position: absolute!important;}
+    /*	#newHdcj .nextpage{_position: absolute;_bottom:0px; left:0px;}
+            #newHdcj .xf_b{ margin-left:auto !important; margin-right:auto !important}*/
+
+    #newHdcj .baom_rightF {_position: absolute !important;_bottom:0px !important; _right:0px !important  ;}
+
+
+
+</style>
+<body>
+
+    <neq name="id" value="4126">
+
+        <div class="hdTop"><div class="spNav" style="height: 53px">
+                <a href="{:C('scurl')['INDEX_INDEX']}" target="_blank"><div class="spLogo">
+                <img src="{$webset.headerlogo}"></div></a>
+                <ul>
+                    <li><a href="{$webset.DOMAIN}" target="_blank" class="cur">首 页</a></li>
+                    <volist name="webmenu" id="vo">
+                    <li><a href="{$vo.url}" target="_blank">{$vo.name}</a></li>
+                    </volist>
+                </ul>
+                <div class="spRight">{$PromoterTel}</div>
+            </div></div>
+    </div> 
+    </neq>
+
+    <script type="text/javascript">
+        function dzp(cjid) {
+
+            var diag = new Dialogdzp();
+            diag.Width = 850;
+            diag.Height = 440;
+            diag.Title = "我要报名";
+            diag.URL = "{:C('scurl')['WXDZP_INDEX']}" + "?cjid=" + cjid + "&t=1";
+            diag.show();
+            $("#_DialogDiv_1").show();
+        }
+        function tijiaos(i) {
+            if (i != 0) {
+
+                if (i == 9999990) {
+                } else {
+                }
+                var form = $("#form" + i);
+                form.submit();
+            }
+        }
+    </script>
+
+    <div class="root" id="root" style="left: 0;width:{$list['width']}px;height:{$list['height']}px;">
+
+
+
+        <volist name="chajians" id="vo">
+            <if condition="$vo['chajianID'] eq 1">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='hbmk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 2">
+                <empty name="vo['color']"><assign name="vo['color']" value="#0f0f0f" /></empty>
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='zbmk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 3">
+
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"
+                   <if condition="$vo.url eq null"> 
+                        href="javascript:baom()"
+                        <else/> 
+                        <if  condition="$Promoterid eq '0'">
+                            href="{$vo.url}" target="_blank"
+                            <else/>
+                            href="#"
+                        </if>
+                    </if>>
+
+                    <include file='rdlj'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 4">
+
+                <div style="position:absolute;text-align: center;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='phone'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 5">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:openphone()">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 6">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="#{$vo['url']}">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 7">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  name="{$vo['cid']}" id="{$vo['cid']}">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 8">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='gdk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 9">
+                <div  style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <iframe  src="{:C('scurl')['HD_INDEX']}hdp/id/{$vo['cid']}/width/{$vo['width']}/height/{$vo['height']}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 10">
+                <div id="{$vo['url']|strrchr='/'|substr=1}" class="{$Promoterid}" style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <iframe  src="{$vo.url}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+           
+            <if condition="$vo['chajianID'] eq 21111">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};" class="cd-popup-trigger">	
+                </a>	
+                <include file='cj'/>
+            </if>
+            <if condition="$vo['chajianID'] eq 24">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"
+                   href="javascript:dzp('{$cjid}')" >
+                    <img src="{$vo.backgroundimg}" border="0" class="baoming" id="a4" />
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 25">
+                <div  style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='zxbj'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 27">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:getlunbo('{$vo.caseid}');">      
+                    <include file='lunbotu'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 28">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='mouse'/>
+                </div>
+            </if>
+        </volist>
+	<?php if(empty($list['qiegenum'])){ ?>
+   
+        <div class="img" id="img" style="background:url({$list['background']});width:{$list['width']}px;height:{$list['height']}px; top:0px;"></div>
+    
+    
+     <?php }else{ ?>
+	    <div class="img" id="img" style="width:{$list['width']};height:{$list['height']+80};">
+	    <?php for($i=0;$i<$list['qiegenum'];$i++){ ?>
+	    
+	    <img class="tpimg" src="__PUBLIC__/Uploads/hd/t<?php echo $list['ID'].$i ;?>.jpg" />
+	    <?php } ?>
+	    </div>
+    <?php } ?>
+    
+    </div>
+
+
+
+<!-- 新活动插件 -->
+
+
+<LINK href="__PUBLIC__/newhd/css/iframes.css" type=text/css rel=stylesheet>
+
+
+<div id="newHdcj">
+
+
+    <div class="nextpage" id="gotops" style="display:none;">
+        <div class="xf_b" >
+             <div class="xf_w">
+                <form method="post" name="newform2" id="newform2">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2">
+                                <input type="hidden" name="ClassRoomID" value="{$id}" />
+                                <input type="hidden"  name="ClassRoomName" value="{$list['Title']}" />
+                                <input type="hidden"  name="qudao" value="{$utm_source}" />
+                                <input type="hidden" value="add" name="action" />
+                                <input type="hidden" value="{$Promoterid}" name="Promoterid" />
+                                <input type="hidden" value="{$PromoterName}" name="PromoterName" />
+                                <input type="hidden" value="{$utm_term}" name="utm_term" />
+                                <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}" />
+                                <input name="CityName" type="hidden" id="CityName" value="{$list['CityName']}" />
+                                <input name="renshu" type="hidden" id="renshu" value="1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="45"><input name="UserName" type="text" class="inputp" size="5" placeholder="请输入您的姓名"/></td>
+                            <td height="45" class="td-bm">已有<span class="bm_num1"></span> 人报名</td>
+                        </tr>
+                        <tr>
+                            <td height="45"><input type="text" class="inputp" name="TelePhone" size="5" maxlength="11" placeholder="请输入您的手机"/></td>
+                            <td height="45"><a href="javascript:;" onClick="$('#newform2').submit();"><img src="__PUBLIC__/newhd/images/button-02.jpg"border="0" /></a></td>
+                        </tr>
+                    </table>
+                </form>    
+            </div>
+            <p class="t_phone">{$PromoterTel}</p>
+            <div class="closeFoot"></div>
+        </div>
+    </div>
+    <div class="footSmall"></div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    // $(window).scroll( function() { 
+    // 	//baomingFd.style.top = (document.body.scrollTop+240) +"px";
+    // 	lineKefu.style.top = (document.body.scrollTop+250) +"px";
+    //  } );
+$(function(){
+    var w = $("body").css("width");
+    str = w.replace('px', "");
+    var imgWidth = "{$list['width']}";
+    if (imgWidth > str) {
+        root.style.left = "-" + ((imgWidth - str) / 2) + "px";
+        //baomingFd.style.left = ((imgWidth - str) / 2) + "px";
+       // $(".tpimg").css("margin-left","-" + ((imgWidth - str) / 2) + "px");
+    } else {
+        root.style.left = ((str - imgWidth) / 2) + "px";
+        //baomingFd.style.left =  "-" + ((str - imgWidth) / 2) + "px";
+        //$(".tpimg").css("margin-left",((str - imgWidth) / 2) + "px");
+    }
+    var lef = (str - 1200) / 2;
+
+    $(".hdTop").css("left", lef);
+
+    //alert(document.body.scrollTop);
+    var id = "{$id}";
+    var url = "{:C('scurl')['HD_INDEX']}ajaxgetbmnumber/id/" + id;
+    $.ajax({
+        type: "get",
+        url: url,
+        data:
+                {
+                },
+        dataType: "html",
+        success: function (data) {
+            $(".bm_numz").html('');
+            $(".bm_numz").html(data);
+            $(".bm_numh").html('');
+            $(".bm_numh").html(data);
+            $(".bm_num").html(data);
+            $(".bm_num1").html(data);
+        }
+    });
+
+
+    function baoming() {
+        var tp = $("#TelePhone").val();
+        var un = $("#UserName").val();
+        if (tp == '') {
+            alert('请输入您的电话号码');
+            return;
+        } else if (un == '') {
+            alert('请输入您的姓名');
+            return;
+        } else {
+            this.document.formleft.submit();
+        }
+
+    }
+});
+    
+</script>
+
+<script>
+    (function () {
+        // use custom tooltip; disable animations for now to work around lack of refresh method on tooltip
+        $("#newform1, #newform2,.formhengzong").tooltip({
+            show: false,
+            hide: false
+        });
+
+        $("#newform1").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: '{:U( "hd/onekey")}',
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data.info);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert('提交失败');
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+//横、纵报名框报名
+
+        $("#form").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: "{:C('scurl')['HD_INDEX']}bm/",
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if ($data.state == 1) {
+                            bmok();
+                        } else {
+                            alert(data.msg)
+                        }
+                        //alert(data.info);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        //alert('提交失败');
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+
+
+        $("#newform2").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: '{:U( "hd/onekey")}',
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.statusCode == 200) {
+                            bmok();
+                        } else {
+                            bmsb(data.info);
+                        }
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        bmsb(data.info)
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+
+    })();
+
+
+
+    function bmok() {
+
+        var diag = new Dialog();
+        diag.Width = 500;
+        diag.Height = 180;
+        diag.Title = "我要报名";
+        diag.URL = "{:C('scurl')['HD_INDEX']}bmok";
+        diag.show();
+        $("#_DialogDiv_0").show();
+    }
+    function bmsb(msg) {
+
+        var diag = new Dialog();
+        diag.Width = 500;
+        diag.Height = 180;
+        diag.Title = "我要报名";
+        diag.URL = "{:C('scurl')['HD_INDEX']}bmsb?msg=" + msg;
+        diag.show();
+        $("#_DialogDiv_0").show();
+    }
+</script>
+
+<script type="text/javascript" src="__PUBLIC__/newhd/js/scroll.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // $('input, textarea').placeholder();
+    });
+</script>
+
+<eq name="list.istopbaoming" value="0">
+<script type="text/javascript">
+$(function(){
+    var windowW = document.documentElement.clientWidth || document.body.clientWidth;
+    var YRight = 0;
+    YRight = (windowW - 1180) / 2;
+    document.getElementById("baoMXF").style.right = (YRight - 8) + "px";
+    // alert(YRight-8);
+    document.getElementById("baoMXF").style.top = "20px";
+
+    document.getElementById("baoMXF").style.display = 'block';
+});
+</script>
+</eq>
+<script type="text/javascript">
+    $(function () {
+        $('#gotop').click(function () {
+            $('html,body').animate({scrollTop: '0px'}, 800);
+        });
+        $(".closeFoot").click(function () {
+            $(".nextpage").animate({left: '-100%'}, 1000);
+            $(".footSmall").show(1000);
+            $(".bodyFt").css({"height": "1349px"});
+        });
+        $(".footSmall").click(function () {
+            $(".footSmall").hide(1000);
+            $(".nextpage").animate({left: '0px'}, 1000);
+            $(".bodyFt").css({"height": "1471px"});
+        });
+        $(".zsYbj ul li:last-child,.ftTjtw ul li:last-child").css({"margin-right": "0px"});
+    });
+
+</script>
+<eq name="list.istopbaoming" value="0">
+<script type="text/javascript">
+    $(function () {
+        $(".baom_gd .list_lh").myScroll({
+            speed: 40, //数值越大，速度越慢
+            rowHeight: 2000 //li的高度
+        });
+    });
+</script>
+</eq>
+<script type="text/javascript">
+    function pyConsultPyL() {
+        var w = window, d = document, e = encodeURIComponent;
+        var b = location.href, c = d.referrer, f, g = d.cookie, h = g.match(/(^|;)\s*ipycookie=([^;]*)/), i = g.match(/(^|;)\s*ipysession=([^;]*)/);
+        if (w.parent != w) {
+            f = b;
+            b = c;
+            c = f;
+        }
+        ;
+        u = '//stats.ipinyou.com/cvt?a=' + e('tG.GCs.YrnyZF3BsWRUPp8nRDeO00') + '&c=' + e(h ? h[2] : '') + '&s=' + e(i ? i[2].match(/jump\%3D(\d+)/)[1] : '') + '&u=' + e(b) + '&r=' + e(c) + '&rd=' + (new Date()).getTime() + '&e=';
+        (new Image()).src = u;
+    }
+
+    var lxbCbInputBtnBindedOne = false;
+    var lxbCbInputBtnBindedTwo = false;
+    var _interval = window.setInterval(function () {
+        //在线咨询（右侧）
+        if ($('.icoTc').length > 0 && !lxbCbInputBtnBindedOne) {
+            $('.icoTc').bind("click", function () {
+                pyConsultPyL();
+            });
+            lxbCbInputBtnBindedOne = true;
+        }
+
+        //在线咨询（悬浮窗）
+        if ($('#doyoo_mon_accept').length > 0 && !lxbCbInputBtnBindedTwo) {
+            $('#doyoo_mon_accept').bind("click", function () {
+                pyConsultPyL();
+            });
+            lxbCbInputBtnBindedTwo = true;
+        }
+        if (lxbCbInputBtnBindedOne && lxbCbInputBtnBindedTwo) {
+            window.clearInterval(_interval);
+        }
+    }, 200);
+</script>
+
+
+</html>

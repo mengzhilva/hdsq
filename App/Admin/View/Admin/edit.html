@@ -1,0 +1,36 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listadmin/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$info.id}"/>
+		<div class="pageFormContent nowrap" layoutH="60" style="overflow-x:hidden !important;">
+			<dl>
+				<dt>用户名：</dt>
+				<dd>{$info.username}</dd>
+			</dl>
+			
+			<dl style="width:680px;">
+				<dt>密码：</dt>
+				<dd  style="width:300px !important;"><input type="password"   style="width:300px !important;" name="userpass" value=""/></dd><span style="margin-left:20px;color:red;">*不修改，则不用填写</span>
+			</dl>
+			<dl>
+				<dt>姓名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="truename" value="{$info.truename}"/></dd>
+			</dl>
+			<dl>
+				<dt>简介：</dt>
+				<dd>
+				<textarea name="content" cols="50" rows="5" class="textInput">{$info.content}</textarea>
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

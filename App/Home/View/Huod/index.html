@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$list.Title}— 实创装饰集团{$list.CityName}公司</title>
+<meta name="viewport" id="viewportid" content="target-densitydpi=320,width=640,user-scalable=yes">
+<script>
+if (window.innerWidth > 640){
+	document.getElementById('viewportid').setAttribute('content', 'target-densitydpi=285,width=640,user-scalable=yes');
+}
+</script>
+
+<meta name="apple-touch-fullscreen" content="no" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="no" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+<!--IOS 添加到主屏幕 应用图标-->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
+<link rel="apple-touch-icon-precomposed" href="">
+<link rel="shortcut icon" href="">
+<style>
+    .lineKefu{position: absolute!important;width: 75px;
+height: 89px;
+position: fixed;
+top: 287px;
+right: 5px;
+z-index: 5;}
+
+</style>
+<link rel="stylesheet" media="all" type="text/css" href="__CSS__/style.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.9.1.min.js"></script>
+
+
+<script type="text/javascript">
+
+<!--
+
+//-->
+function tijiaos(){
+		var form = $("#form");
+		var UserName = $('#form input[name="UserName"]').val();
+		var TelePhone = $('#form input[name="TelePhone"]').val();
+		//alert(UserName);
+		if(UserName == ''){
+			alert('请填写姓名!');
+		}else if (TelePhone == ''){
+			alert('请填写电话!');
+		}else{
+			form.submit();
+		}
+}
+</script>
+
+	<script type="text/javascript">
+		var url = "__APP__/Hd/ajaxgetbmnumber";
+		var id = "{$id}";
+		$.get(url,
+			{id:id},
+			function(txt){
+					//alert(txt);
+					$("#bm_numz").html('');
+					$("#bm_numz").html(txt);
+				}
+			
+			);
+	</script>
+</head>
+<body>
+<div class="contain">
+	<div class="header">
+    	<h1>{$list.Title}</h1>
+        <div class="dh_01"><a href="tel://{$cityinfo.TELEPHONE}">{$cityinfo.TELEPHONE}</a></div>
+        <img src="http://www.sc.cc/{$list.background}" width="560" height="262" />
+    </div>
+    <div class="main">
+    
+    	<div class="main_bm">
+        	本场活动已报名<p class="bm_num" id="bm_numz"></p>人
+            <div class="baoming">
+<form id="form"  action="__APP__/Hd/bm/" method="post" name="form" >
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+  <tr>
+    <td>姓名:&nbsp;</td>
+    <td><input name="UserName" type="text" class="input input2"/></td>
+     <td>电话:&nbsp;</td>
+    <td ><input type="text" class="input" name="TelePhone" size="5" maxlength="11" /></td>
+    <td ><a href="javascript:tijiaos();"><input type="button" value="免费报名" class="mf"></a></td>
+  </tr>
+</table>
+</form>
+			</div>
+        </div>
+        
+        <div class="ld">
+        	<p class="x_bt">活动亮点</p>
+            <div class="ld_con">
+            <pre style="font-family: 微软雅黑;font-size:18px;">
+{$list.hdld}
+</pre>
+</div>
+        
+        <div class="ld">
+        	<p class="x_bt">合作品牌<span>&nbsp;&nbsp;&nbsp;&nbsp;进口主材 欧洲标准 绿色环保</span></p>
+            <div class="pp_con">
+            	<span>西班牙道奇帕克地板</span><span>东鹏瓷砖</span><span>西班牙堤丹墙漆</span><span class="mn">丹麦福乐阁墙漆</span><span>TOTO卫浴</span><span>科勒卫浴</span><span>巴赫曼厨柜</span><span class="mn">巴赫曼德式木门</span>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+        <div class="ld ld2">
+        	<p class="x_bt">品牌优势</p>
+            <div class="ys_con">
+            	实创装饰标准化整体家居服务领导者，整体家装模式缔造者与领航者。凭借17年品牌经验，全面整合进口主材、标准施工和一站式售后服务，使实创成为迄今为止，项目最全、性价比最高、报价最透明的整体家装装修公司，亦是业内唯一《福布斯》上榜100强的品牌家装企业！
+
+            </div>
+            <p class="ys_c2"><img src="__PUBLIC__/Home/images/index_11.jpg" width="560" height="150" /></p>
+            <p class="ys_c3">一站式整体家居服务设计/选材/施工/售 后一站搞定 省钱更省心</p>
+            <p class="ys_c3 ys_c4">全责售后避免推诿更省心</p>
+            <p class="ys_c3 ys_c5">原装正品  假一赔三</p><p class="ys_c3 ys_c5 ys_c6">环保不达标  负全责</p>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="ld">
+        	<p class="x_bt x_bt2">活动流程</p>
+            <img src="__PUBLIC__/Home/images/index_06.jpg" width="560" height="250" />
+        </div>
+        
+    </div>
+	<div class="footer">
+    	<div class="foot"><span>整体家装</span><span>装修日记</span><span>设计案例</span><span>标准工程</span></div>
+        <div class="phone"><p class="p_left">官方微信：<span class="wx">sitrust288</span></p><p class="p_right">免费咨询热线：<span class="dh"><a href="tel://{$cityinfo.TELEPHONE}">{$cityinfo.TELEPHONE}</a></span></p></div>
+    </div>
+
+
+</div>
+</div>
+<div class="lineKefu" id="lineKefu"><a target="_blank"  href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}"><img src="__PUBLIC__/kf.png" width="75" height="89" /></a></div>
+<!--代码统计BEDIN-->
+  <script type='text/javascript'>
+  (function(){
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = (location.protocol == 'https:' ? 'https://ssl.' : 'http://static.') + 'gridsumdissector.com/js/Clients/GWD-002542-2331F6/gs.js';
+    var firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(s, firstScript);
+  })();
+</script>
+<!--代码统计END-->
+<!--乐语探头-->
+<if condition="$Promoter eq ''">
+<script>
+
+document.write("<scr"+"ipt src=\"http://gate.looyu.com/31779/{$cityinfo.LEYUTID}.js\"></sc"+"ript>");
+</script>
+</if>
+<!--全站代码-->
+<script type="text/javascript">
+
+
+
+var _py = _py || [];
+_py.push(['a', 'tG..Q7Fx4-PNjuKaCidlzwGtc0']);
+_py.push(['domain','stats.ipinyou.com']);
+_py.push(['e','']);
+-function(d) {
+    var s = d.createElement('script'),
+    e = d.body.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e),
+    f = 'https:' == location.protocol;
+    s.src = (f ? 'https' : 'http') + '://'+(f?'fm.ipinyou.com':'fm.p0y.cn')+'/j/adv.js';
+}(document);
+</script>
+<noscript><img src="//stats.ipinyou.com/adv.gif?a=tG..Q7Fx4-PNjuKaCidlzwGtc0&e=" style="display:none;"/></noscript>
+</body>
+<script>
+    $(window).scroll( function() { 
+                    //baomingFd.style.top = (document.body.scrollTop+240) +"px";
+                    lineKefu.style.top = (document.body.scrollTop+250) +"px";
+         } );
+</script>
+</html>

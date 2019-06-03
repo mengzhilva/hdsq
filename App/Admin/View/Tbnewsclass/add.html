@@ -1,0 +1,30 @@
+
+<div class="pageContent">
+    <form method="post" action="__URL__/insert/navTabId/listclass/callbackType/closeCurrent"  class="pageForm required-validate" 
+        onsubmit="return iframeCallback(this, navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+        <div class="pageFormContent nowrap" layoutH="60">
+            <dl>
+                <dt>新闻类型：</dt>
+                <dd><input type="text" class="required"  style="width:100%" name="ClassName"/></dd>
+            </dl>
+            <dl>
+                <dt>便签：</dt>
+                <dd><input type="text" class="required"  style="width:100%" name="ClassNote"/></dd>
+            </dl>
+            <dl>
+                <dt>排序：</dt>
+                <dd><input type="text" class="required digits"  style="width:100%" name="OrderID" placeholder="请输入一个整数数字"/></dd>
+            </dl>
+            
+            
+        </div>
+        
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+

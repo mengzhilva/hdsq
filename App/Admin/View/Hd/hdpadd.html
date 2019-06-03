@@ -1,0 +1,56 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/hdpinsert/navTabId/hdlist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent nowrap" layoutH="60" >
+		
+				<input type="hidden" style="width:100%" name="cid" id="cid" value="{$cid}" class="valid">
+			<dl>
+				<dt>链接地址：</dt>
+				<dd><input type="text"  style="width:100%" name="url"/></dd>
+			</dl>
+			<dl>
+				<dt>背景图片：</dt>
+				<dd>
+				<div style="display:blodk;width:500px;">
+				<img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.img}"/>
+				<a style="display:blodk;float:left;width:100px;height:50px;padding-top:50px;padding-left:20px;" href="__MODULE__/Demo/add"  target="dialog">上传图片</a>
+				</div>
+				<input type="hidden" style="width:100%" name="background" id="background" class="valid">
+				</dd>
+			</dl>
+			<dl>
+				<dt></dt>
+				<dd>
+		            <input style="display:none;width:80px;background:{$vo['color']}" name="backgroundcolor" type="text" id="colors" class="add_tr4_input" value="{$vo["color"]}" />
+		         	
+					<input style="display:none;" type="color" id="color" />
+					<a id="btn"></a>
+				</dd>
+			
+			</dl>
+			
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	<script type="text/javascript">
+document.getElementById('btn').onclick = function(){
+	$("#color").show();
+	document.getElementById('color').click();
+};
+
+document.getElementById('color').onchange = function(){
+	$("#colors").val(this.value);
+	$("#colors").css('background',this.value);
+	$("#color").hide();
+};
+
+</script>
+</div>
+

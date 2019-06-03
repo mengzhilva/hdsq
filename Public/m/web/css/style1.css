@@ -1,0 +1,46 @@
+/************************************************************ M案例首页 ************************************************************/
+* { box-sizing:border-box; }
+.sContain { width:100%; min-width:320px; max-width:640px; margin:0 auto; }
+.sContain{ padding-bottom:50px;}
+header,.sMain,.docH,.ssMain{ width:100%; }
+/* header */
+header { padding:15px 3.125%; background:#ffffff  }
+header h1 { font-size:1px; }
+.city-name { width:65px; height:13px;/*  border:1px solid #ea5404; border-radius:2px; */ background:url(../images/index_01.png) no-repeat 50px 4px; background-size:10px; padding-right:12px; line-height:12px; text-align:center;color:#fa4c06; }
+.city-name a { color:#ea5404; }
+.header-span{ padding-left:15px; font-size:13px; line-height:13px;}
+.header-span1{ padding-left:40%; font-size:15px; line-height:18px;}
+.sMain{ margin-top:5px; overflow:hidden;background:#ffffff }
+.ssMain{ overflow:hidden;background:#f0f0f0; }
+.sSearch,.sDoc-con,.tDoc{ width:93.75%; margin:0 auto; margin-top:10px; margin-bottom:10px;overflow:hidden}
+.sText{ border:#cccccc solid 1px; height:40px; line-height:40px; width:68%;border-right:none !important;border-bottom-right-radius:0px; border-top-right-radius:0px;}
+.sButton{ width:32%; background:#fa4c06; height:40px; line-height:40px; text-align:center; font-size:14px; color:#ffffff; cursor:pointer; border-bottom-left-radius:0px;border-top-left-radius:0px;}
+.sDoc-con-left{ width:66.13%; height:auto; }
+.sDoc-con-right{ width:32.26%; height:auto; }
+.sDoc-con-left,.sDoc-con-right-up,.sDoc-con-right-down{ position:relative}
+.sDoc-con-right-up,.sDoc-con-right-down{ width:100%}
+.sDoc-con-left img, .sDoc-con-right-up img, .sDoc-con-right-down img{ width:100%; height:auto; }
+.sDoc-con-left a span, .sDoc-con-right-up a span,.sDoc-con-right-down a span{ position:absolute; left:0; bottom:2px;  display:block; width:100%; height:25px; text-align:center; line-height:25px; font-size:14px; color:#ffffff; background:rgba( 0, 0, 0, 0.4 ); }
+.sDoc-con-right-down{ margin-top:2%}
+.sDoc-con-left-b1{ font-weight:normal; width:60%; padding-left:3%; text-align:left;overflow:hidden;height:25px;color:#ffffff}
+.sDoc-con-left-b2{ font-weight:normal;width:35%; padding-right:2%; text-align:right ;height:25px;overflow:hidden; color:#ffffff}
+.sDoc-con-bottom{ width:100%; background:#ffffff; padding:2%; margin-top:8px;}
+.sDoc-con-bottom h3{ background:url(../images/anli-04.jpg) right center no-repeat; width:20%; height:55px;line-height:55px; text-align:center; font-weight:normal; font-size:16px;}
+.sDoc-con-bottom ul{ width:80%}
+.sDoc-con-bottom li{ width:33%; float:left; height:24px; line-height:24px;padding-left:1%}
+.sDoc-con-bottom li a{ color:#000000; font-size:14px; float:left; width:85% ; line-height:30px; height:30px; overflow:hidden;  text-align:center}
+.sDoc-con-bottom li span{ float:left; width:15%}
+.sDoc-con-bottom li span img{ float:left}
+.docH{ padding:15px 0px; background:url(../images/index_10.jpg) center no-repeat; font-size:18px; text-align:center}
+.dDoc{ width:48%; margin-bottom:10px;}
+.dDoo{ width:100%; position:relative}
+.dDoo span img{ position:absolute; width:18%; height:auto; left:41%; top:41%;}
+.dDoc p,.dDoc p a{ width:100%; height:26px; line-height:26px; font-size:14px; background:#ffffff; text-align:center; overflow:hidden; white-space:nowrap;text-overflow:ellipsis}
+.doc-ck{ width:100%; height:40px; line-height:40px; font-size:14px; text-align:center; border:1px solid #cccccc; background:#ffffff; display:inline-block; margin:0 auto; margin-top:10px}
+.doc-ck a{ width:100%; height:30px; display:block}
+.tDoc{ margin-top:3%;}
+.tDoc p a{ font-size:14px; width:22%; margin-right:3%; height:24px; line-height:24px; overflow:hidden; float:left; margin-top:3px; display:block; color:#999999}
+.dDoo-a{ width:45% !important;}
+.black{ color:#333333 !important}
+.tMain{ margin-top:10px;}
+.doc-cc { width:93.75%; margin:0 auto;}

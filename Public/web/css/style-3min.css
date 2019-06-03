@@ -1,0 +1,144 @@
+
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,textarea,p,th,td{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+fieldset,img{border:0;}
+li{list-style:none;}
+em,strong,th{font-style:normal;font-weight:normal;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select {*font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+/*  body  */
+body{font-size:12px;font-family:"微软雅黑";color:#333;}
+a:link,a:visited{color:#333;text-decoration:none;}
+a:hover{color:#a10000;text-decoration:none;}
+/* 
+a,area {blr:expression(this.onFocus=this.blur()) }   //IE
+a:focus {outline:none;}                              //FF
+*/
+.blank0{clear:both;display:block;font-size:1px;visibility:hidden;height:-1px;line-height:0;}
+.blank5{clear:both;display:block;font-size:1px;overflow:hidden;height:5px;}
+.blank8{clear:both;display:block;font-size:1px;overflow:hidden;height:8px;}
+.blank10{clear:both;display:block;font-size:1px;overflow:hidden;height:10px;}
+.blank12{clear:both;display:block;font-size:1px;overflow:hidden;height:12px;}
+.blank15{clear:both;display:block;font-size:1px;overflow:hidden;height:15px;}
+.blank20{clear:both;display:block;font-size:1px;overflow:hidden;height:20px;}
+.blank25{clear:both;display:block;font-size:1px;overflow:hidden;height:25px;}
+.blank8ie { clear:both; display:block; font-size:1px; overflow:hidden; }
+/*  head  */
+.headBg { background-color:#fa4c06; width:100%; }
+.headCon{ width:1200px; height:80px; margin:0px auto; font-size:14px; background-color:#fa4c06; }
+.chenshanLogo{ width:1200px; height:46px; background:#aa272c; display:none;}
+.chenshanLogo h1{ width:140px; height:46px;  margin:0px auto;}
+.chenshanLogo h1 a{ display:block; width:140px; height:46px;}
+.chenshanNav{  border-top:1px solid #f8f8f8; width:1200px; height:50px; overflow:hidden; background-color:#fa4c06;
+opacity: 0.75;
+filter:alpha(opacity=75);   
+}
+.chenshanNav ul { float:left; margin-top:4px; margin-left:20px;}
+.chenshanNav ul li.i1 { background-color:#990000}
+.chenshanNav ul li{ float:left; width:100px; height:44px; text-align:center; line-height:44px; }
+.chenshanNav ul li a{ display:block; width:100%; height:100%;}
+
+.chenshanNav ul li a:link,.chenshanNav ul li a:visited,.chenshanNav ul li a:hover,.chenshanNav ul li a:active{ color:#ffffff; }
+
+.chenshanNav ul li a:hover{ background:url(../images/index_bg.png) no-repeat center top; color:#fff;}
+.chenshanNav ul li a:active{ background:url(../images/index_bg.png) no-repeat center top; }
+.chenshanNav .fabuhui{ width:80px; line-height:50px; float:right;}
+/*  main  */  
+.cs-container{ margin:0px auto; /*width:1240px;*/ /*width:1200px;*/ height:auto; overflow:hidden;}	/*== cs-container的宽是显示器可视窗口的宽 ==*/
+.cs-container .section {
+	width:100%;
+	height:1200px;
+	overflow:hidden;
+} /*=== section的高也会随显示器可视高而改变 ===*/
+.cs-container .section .container {
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	z-index:5;
+}
+.cs-container .section .container .slide{ display:block; width:100%; height:100%; float:left; overflow:hidden; position:relative;}
+.cs-container .section-08 .container a{ display:block; width:100%; height:100%; }
+.cs-container .container .linkCon { margin:0px auto; width:980px; height:100%;}
+.cs-container .section-07 .container .linkCon a,.cs-container .section-13 .container .linkCon a{ display:block; width:185px; height:35px; float:left;}
+.cs-container .section-07 .container .linkCon a.link07-a{ margin:483px 0px 0px 126px;}
+.cs-container .section-07 .container .linkCon a.link07-b{ margin:482px 0px 0px 357px;}
+.cs-container .section-07 .container .linkCon a.link07-a:link,.cs-container .section-07 .container .linkCon a.link07-a:visited{ background:url(http://i4.vanclimg.com/cms/20140901/btnbx.png) no-repeat scroll 0px 0px;}
+.cs-container .section-07 .container .linkCon a.link07-a:hover{ background:url(http://i4.vanclimg.com/cms/20140901/btnbx.png) no-repeat scroll 0px -35px;}
+.cs-container .section-07 .container .linkCon a.link07-b:link,.cs-container .section-07 .container .linkCon a.link07-b:visited{ background:url(http://i4.vanclimg.com/cms/20140901/btnbx.png) no-repeat scroll -185px 0px;}
+.cs-container .section-07 .container .linkCon a.link07-b:hover{ background:url(http://i4.vanclimg.com/cms/20140901/btnbx.png) no-repeat scroll -185px -35px;}
+.cs-container .section-13 .container .linkCon a.link12-a{ margin:383px 0px 0px 672px;}
+.cs-container .section-13 .container .linkCon a.link12-b{ margin:23px 0px 0px 672px;}
+
+.cs-container .section-03 .container .selectBtn{ position:absolute; top:354px; left:50%; margin:0px 0px 0px -110px; width:212px; height:189px; padding:31px 0px 0px 28px; background:url(http://i1.vanclimg.com/cms/20140901/btnlink.jpg) no-repeat scroll 0px 0px;}
+.cs-container .section-03 .container .selectBtn a{ display:block; width:184px; height:34px; margin-bottom:29px;}
+.cs-container .section-03 .container .selectBtn a.selbtn-02{ margin-bottom:30px;}
+.cs-container .section-03 .container .selectBtn a.selbtn-01:hover{ background:url(http://i1.vanclimg.com/cms/20140901/btnhover.jpg) no-repeat scroll -28px -30px;}
+.cs-container .section-03 .container .selectBtn a.selbtn-02:hover{ background:url(http://i1.vanclimg.com/cms/20140901/btnhover.jpg) no-repeat scroll -28px -95px;}
+.cs-container .section-03 .container .selectBtn a.selbtn-03:hover{ background:url(http://i1.vanclimg.com/cms/20140901/btnhover.jpg) no-repeat scroll -28px -159px;}
+
+/*   bg   */
+.cs-container .section-01 .container{ background:url(../images/min_01.jpg) no-repeat scroll center 0px; }
+.cs-container .section-02 .container{ background:url(../images/min_02.jpg) no-repeat scroll center 0px; }
+.cs-container .section-03 .container{ background:url(../images/min_03.jpg) no-repeat scroll center 0px; }
+.cs-container .section-04 .container{ background:url(../images/min_04.jpg) no-repeat scroll center 0px; }
+
+.cs-container .section-05 .container .slide-1{ background:url(../images/min_05-01.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-2{ background:url(../images/min_05-02.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-3{ background:url(../images/min_05-03.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-4{ background:url(../images/min_05-04.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-5{ background:url(../images/min_05-05.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-6{ background:url(../images/min_05-06.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-7{ background:url(../images/min_05-07.jpg) no-repeat scroll center 0px; }
+.cs-container .section-05 .container .slide-8{ background:url(../images/min_05-08.jpg) no-repeat scroll center 0px; }
+
+.cs-container .section-06 .container{ background:url(../images/min_06.jpg) no-repeat scroll center 0px; }
+.cs-container .section-07 .container{ background:url(../images/min_07.jpg) no-repeat scroll center 0px; }
+.cs-container .section-08 .container{ background:url(../images/min_08.jpg) no-repeat scroll center center; }
+
+
+/*   js-css   */
+#superContainer {height: 100%;position: relative;}
+.section {position: relative;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.slide {float: left;}
+.slide, .slidesContainer {height: 100%;display: block;}
+.slides {height: 100%;overflow: hidden;position: relative;-webkit-transition: all 0.3s ease-out;-moz-transition: all 0.3s ease-out;-o-transition: all 0.3s ease-out;transition: all 0.3s ease-out;}
+.section.table, .slide.table {display: table; width: 100%;}
+.tableCell { display:block; vertical-align: middle;width: 100%;height: 100%;}/*   display: table-cell;  */
+.slidesContainer {float: left;position: relative;}
+.controlArrow {position: absolute;top: 50%;cursor: pointer;width: 0;height: 0;margin-top: -38px;}
+.controlArrow.prev,.controlArrow.next{ width:23px; height:35px;}
+.controlArrow.prev {left:195px; background:url(http://i1.vanclimg.com/cms/20140901/left_white.png) no-repeat scroll 0px 0px;}
+.controlArrow.next {right:195px; background:url(http://i1.vanclimg.com/cms/20140901/right_white.png) no-repeat scroll 0px 0px;}
+.scrollable {overflow: scroll;}
+.easing {-webkit-transition: all 0.7s ease-out;-moz-transition: all 0.7s ease-out;-o-transition: all 0.7s ease-out;transition: all 0.7s ease-out;}
+#fullPage-nav {position: fixed;z-index: 100;margin-top: -32px;top: 50%;opacity: 1;}
+#fullPage-nav.right {right: 17px;}
+#fullPage-nav.left {left: 17px;}
+.fullPage-slidesNav {position: absolute;z-index: 100;left: 50%;opacity: 1;}
+.fullPage-slidesNav.bottom {bottom: 17px;}
+.fullPage-slidesNav.top {top: 17px;}
+#fullPage-nav ul,.fullPage-slidesNav ul {margin: 0;padding: 0;}
+#fullPage-nav li,.fullPage-slidesNav li {display: block;width: 14px;height: 13px;margin: 9px;position:relative;}
+.fullPage-slidesNav li {display: inline-block;}
+#fullPage-nav li a,.fullPage-slidesNav li a {display: block;position: relative;z-index: 1;width: 100%;height: 100%;cursor: pointer;text-decoration: none;}
+#fullPage-nav li .active span,.fullPage-slidesNav .active span {background: #333;}
+#fullPage-nav span,.fullPage-slidesNav span {top: 2px;left: 2px;width: 14px;height: 14px;/*border: 1px solid #000;background: rgba(0, 0, 0, 0);-webkit-border-radius: 50%;-moz-border-radius: 50%;*/border-radius: 50%; position: absolute;z-index: 1; background:url(../images/nav-bg.png) center no-repeat; }
+.fullPage-tooltip {position: absolute;color: #fff;font-size: 14px;font-family: arial, helvetica, sans-serif;top: -2px;}
+.fullPage-tooltip.right {right: 20px;}
+.fullPage-tooltip.left {left: 20px;}
+
+/*** 文字style ***/
+.fon { line-height:26px; font-size:16px; overflow:hidden; }
+.fon span { display:block; font-size:30px; padding-bottom:20px; font-weight:bold; }
+.con-2 { padding-top:288px; text-align:center; } .con-2 span { color:#000000; } .con-2 p { color:#696969; }
+.con-3 { color:#ffffff; width:335px; height:195px; padding:284px 0 0 574px; }
+.con-4 { color:#fff; width:335px; height:121px; padding:298px 0 0 575px; }
+.con-6 { width:368px; padding:305px 0 0 550px; }
+.con-7 { width:350px; height:100px; padding:307px 0 0 83px; color:#fff; }
+
+.con-5 { padding:447px 0 0 88px; width:328px; color:#ffffff; float:left; }
+	.con-5-1 { width:280px; height:140px; padding:265px 0 0 212px; text-align:center; display:table-cell; vertical-align:middle; }
+

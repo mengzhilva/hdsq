@@ -1,0 +1,834 @@
+<style>
+@charset "utf-8";
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family:Microsoft YaHei;
+	font-size: 28px;
+	color: #666;
+}
+a{
+	text-decoration: none;
+	font-weight: normal;
+}
+input { -webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; }
+/*h1,h2,h3{
+	font-weight: normal;
+}*/
+/*Fix Float BUG 万能闭合*/
+.clearfix:after {
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+ line-height: 0px;
+}
+.fl {
+float: left;
+}
+.fr {
+float: right;
+}
+.clear{
+	clear: both;
+}
+/*公用头部分*/
+body{
+	background: #eeeeee;
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #666666;
+	line-height: 1;
+}
+.wapM{
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	padding-bottom: 50px; 
+}
+header {
+	background-color: #ffffff;
+	padding: 15px 3.125%;
+}
+header h1 { 
+	font-size:1px;
+	height: 13px;
+	line-height: 12px;
+}
+.city-name { 
+	width:55px; 
+	height:13px; 
+	border:1px solid #ea5404; 
+	border-radius:2px; 
+	background:url(http://m.sc.cc/Public/2016/images/dowbArrow.png) no-repeat 50px 4px; 
+	background-size:11px; 
+	padding-right:12px; 
+	line-height:12px; 
+	text-align:center; 
+}
+.city-name a { 
+	color:#ea5404;
+	font-size: 12px;
+}	
+/* mBanner */
+.mBanner{
+	width: 100%;
+}
+.mBanner img { 
+	width:100%; 
+	height:auto; 
+}
+.relative {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+/*public scroll*/
+.scroll{margin:0px auto;max-width:640px;}
+.scroll_box{overflow:hidden;visibility:hidden;position:relative;}
+.scroll_wrap{overflow:hidden; position:relative;}
+.scroll_wrap li{position:relative;display:block;width:100%;float:left;}
+.scroll_wrap li a{display:block;margin:0 auto;position:relative;}
+.scroll_position{position:absolute;left:45%;z-index:400px;bottom:5px;}
+.scroll_position li{display:inline-block;width:10px;height:10px;border-radius:10px;background:#fff;}
+.scroll_position li a{font-size:0;}
+.scroll_position li.on{background-color:#ffd800;}
+.scroll_position_bg{position:absolute;bottom:12px;left:42%;padding:0 15px;z-index:380px;height:26px;border-radius:26px;}
+/*主体部分*/
+.mMain{
+	width: 100%;
+	padding-top: 5px;
+}
+.mainNav{
+	background-color: #ffffff;
+	padding: 13px 3.125%;
+}
+.mainNav ul{
+	padding: 0px;
+}
+.mainNav ul li{
+	width: 25%;
+	height: auto;
+	text-align: center;
+	float: left;
+	list-style: none;
+}
+.mainNav ul li a{
+	display: block;
+}
+.mainNav ul li a img{
+	width: 50px;
+	height: 50px;
+	margin: 0 auto 2.5px;
+}
+.mainNav ul li a h3{
+	height: 20px;
+	line-height: 20px;
+	font-weight: normal;
+}
+.mainNav ul li a:hover h3{
+	color: #fa4c06;
+}
+/*快速报价部分*/
+.ksbj{
+	padding: 13px 3.125%;
+	padding-bottom: 8px;
+	position: relative;
+}
+.ksbj select{
+	width: 48%;
+	height: 62px;
+	line-height: 62px;
+	/*margin-right: 1.705%;*/
+	color: #666;
+	margin-bottom: 5px;
+}
+.ksbj input{
+	width: 47.95%;
+	text-indent: 3px;
+	height: 62px;
+	line-height: 62px;
+	margin:0px;
+	padding: 0px;
+	color: #666;
+	margin-bottom: 5px;
+	border:1px solid #bbb;	
+	background: #fff;
+	/* background:#fff url(http://m.sc.cc/Public/2016/images/pmBg.png) no-repeat right center; */
+	background-size: 15px 16px;
+	border-radius: 3px;
+}
+input#ksbjBtn{
+	width: 99.5%;
+	height: 62px;
+	line-height: 62px;
+	background: #fa4c07;
+	border-radius: 5px;
+	border:none!important;
+	color: #fff;
+	margin-top:5px;
+	cursor: pointer;
+	font-size:28px;
+}
+/*理想装部分*/
+.lxzBar{
+	width: 100%;
+	height: 133px;
+	background:url(../images/88Bg.png) no-repeat center top;
+}
+.lxzBar h1{
+	width: 100%;
+	text-align: center;
+	color: #e94f06;
+	font-size: 34px;
+	padding-top: 25px;
+	font-family: Microsoft YaHei;
+}
+.lxzBar span{
+	width: 100%;
+	height:20px;
+	line-height: 20px;
+	text-align: center;
+	display: block;
+	color:#010000;
+	font-size: 12px;
+	padding-top: 5px;
+}
+/*家装清单*/
+.jzqd{
+	width: 100%;
+	height: auto;
+	/*position: relative;*/
+	margin:0px;
+	padding: 0px;
+}
+.jzqd img{
+	vertical-align: middle;
+	width: 100%;
+}
+.jzqd p{
+	position: absolute;
+	color: #ffff00;
+	font-size: 28px;
+	height: 18px;
+	line-height: 18px;
+}
+.jzqdKj,.jzqdZc{
+	width: 100%;
+	position: relative;
+}
+.jzqdKj img,.jzqdZc img{
+	border-bottom: 1px solid #fff;
+}
+.jzqdKj p.jzqd01{
+	width: 46.875%;
+	top:33.15%;
+	left: 2.46375%;
+}
+.jzqd span{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 20px;
+	background: #ff0000;
+	color: #ffff00;
+	display: inline-block;
+	text-align: center;
+}
+.jzqdZc  p.jzqd02{
+	width: 70%;
+	height:auto;
+	top:33.928%;
+	left: 2.46375%;
+	line-height: 14px;
+}
+.jzqdZc  p.jzqd02 span{
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	border-radius: 18px;
+}
+p.jzqd03{
+	width: 56.25%;
+	top:33.928%;
+	left: 2.46375%;
+	line-height: 16px;
+}
+.mFtBanner{
+	width: 100%;
+	height: auto;
+	margin-top:5px;
+}
+.mFtBanner img{
+	width: 100%;
+}
+.zxqg{
+	padding: 13px 3.125%;
+}
+a.zxzxBtn{
+	width: 48%;
+	height: 28px;
+	line-height:28px;
+	background: #fff;
+	border:1px solid #fa4c06;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	text-align: center;
+	color: #fa4c06;
+	font-size: 28px;
+}
+a.ljqgBtn{
+	width: 48%;
+	height: 28px;
+	line-height:28px;
+	background: #fa4c06;
+	border:1px solid #fa4c06;
+	border-radius: 5px;
+	display: block;
+	float: right;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+.lxzBar h2{
+	width: 100%;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+	color: #fa4c06;
+	font-weight: normal;
+	font-size: 20px;
+}
+/*装修案例主体部分*/
+.mZxalM{
+	padding:10px 0.9375%;
+	background: #fff;
+	margin-bottom: 5px;
+}
+.zxalLeft{
+	width: 35.03%;
+	float: left;
+	height: auto;
+}
+.zxalRight{
+	width: 63.70%;
+	height: auto;
+	float: right;
+	position: relative;
+}
+.zxalLTop{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.zxalLTop img{
+	width: 100%;
+}
+.zxalLTopM{
+	padding:13px 2.941px;
+	background: #13b5b1;
+	border:2px solid #fff;
+}
+.zxalLTop h1{
+	font-size: 18px;
+	color:#ffffff;
+	height: 24px;
+	line-height: 24px;
+	position: absolute;
+	top:26.77125%;
+	left: 11.236%;
+}
+.zxalLTop p{
+	font-size: 12px;
+	color:#ffffff;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	top:60.63%;
+	left: 11.236%;
+}
+.zxalLBt{
+	width: 100%;
+	height: auto;
+	margin-top:2%;
+	position: relative;
+}
+.zxalLBt img{
+	width: 100%;
+
+}
+.zxalLBt .zxalInfo{
+	position: absolute;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	bottom: 2px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	color: #ffffff;
+	background: rgba( 0, 0, 0, 0.4 );
+	overflow: hidden;
+}
+.zxalRight img{
+	width: 100%;
+}
+.zxalRight .zxalInfo{
+	position: absolute;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	bottom: 2px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	color: #ffffff;
+	background: rgba( 0, 0, 0, 0.4 );
+	overflow: hidden;
+}
+/*设计师部分*/
+.mSjsm{
+	padding:0px 1.5625%;
+}
+.msjs{
+	width: 49.1935%;
+	height: auto;
+	margin-top:5px;
+}
+.msjs img{
+	width: 100%;
+	height: auto;
+}
+.msjsInfo{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding:13px 0px;
+	text-align: center;
+	margin-top:1px;
+}
+.msjsInfo h2{
+	color: #000000;
+	font-size: 28px;
+	font-family: Microsoft YaHei;
+	height: 20px;
+	line-height: 20px;
+}
+.msjsInfo p{
+	width: 100%;
+	height: 18px;
+	line-height: 18px;
+	color: #000000;
+	font-size: 28px;
+
+}
+a.moreSjs,a.moreGl{
+	width: 93.75%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #666666;
+	font-size: 28px;
+	background: #fff;
+	display: block;
+	margin: 13px auto;
+	border-radius: 5px;
+	border:1px solid #c9c9c9;
+}
+a.moreZal{
+
+}
+.mzxgl{
+	padding:9px 3.125%;
+}
+.mzxglM{
+	width: 100%;
+	background: #fff;
+	padding-bottom: 4px;
+	margin-bottom: 5px;
+}
+.mzxgl img{
+	width: 100%;
+
+}
+.mzxgl ul{
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+.mzxgl ul li{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #eee;
+	list-style: none;
+	text-indent: 5px;
+	color: #333333;
+	font-size: 12px;
+}
+.mzxgl ul li a{
+	width: 100%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	color: #333333;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+}
+.mzxgl ul li a:hover{
+	color: #fa4c06;
+}
+.mzxgl ul li:last-child{
+	border-bottom: none;
+}
+a.moreGl{
+	width: 100%;
+}
+.wapM .footer{
+	width: 100%;
+	height: 49px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	padding: 0px;
+	border-top:1px solid #a7a7a7;
+}
+.wapM .footer ul{
+	background: #fff;
+}
+.wapM .footer ul li{
+	width: 20%;
+	padding-top:10px;
+	padding-bottom: 10px;
+	float: left;
+	position: relative;
+	text-align: center;
+	list-style: none;
+}
+.wapM .footer ul li a{
+	display: block;
+}
+.wapM .footer ul li img{
+	width: 16px;
+	height: 16px;
+	margin: 0 auto;/*
+	margin-bottom: 5px;*/
+}
+.wapM .footer ul li span{
+	width: 100%;
+	height: 13px;
+	line-height: 20px;
+	display: block;
+	text-align: center;
+}
+/*报价弹出框*/
+.bjTck{
+	position: absolute;
+	top:0%;
+	left: 3.125%;
+	width: 93.75%;
+	height: auto;
+	z-index:999;
+	border:1px solid #999;
+	border-radius: 10px;
+	background: #ffffff;
+	display: none;
+}
+.bjTckTop{
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	background: #eeeeee;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	text-indent: 10px;
+}
+.bjTckTop h1{
+	width: 50%;
+	height: 34px;
+	line-height: 34px;
+	float: left;
+	display: block;
+	font-family: Microsoft YaHei;
+	color: #666666;
+	font-size: 14px;
+	font-weight: normal;
+}
+.closeBtn{
+	width: 22px;
+	height: 22px;
+	margin-top:6px;
+	float: right;
+	margin-right: 10px;
+	background: url(http://m.sc.cc/Public/2016/images/closeBtn.png) no-repeat left center;
+	background-size: 100%; 
+	cursor:pointer;
+}
+.bjTckMain{
+	width: 93.72%;
+	height: auto;
+	margin: 0 auto;
+}
+.bjTckMain p{
+	width: 100%;
+	height: auto;
+	line-height: 20px;
+	padding:10px 0px;
+	font-size: 12px;
+}
+.mYgbj{
+	width: 100%;
+	height: 100%;
+	line-height: 29px;
+}
+.mYgbj span{
+	float: left;
+	height: 29px;
+	line-height: 29px;
+	width: 45%;
+	display: block;
+	font-weight: bold;
+	color: #333333;
+	font-size: 12px;
+}
+a.mYgbjTel{
+	display: block;
+	width: 43.74%;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+	float: right;
+	background: #fa4c06 url(http://m.sc.cc/Public/2016/images/tel.png) no-repeat 24.2% center;
+	background-size: 8%;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 12px;margin-top: 26px;
+	font-family: Microsoft YaHei;
+}
+.mYgbjZc{
+	width: 100%;
+	height: 29px;
+	line-height: 29px;
+	background:#fa4c06;
+	margin-top:10px;
+	margin-bottom: 20px;
+	text-align: center;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	cursor: pointer;
+}
+.bj-button{ background:#ffffff !important; color:#fa4c06 !important; height:38px; line-height:38px; border:#fa4c06 1px solid !important; }
+.no-bac{ background:#ffffff !important}
+
+.bj-button-false{ background:#ddd !important; color:#999 !important; height:38px; line-height:38px; border:#ccc 1px solid !important; }
+</style>
+	<div class="wapM">
+		<div class="mMain">
+			<div class="ksbj">
+				<form id="mbj_chajian" action="{:U('/Index/jisuan/city/'.$city)}" method="post">
+					<input type="hidden" name="utm_source" value="{$utm_source}">
+					<input type="hidden" name="utm_term" value="{$utm_term}">
+					<input type="hidden" name="Promoterid" value="{$Promoterid}">
+					<input type="hidden" name="PromoterName" value="{$PromoterName}">
+					
+					<input type="text" name="NAME"  placeholder="姓名" />
+					<input type="text" name="PHONE" maxlength="11" placeholder="电话" />
+					<select name="old">
+						<option value="1" >新房装修</option>
+						<option value="2" >老房装修</option>
+					</select>
+					<input type="text" name="area"  placeholder="建筑面积" />
+	         <input type="text" name="checkCode"   size="4" maxlength="4" class="mInputName" placeholder="验证码" />
+                    <input type="button" name="yanCode" onclick="sendcode(this)" value="获得验证码" class="bj-button">			
+                  <!--   <input type="text" name="NAME" value="" class="mInputName no-bac" placeholder="验证码" />
+                    <input type="button" name="" value="获得验证码" class="bj-button">-->
+                    <input type="button" id="ksbjBtn"
+					<if condition="$vo['image'] ==''"> value="快速报价"
+						    <else /> 
+								style="background:url(http://www.sc.cc/{$vo['image']});    background-repeat: no-repeat;
+    background-size: 100%;"
+							</if>
+							 /> 
+				</form>
+				<div class="bjTck">
+					<div class="bjTckTop clearfix">
+						<h1>装修报价</h1>
+						<div class="closeBtn"></div>
+					</div>
+					<div class="bjTckMain">
+						<p>本次报价仅供参考，实际价格需以设计师的最终报价为准。</p>
+						<div class="mYgbj clearfix">
+							<span id="jisuanjiage" style="height:100%"></span>
+							<a href="tel:<if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if>" class="mYgbjTel">电话咨询</a>
+						</div>
+						<div class="mYgbjZc">收起</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+function sendcode(obj){
+	var self = $(obj).parent('form#mbj_chajian');
+	
+	if(!$.trim($('input[name="NAME"]').val())){
+		alert('请输入您的称呼');
+		return false;
+	}
+	if(!$.trim($('input[name="PHONE"]').val())){
+		alert('请输入手机号码');
+		return false;
+	}
+
+	if ( self.find('input[name="area"]').val().match(/^\d{1,4}\.{0,1}\d{0,2}$/) == null || self.find('input[name="area"]').val() == '' ) { 
+		alert('请输入合法面积');
+		 return false;
+	};
+
+	var phone =$.trim($('input[name="PHONE"]').val());
+	var length =$.trim($('input[name="PHONE"]').val()).length;
+	var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+	
+	 if(!(length == 11 && mobile.test(phone))){
+	 	alert("请正确填写您的手机号码");
+	 	return false;
+	 }
+	
+	var codeNum=0;
+	var timmer;
+	var flages = 1;
+	if(!flages){
+		return ;
+	}else{
+		//safeAccunt();//账户安全--获取手机验证码
+		$.ajax({
+			type: "post",
+			url: "{:U('Index/mcode')}",
+			data: {phone:phone},	
+			dataType: "json",
+			success: function(data){
+			          if(data==1){
+			          		$('input[name="yanCode"]').attr('onclick',' ');
+			          		timmer=setInterval(codeTime,1000);
+			          		$('input[name="yanCode"]').prop('class','bj-button-false');
+			          }else{	
+			          		return false;
+			          }
+			}
+		})
+			
+	}
+		  
+
+	function codeTime(){
+		codeNum++;
+		$('input[name="yanCode"]').val('('+(30-codeNum)+') 秒后系统重新发送！');
+		if(codeNum>30){
+			$('input[name="yanCode"]').prop('class','bj-button');
+			$('input[name="yanCode"]').attr('onclick','sendcode(this)');
+			codeNum=0;
+			clearInterval(timmer);
+			$('input[name="yanCode"]').val("再次获取短信校验码");
+			   //alert('哈哈！验证码收到没？没收到继续获取哦！！！')
+		};
+	};//codeTime end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	$(function(){
+		//$(".ksbj select:even").css({"margin-right":"2.55%"});
+		$(".closeBtn,.mYgbjZc").click(function(){
+			$(".bjTck").hide();
+		});
+
+		$("#ksbjBtn").click(function(){
+		var self = $('form#mbj_chajian');
+
+		// alert( self.find('input[name="area"]').val().match(/^\d{11}$/) );
+		if ( self.find('input[name="area"]').val().match(/^\d{1,4}\.{0,1}\d{0,2}$/) == null || self.find('input[name="area"]').val() == '' ) { 
+			alert('请输入合法面积');
+			 return false;
+		};
+		if ( self.find('input[name="NAME"]').val() == '' ) { 
+			alert('请输入姓名');
+			 return false;
+			};
+		if ( self.find('input[name="PHONE"]').val().match(/^1[3|4|5|8|7][0-9]\d{8}$/) == null || self.find('input[name="PHONE"]').val() == '' ) { 
+			alert('请输入合法电话');
+			 return false;
+			};
+
+
+		//判断验证码是否正确
+		if(!$.trim($('input[name="checkCode"]').val())){
+				alert('请输入验证码');
+				return false;
+		}else{
+				var mobile = /^\d{4}$/;
+				var length = $.trim($('input[name="checkCode"]').val()).length;
+				var yzm =$.trim($('input[name="checkCode"]').val());
+				if(!(length == 4 && mobile.test(yzm))){
+				 	alert("请正确填写验证码");
+				 	return false;
+				}
+				
+			$.ajax({
+				url: "{:U('Index/check_yzm')}",
+				type: 'post',
+				async: false,
+				dataType: 'json',
+				data: {yzm: yzm},
+				success:function(msg){
+						if(msg.status==0){
+							alert('验证码错误！');
+							res_status=0;	
+						}else{
+							res_status =1;
+						}
+					}
+				})
+				
+			}
+
+		if(res_status){
+			var self = $('form#mbj_chajian');
+			$.post(self.attr('action'), self.serialize(),function(data){
+				ga('send', 'event', 'huodong', 'tijiao', 'huodong', 350);
+				if (data.status) {
+					$('#jisuanjiage').html('预估价格：' + data.info + '元');
+					$(".bjTck").show();
+				} else {
+					$('#jisuanjiage').html(data.info);
+					$(".bjTck").show();
+				}
+				
+			}, 'json');
+			return false;	
+		}
+		
+			//$('#mbj_chajian').submit();
+			
+		});
+	});
+		
+	</script>

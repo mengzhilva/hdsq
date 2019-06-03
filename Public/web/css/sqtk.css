@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*********************我的订单--申请退款style开始****************************************/
+.sqtkCon{border: 1px solid #dbdbdb; height:auto; width:880px; overflow:hidden; padding-bottom:20px;}
+.sqtkh3{ width:880px; height:35px; background:#ededeb; border-bottom:1px solid #dbdbdb; font-size:14px; font-weight:bold; line-height:35px; padding-left:20px;}
+.sqtkConTable{ margin-left:20px; width:860px; margin-top:20px; display:inline}
+.sqtkConTabletd1{ font-size:16px; color:#666666; font-weight:bold}
+.sqtkConTabletd2{ color:#ff0000; font-size:16px;}
+.sqtkConTabletextarea{ width:96%; height:110px; border:#dbdbdb solid 1px; color:#696969}
+.hrr{ height:1px; width:880px;border-top: 1px solid #dbdbdb; margin-top:20px; display:inline}
+.sqtkConTabletd3{font-size:16px; color:#696969;}
+.sqtkConTabletext{border: 1px solid #dbdbdb; width:200px; height:30px; line-height:30px; color:#999; padding-left:5px;}
+.sqtkConTablespan{ color:#999899; font-size:14px; padding-left:10px;}
+.sqtkConbtn{ width:880px; margin-top:30px;display:inline}
+.sqtkConbtn .sqtkConbtnp{ margin-left:300px; display:inline}
+.quxiao{ margin-left:15px; background:#f6efe9; color:#fa4c06; border:#e6c7a5 1px solid}
+.sqtkConTableSelect{border: 1px solid #dbdbdb; width:80px; height:30px; line-height:30px; margin-right:10px; color:#696969}
+.sqtkConTabletext1{ width:310px;}
+.sqtkConbtn .sqtkConbtnp1{ margin-left:230px; display:inline}
+.sqtkConTablespa{ font-weight:normal}
+
+
+
+
+/*********************我的订单--申请退款style结束****************************************/

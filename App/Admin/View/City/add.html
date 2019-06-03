@@ -1,0 +1,102 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/listcity/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$info.ID}"/>
+		<div class="pageFormContent nowrap" layoutH="60"  >
+			<dl>
+				<dt>城市：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="name" value="{$info.NAME}"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>域名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="DOMAIN" value="{$info.NAME}"/></dd>
+			</dl>
+			<dl>
+				<dt>SEO标题：</dt>
+				<dd><input type="text"    style="width:100%" name="SEONAME" value="{$info.SEONAME}"/></dd>
+			</dl>
+			<dl>
+				<dt>SEO关键字：</dt>
+				<dd><input type="text"   style="width:100%" name="SEOKEYWORD" value="{$info.SEOKEYWORD}"/></dd>
+			</dl>
+			<dl>
+				<dt>SEO描述：</dt>
+				<dd><input type="text"    style="width:100%" name="SEODESCRIPTION" value="{$info.SEODESCRIPTION}"/></dd>
+			</dl>
+			<dl>
+				<dt>地址：</dt>
+				<dd><input type="text" class=""  style="width:100%" name="address" value="{$info.address}"/></dd>
+			</dl>
+			<dl>
+				<dt>套餐类型：</dt>
+				<dd>
+				<select name="PTYPE">
+				<option value="1" <if condition="$info['PTYPE'] eq 1">selected</if>>369系</option>
+				<option value="2" <if condition="$info['PTYPE'] eq 2">selected</if>>S369系</option>
+				</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>售前电话：</dt>
+				<dd><input type="text"   style="width:100%" name="TELEPHONE" value="{$info.TELEPHONE}"/></dd>
+			</dl>
+			<dl>
+				<dt>售后电话：</dt>
+				<dd><input type="text"   style="width:100%" name="PHONE" value=""/></dd>
+			</dl>
+			<dl>
+				<dt>状态：</dt>
+				<dd>
+				
+				<select name="STATE">
+					<option value="0" <if condition="$info['STATE'] eq 0">selected</if>>营业</option>
+					<option value="1" <if condition="$info['STATE'] eq 1">selected</if>>关闭</option>
+				</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>88理想装上线状态：</dt>
+				<dd>
+				
+				<select name="up">
+					<option value="0" <if condition="$info['up'] eq 0">selected</if>>下线</option>
+					<option value="1" <if condition="$info['up'] eq 1">selected</if>>上线</option>
+				</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>乐语公司ID：</dt>
+				<dd><input type="text"    style="width:100%" name="LEYUCID" value="{$info.LEYUCID}"/></dd>
+			</dl>
+			<dl>
+				<dt>乐语公司ID：</dt>
+				<dd><input type="text"   style="width:100%" name="LEYUFID" value="{$info.LEYUFID}"/></dd>
+			</dl>
+			<dl>
+				<dt>乐语分组ID：</dt>
+				<dd><input type="text"   style="width:100%" name="LEYUGID" value="{$info.LEYUGID}"/></dd>
+			</dl>
+
+			<dl>
+				<dt>地图:	<br>576px*331px </dt>
+				<dd>
+					<div style="display:block;width:500px;">
+					<img id="uploadimg" src="" style="display:block;float:left;" width="300" height="200" >
+						<a class="button" href="__MODULE__/Demo/upindex/width/576/height/331"  target="dialog"><span>上传地图</span></a>
+						</div>
+					<input type="hidden" style="width:100%" name="mapimg" id="background" class="valid">
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

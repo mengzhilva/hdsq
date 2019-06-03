@@ -1,0 +1,72 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+    <input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" />
+    <input type="hidden" name="_order" value="{$Think.request._order}"/>
+    <input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li><a class="add" href="__CONTROLLER__/add" target="navTab"  rel="addnewsclass" title="添加新闻分类"><span>添加</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/del/ids/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}" target="ajaxTodo" postType="string" title="确定要删除吗?"><span>删除</span></a></li>
+            <li><a class="edit" href="__URL__/edit/ClassID/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}"   target="navTab" rel="editnewsclass" title="编辑新闻分类"><span>编辑</span></a></li>
+            <li class="line">line</li>
+            <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="75">
+        <thead>
+            <tr>
+            <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                <th width="50" orderField="ClassID"  class="asc">ID</th>
+                <th width="150" orderField="ClassName" >新闻类型</th>
+                <th width="150" orderField="ClassNote">便签</th>
+                <th width="150" orderField="OrderID">排序</th>
+                <th width="100" >基本操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="classlist">
+                <tr target="item_id" rel="{$classlist.ClassID}">
+                    <td><input name="ids" value="{$classlist.ClassID}" type="checkbox"></td>
+                    <td>{$classlist.ClassID}</td>
+                    <td>{$classlist.ClassName}</td>
+                    <td>{$classlist.ClassNote}</td>
+                    <td>{$classlist.OrderID}</td>
+                    <td><a class="edit" href="__URL__/edit/ClassID/{$classlist.ClassID}" target="navTab" rel="editnewsclass" title="编辑新闻分类">编辑</a>&nbsp;<a class="delete" href="__CONTROLLER__/del/ids/{$classlist.ClassID}" target="ajaxTodo" postType="string" title="确定要删除吗?">删除</a></td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <div class="panelBar">
+        <div class="pages">
+            <span>显示</span>
+            <select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+                <option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+                <option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+                <option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+                <option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+                <option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+            </select>
+            <span>共{$totalCount}条</span>
+        </div>
+        <div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+    </div>
+</div>
+<script type="text/javascript">
+        //定义函数处理选择框的选择
+           function doSelect(m){
+                //获取上面所有的input节点
+                var list = document.getElementsByTagName("input");
+                //遍历
+                for(var i=0;i<list.length;i++){
+                    //判断如何选择中
+                    switch(m){
+                        case 0: list[i].checked=true;   break; //全选
+                        case 1: list[i].checked=false;  break; //全不选
+                        case 2: list[i].checked=!list[i].checked;  break; //反选
+                    }
+                }
+           }
+        </script>

@@ -1,0 +1,697 @@
+<html>
+    <head>
+        <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <if condition="$chajiantyle eq '1'">
+        <link href="__PUBLIC__/css/hddisplay.css" rel="stylesheet" type="text/css" />
+        <else/>
+        <link href="__PUBLIC__/css/hddisplaynew.css" rel="stylesheet" type="text/css" />
+    </if>
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/hd_nav.css" />
+    <link href="__PUBLIC__/css/hd.css" rel="stylesheet" type="text/css" />
+    <eq name="list['Title']" value="88理想装">
+    <title>{$cityinfo.NAME}装修套餐_家庭装修套餐_理想装-实创装饰集团官方网站</title>
+    <meta name="keywords" content="{$cityinfo.NAME}装修套餐,家庭装修套餐,理想装" />
+    <meta name="description" content="实创装饰集团理想装专区{$cityinfo.NAME}装修套餐致力于装修设计、大包全包装修,打破套餐装修陷阱,真正省心、省钱。最贴心的家装服务，多年装修经验，数十万个家庭的选择。查找{$cityinfo.NAME}装修套餐的内容就上实创集团理想装专区。" />
+
+    <else />
+    <title>{$list['Title']} — 实创装饰集团{$cityinfo.NAME}公司</title>
+    </eq>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/zDialog.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/zDialogdzp.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/newhd/js/placeholder.min.js"></script>
+    <script src="__JS__/jquery.validate.js"></script>
+    <script src="__JS__/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="__CSS__/jquery-ui.min.css" media="screen"/>
+    <script>
+
+        $.validator.setDefaults({
+            submitHandler: function () {
+
+            },
+            showErrors: function (map, list) {
+                // there's probably a way to simplify this
+                var focussed = document.activeElement;
+                if (focussed && $(focussed).is("input, textarea")) {
+                    $(this.currentForm).tooltip("close", {
+                        currentTarget: focussed
+                    }, true)
+                }
+                this.currentElements.removeAttr("title").removeClass("ui-state-highlight");
+                $.each(list, function (index, error) {
+                    $(error.element).attr("title", error.message).addClass("ui-state-highlight");
+                });
+                if (focussed && $(focussed).is("input, textarea")) {
+                    $(this.currentForm).tooltip("open", {
+                        target: focussed
+                    });
+                }
+            }
+        });
+        // 手机号码验证
+        jQuery.validator.addMethod("isMobile", function (value, element) {
+            var length = value.length;
+            var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+            return this.optional(element) || (length == 11 && mobile.test(value));
+        }, "请正确填写您的手机号码");
+
+    </script>
+</head>
+
+<style>*{margin:0px;}
+    body{overflow-x:hidden;height:{$list['height']}px;background:{$list['backgroundcolor']};} 
+    .root{position: relative;}
+    .img{z-index:-1; position:absolute;}
+    .tou{background:#fff;}
+    .lineKefu{position: absolute!important;}
+    /*	#newHdcj .nextpage{_position: absolute;_bottom:0px; left:0px;}
+            #newHdcj .xf_b{ margin-left:auto !important; margin-right:auto !important}*/
+
+    #newHdcj .baom_rightF {_position: absolute !important;_bottom:0px !important; _right:0px !important  ;}
+
+
+
+</style>
+<body>
+
+    <neq name="id" value="4126">
+    <!----> <div class="tou">
+        <!--<div class="hdTop">
+                <map name="Map01" id="Map01">
+                  <area shape="rect" coords="99,5,261,51" href="{:C('scurl')['INDEX_INDEX']}" target="_blank">
+                </map>
+                <img src="__PUBLIC__/images/Home/zt_top2.jpg" alt="" width="1200" height="53" border="0" usemap="#Map01">
+                <div class="nav">
+                        <span><a href="{:C('scurl')['INDEX_INDEX']}" target="_blank">首页</a></span><span><a href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}{:C('scurl')['GHOUZHUI']}" target="_blank">理想装</a></span><span><a href="{:C('scurl')['XIAOGUOTU_HOMEPIC']}" target="_blank">效果图</a></span><span><a href="{:C('scurl')['DESIGNER_INDEX']}" target="_blank">设计师</a></span><span><a href="{:C('scurl')['GONGLUE_INDEX']}{:C('scurl')['GHOUZHUI']}" target="_blank">装修知识</a></span><span><a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a></span>
+                </div>
+                <div class="zt_ph">24小时热线：<span>{$PromoterTel}</span></div>
+        </div>-->
+        <div class="hdTop"><div class="spNav" style="height: 53px">
+                <a href="{:C('scurl')['INDEX_INDEX']}" target="_blank"><div class="spLogo"><img src="__PUBLIC__/images/hd_top.png"></div></a>
+                <ul>
+                    <li><a href="{:C('scurl')['INDEX_INDEX']}" target="_blank" class="cur">首 页</a></li>
+                    <li><a href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}{:C('scurl')['GHOUZHUI']}" target="_blank">理想装</a></li>
+                    <li><a href="{:C('scurl')['XIAOGUOTU_MEITU']}" target="_blank">家装案例</a></li>
+                    <li><a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a></li>
+                    <li><a href="{:C('scurl')['DESIGNER_INDEX']}" target="_blank">设计师</a></li>
+                    <li><a href="{:C('scurl')['CASES_INDEX']}" target="_blank">小区装修</a></li>
+                    <li><a href="{:C('scurl')['GONGLUE_INDEX']}{:C('scurl')['GHOUZHUI']}" target="_blank">装修知识</a></li>
+                    <li><a href="{:C('scurl')['ABOUT_INDEX']}" target="_blank">关于实创</a></li>
+                </ul>
+                <div class="spRight"><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></div>
+            </div></div>
+    </div> 
+    </neq>
+
+    <script type="text/javascript">
+        function dzp(cjid) {
+
+            var diag = new Dialogdzp();
+            diag.Width = 850;
+            diag.Height = 440;
+            diag.Title = "我要报名";
+            diag.URL = "{:C('scurl')['WXDZP_INDEX']}" + "?cjid=" + cjid + "&t=1";
+            diag.show();
+            $("#_DialogDiv_1").show();
+        }
+        function tijiaos(i) {
+            if (i != 0) {
+
+                if (i == 9999990) {
+                    ga('send', 'event', 'huodong', 'tijiao', 'huodongdizhi', 350);
+                } else {
+                    ga('send', 'event', 'huodong', 'tijiao', 'huodongbaoming', 350);
+                }
+                var form = $("#form" + i);
+                form.submit();
+            }
+        }
+    </script>
+
+    <div class="root" id="root" style="left: 0;width:{$list['width']}px;height:{$list['height']}px;">
+
+
+
+        <volist name="chajians" id="vo">
+            <if condition="$vo['chajianID'] eq 1">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='hbmk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 2">
+                <empty name="vo['color']"><assign name="vo['color']" value="#0f0f0f" /></empty>
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='zbmk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 3">
+
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"
+                   <if condition="$vo.url eq null"> 
+                        href="javascript:baom()"
+                        <else/> 
+                        <if  condition="$Promoterid eq '0'">
+                            href="{$vo.url}" target="_blank"
+                            <else/>
+                            href="#"
+                        </if>
+                    </if>>
+
+                    <include file='rdlj'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 4">
+
+                <div style="position:absolute;text-align: center;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='phone'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 5">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:openphone()">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 6">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="#{$vo['url']}">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 7">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  name="{$vo['cid']}" id="{$vo['cid']}">		
+                    <include file='phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 8">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='gdk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 9">
+                <div  style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <iframe  src="{:C('scurl')['HD_INDEX']}hdp/id/{$vo['cid']}/width/{$vo['width']}/height/{$vo['height']}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 10">
+                <div id="{$vo['url']|strrchr='/'|substr=1}" class="{$Promoterid}" style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <iframe  src="{$vo.url}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 21">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};" class="cd-popup-trigger">	
+                </a>	
+                <include file='cj'/>
+            </if>
+            <if condition="$vo['chajianID'] eq 24">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"
+                   href="javascript:dzp('{$cjid}')" >
+                    <img src="{$vo.backgroundimg}" border="0" class="baoming" id="a4" />
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 25">
+                <div  style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='zxbj'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 27">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:getlunbo('{$vo.caseid}');">      
+                    <include file='lunbotu'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 28">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                    <include file='mouse'/>
+                </div>
+            </if>
+        </volist>
+	<?php if(empty($list['qiegenum'])){ ?>
+   
+        <div class="img" id="img" style="background:url({$list['background']});width:{$list['width']}px;height:{$list['height']}px; top:0px;"></div>
+    
+    
+     <?php }else{ ?>
+	    <div class="img" id="img" style="width:{$list['width']};height:{$list['height']+80};">
+	    <?php for($i=0;$i<$list['qiegenum'];$i++){ ?>
+	    
+	    <img class="tpimg" src="__PUBLIC__/Uploads/hd/t<?php echo $list['ID'].$i ;?>.jpg" />
+	    <?php } ?>
+	    </div>
+    <?php } ?>
+    
+    </div>
+
+
+    <!-- <div class="lineKefu" id="lineKefu"><a target="_blank"   rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}"><img src="__PUBLIC__/web/images/kf.png" width="75" height="89" /></a></div> -->
+
+
+
+    <!-- 百度统计代码
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7332317144fc4492151562d505ea4700' type='text/javascript'%3E%3C/script%3E")); 
+</script>-->
+
+    <!--谷歌统计代码-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46195401-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!--唯众统计*-->
+    <script type="text/javascript">
+        var _py = _py || [];
+        _py.push(['a', 'tG..Q7Fx4-PNjuKaCidlzwGtc0']);
+        _py.push(['domain', 'stats.ipinyou.com']);
+        _py.push(['e', '']);
+        -function (d) {
+            var s = d.createElement('script'),
+                    e = d.body.getElementsByTagName('script')[0];
+            e.parentNode.insertBefore(s, e),
+                    f = 'https:' == location.protocol;
+            s.src = (f ? 'https' : 'http') + '://' + (f ? 'fm.ipinyou.com' : 'fm.p0y.cn') + '/j/adv.js';
+        }(document);
+    </script>
+    <noscript><img src="//stats.ipinyou.com/adv.gif?a=tG..Q7Fx4-PNjuKaCidlzwGtc0&e=" style="display:none;"/></noscript>
+    <!-- 回头客定向代码-->
+    <script type="text/javascript">
+        <!-- 
+    var bd_cpro_rtid = "rjf4";
+        //-->
+    </script>
+    <script type="text/javascript" src="http://cpro.baidu.com/cpro/ui/rt.js"></script>
+    <noscript>
+    <div style="display:none;">
+        <img height="0" width="0" style="border-style:none;" src="http://eclick.baidu.com/rt.jpg?t=noscript&rtid=rjf4" />
+    </div>
+    </noscript>
+    <!--访问统计代码开始-->
+    <!--访问统计代码结束-->
+
+    <!--获取手机号代码-->
+    <!--<script type='text/javascript'>document.write("<scr"+"ipt type='text/javascript' src='http://ww1.seoyx.net/m7/?jsuid=16&r="+new Date().getTime()+"'><\/script>");</script>-->
+    <!--获取手机号代码-->
+
+
+<if condition="$Promoterid eq '' || $Promoterid eq 0">
+    <script>
+
+        document.write("<scr" + "ipt src=\"http://gate.looyu.com/31779/{$cityinfo.LEYUTID}.js\"></sc" + "ript>");
+    </script>
+</if>
+
+
+<!-- 新活动插件 -->
+
+
+<LINK href="__PUBLIC__/newhd/css/iframes.css" type=text/css rel=stylesheet>
+
+
+<div id="newHdcj">
+
+    <div class="baom_rightF" >
+        <a target="_blank"  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" class="baomZxzx">在线<br/>咨询</a>
+        <a href="javascript:baom()" class="baomcj">报名<br/>参加</a>
+        <a class="baomGoTop" id="gotop" href="javascript:;" title="Top">置顶</a>
+    </div>
+    <div class="nextpage" id="gotops">
+        <div class="xf_b" <?php if($list['ID'] == 4948){echo 'style="background:url(http://www.sc.cc/Public/newhd/images/xf-con1.png)"';}?>>
+             <div class="xf_w">
+                <form method="post" name="newform2" id="newform2">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2">
+                                <input type="hidden" name="ClassRoomID" value="{$id}" />
+                                <input type="hidden"  name="ClassRoomName" value="{$list['Title']}" />
+                                <input type="hidden"  name="qudao" value="{$utm_source}" />
+                                <input type="hidden" value="add" name="action" />
+                                <input type="hidden" value="{$Promoterid}" name="Promoterid" />
+                                <input type="hidden" value="{$PromoterName}" name="PromoterName" />
+                                <input type="hidden" value="{$utm_term}" name="utm_term" />
+                                <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}" />
+                                <input name="CityName" type="hidden" id="CityName" value="{$list['CityName']}" />
+                                <input name="renshu" type="hidden" id="renshu" value="1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="45"><input name="UserName" type="text" class="inputp" size="5" placeholder="请输入您的姓名"/></td>
+                            <td height="45" class="td-bm">已有<span class="bm_num1"></span> 人报名</td>
+                        </tr>
+                        <tr>
+                            <td height="45"><input type="text" class="inputp" name="TelePhone" size="5" maxlength="11" placeholder="请输入您的手机"/></td>
+                            <td height="45"><a href="javascript:;" onClick="$('#newform2').submit();"><img src="__PUBLIC__/newhd/images/button-02.jpg"border="0" /></a></td>
+                        </tr>
+                    </table>
+                </form>    
+            </div>
+            <p class="t_phone">{$PromoterTel}</p>
+            <div class="closeFoot"></div>
+        </div>
+    </div>
+    <div class="footSmall"<?php if($list['ID'] == 4948){echo 'style=" background: url(http://www.sc.cc/Public/newhd/images/bottomSm1.png) no-repeat left center"';}?>></div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    // $(window).scroll( function() { 
+    // 	//baomingFd.style.top = (document.body.scrollTop+240) +"px";
+    // 	lineKefu.style.top = (document.body.scrollTop+250) +"px";
+    //  } );
+$(function(){
+    var w = $("body").css("width");
+    str = w.replace('px', "");
+    var imgWidth = "{$list['width']}";
+    if (imgWidth > str) {
+        root.style.left = "-" + ((imgWidth - str) / 2) + "px";
+        //baomingFd.style.left = ((imgWidth - str) / 2) + "px";
+       // $(".tpimg").css("margin-left","-" + ((imgWidth - str) / 2) + "px");
+    } else {
+        root.style.left = ((str - imgWidth) / 2) + "px";
+        //baomingFd.style.left =  "-" + ((str - imgWidth) / 2) + "px";
+        //$(".tpimg").css("margin-left",((str - imgWidth) / 2) + "px");
+    }
+    var lef = (str - 1200) / 2;
+
+    $(".hdTop").css("left", lef);
+
+    //alert(document.body.scrollTop);
+    var id = "{$id}";
+    var url = "{:C('scurl')['HD_INDEX']}ajaxgetbmnumber/id/" + id;
+    $.ajax({
+        type: "get",
+        url: url,
+        data:
+                {
+                },
+        dataType: "html",
+        success: function (data) {
+            $(".bm_numz").html('');
+            $(".bm_numz").html(data);
+            $(".bm_numh").html('');
+            $(".bm_numh").html(data);
+            $(".bm_num").html(data);
+            $(".bm_num1").html(data);
+        }
+    });
+
+
+    function baoming() {
+        var tp = $("#TelePhone").val();
+        var un = $("#UserName").val();
+        if (tp == '') {
+            alert('请输入您的电话号码');
+            return;
+        } else if (un == '') {
+            alert('请输入您的姓名');
+            return;
+        } else {
+            this.document.formleft.submit();
+        }
+
+    }
+});
+    
+</script>
+
+<script>
+    (function () {
+        // use custom tooltip; disable animations for now to work around lack of refresh method on tooltip
+        $("#newform1, #newform2,.formhengzong").tooltip({
+            show: false,
+            hide: false
+        });
+
+        $("#newform1").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: '{:U( "hd/onekey")}',
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data.info);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert('提交失败');
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+//横、纵报名框报名
+
+        $("#form").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: "{:C('scurl')['HD_INDEX']}bm/",
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if ($data.state == 1) {
+                            ga('send', 'event', 'huodong', 'tijiao', 'huodongbaoming', 350);
+                            bmok();
+                        } else {
+                            alert(data.msg)
+                        }
+                        //alert(data.info);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        //alert('提交失败');
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+
+
+        $("#newform2").validate({
+            submitHandler: function (form) {
+
+                var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+                $.ajax({
+                    type: 'post',
+                    url: '{:U( "hd/onekey")}',
+                    data: formParam,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.statusCode == 200) {
+                            ga('send', 'event', 'huodong', 'tijiao', 'huodongdilan', 350);
+                            bmok();
+                        } else {
+                            bmsb(data.info);
+                        }
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        bmsb(data.info)
+                    },
+                    complete: function () {
+                    }
+                });
+                //alert("formParam");    
+            },
+            rules: {
+                UserName: "required",
+                TelePhone: {
+                    required: true,
+                    isMobile: true
+                },
+            },
+            messages: {
+                UserName: "请输入您的姓名",
+                TelePhone: {
+                    required: "请输入您的联系电话",
+                    isMobile: "您输入的电话号码有误！"
+                },
+            }
+        });
+
+    })();
+
+
+
+    function bmok() {
+
+        var diag = new Dialog();
+        diag.Width = 500;
+        diag.Height = 180;
+        diag.Title = "我要报名";
+        diag.URL = "{:C('scurl')['HD_INDEX']}bmok";
+        diag.show();
+        $("#_DialogDiv_0").show();
+    }
+    function bmsb(msg) {
+
+        var diag = new Dialog();
+        diag.Width = 500;
+        diag.Height = 180;
+        diag.Title = "我要报名";
+        diag.URL = "{:C('scurl')['HD_INDEX']}bmsb?msg=" + msg;
+        diag.show();
+        $("#_DialogDiv_0").show();
+    }
+</script>
+
+<script type="text/javascript" src="__PUBLIC__/newhd/js/scroll.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // $('input, textarea').placeholder();
+    });
+</script>
+
+<eq name="list.istopbaoming" value="0">
+<script type="text/javascript">
+$(function(){
+    var windowW = document.documentElement.clientWidth || document.body.clientWidth;
+    var YRight = 0;
+    YRight = (windowW - 1180) / 2;
+    document.getElementById("baoMXF").style.right = (YRight - 8) + "px";
+    // alert(YRight-8);
+    document.getElementById("baoMXF").style.top = "20px";
+
+    document.getElementById("baoMXF").style.display = 'block';
+});
+    
+
+
+
+</script>
+</eq>
+<script type="text/javascript">
+    $(function () {
+        $('#gotop').click(function () {
+            $('html,body').animate({scrollTop: '0px'}, 800);
+        });
+        $(".closeFoot").click(function () {
+            $(".nextpage").animate({left: '-100%'}, 1000);
+            $(".footSmall").show(1000);
+            $(".bodyFt").css({"height": "1349px"});
+        });
+        $(".footSmall").click(function () {
+            $(".footSmall").hide(1000);
+            $(".nextpage").animate({left: '0px'}, 1000);
+            $(".bodyFt").css({"height": "1471px"});
+        });
+        $(".zsYbj ul li:last-child,.ftTjtw ul li:last-child").css({"margin-right": "0px"});
+    });
+
+</script>
+<eq name="list.istopbaoming" value="0">
+<script type="text/javascript">
+    $(function () {
+        $(".baom_gd .list_lh").myScroll({
+            speed: 40, //数值越大，速度越慢
+            rowHeight: 2000 //li的高度
+        });
+    });
+</script>
+</eq>
+<script type="text/javascript">
+    function pyConsultPyL() {
+        var w = window, d = document, e = encodeURIComponent;
+        var b = location.href, c = d.referrer, f, g = d.cookie, h = g.match(/(^|;)\s*ipycookie=([^;]*)/), i = g.match(/(^|;)\s*ipysession=([^;]*)/);
+        if (w.parent != w) {
+            f = b;
+            b = c;
+            c = f;
+        }
+        ;
+        u = '//stats.ipinyou.com/cvt?a=' + e('tG.GCs.YrnyZF3BsWRUPp8nRDeO00') + '&c=' + e(h ? h[2] : '') + '&s=' + e(i ? i[2].match(/jump\%3D(\d+)/)[1] : '') + '&u=' + e(b) + '&r=' + e(c) + '&rd=' + (new Date()).getTime() + '&e=';
+        (new Image()).src = u;
+    }
+
+    var lxbCbInputBtnBindedOne = false;
+    var lxbCbInputBtnBindedTwo = false;
+    var _interval = window.setInterval(function () {
+        //在线咨询（右侧）
+        if ($('.icoTc').length > 0 && !lxbCbInputBtnBindedOne) {
+            $('.icoTc').bind("click", function () {
+                pyConsultPyL();
+            });
+            lxbCbInputBtnBindedOne = true;
+        }
+
+        //在线咨询（悬浮窗）
+        if ($('#doyoo_mon_accept').length > 0 && !lxbCbInputBtnBindedTwo) {
+            $('#doyoo_mon_accept').bind("click", function () {
+                pyConsultPyL();
+            });
+            lxbCbInputBtnBindedTwo = true;
+        }
+        if (lxbCbInputBtnBindedOne && lxbCbInputBtnBindedTwo) {
+            window.clearInterval(_interval);
+        }
+    }, 200);
+</script>
+
+
+<!-- 问卷调查 -->
+<style>
+    .wjdc{
+        float: left;
+        position: fixed;
+        left: 0px;
+        bottom: 122px;
+    }
+</style>
+<div class="wjdc"><a href="http://tp.sojump.cn/jq/9033179.aspx" rel="nofollow" target="_blank"><img src="http://www.sc.cc/public/web/images/pcImg.jpg"></a></div>
+</html>

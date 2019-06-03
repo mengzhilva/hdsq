@@ -1,0 +1,165 @@
+<extend name="Public/common2016" />
+<block name="main">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/yangbanjian/css/common.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/yangbanjian/css/yanbanjian.css" />
+        <script type="text/javascript" src="__PUBLIC__/web/yangbanjian/js/jquery.js"></script>
+                <!--[if lte IE 6]>
+        <script type="text/javascript" src="js/belatedPNG.js"></script>
+        <script type="text/javascript">
+            var __IE6=true;
+            DD_belatedPNG.fix('.logo img,.prev img,.next img,img');
+        </script>
+        <![endif]-->
+        <style>
+                    a.touch{background: #f6efe9 none repeat scroll 0 0; color: #fa4c06;}
+        </style>
+    </head>
+	<body>
+    	<div class="contain">
+        
+        	<div class="souNav"><a href="http://www.sc.cc/" target="_blank">实创装饰首页</a>&nbsp;>&nbsp;装修样板间</div>
+            
+            <!-- part1 -->
+            <div class="ybj-p1">
+            	<div class="p1-list" id="p1-list">
+                	<div class="list-tit fl">风格<a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/<?php if($mtuCon['huxing']){if($mtuCon['area']){echo $mtuCon['huxing']."-".$mtuCon['area'];}else{echo $mtuCon['huxing'];}}else{echo $mtuCon['area'];} ?>">不限</a></div>
+                       <div class="list-con fl">
+                           <?php foreach ($styles as $k => $v): ?>
+                                <a key="{$k}" href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/{$v.FONT_PINYIN}<?php if($mtuCon['huxing']){echo '-'.$mtuCon['huxing'];} ?><?php if($mtuCon['area']){echo "-".$mtuCon['area'];} ?>" <?php if($mtuCon['style']==$v['FONT_PINYIN']){echo "class='touch' id='active1'";} ?>>
+                                                    {$v.FONTNAME}   
+                                </a>
+                            <?php endforeach ?>    
+                       </div>
+                    <div class="clear"></div>
+                    <div class="p1-more fr" id="p1-more">更多</div>
+                </div>
+                <div class="p1-list2" >
+                	<div class="list-tit fl">户型<a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/<?php if($mtuCon['style']){if($mtuCon['area']){echo $mtuCon['style']."-".$mtuCon['area'];}else{echo $mtuCon['style'];}}else{echo $mtuCon['area'];} ?>">不限</a></div>
+                       <div class="list-con fl">
+                           <?php foreach ($huxing as $k => $v): ?>
+                                <a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/<?php if($mtuCon['style']){echo $mtuCon['style'].'-';} ?>{$v.FONT_PINYIN}<?php if($mtuCon['area']){echo "-".$mtuCon['area'];} ?>" <?php if($mtuCon['huxing']==$v['FONT_PINYIN']){echo "class='touch' id='active2'" ;} ?>>
+                                   {$v.NAME}
+                                </a>
+                        <?php endforeach ?>
+                        </div>
+                        <div class="clear"></div>
+                </div>
+                <div class="p1-list3" >
+                	<div class="list-tit fl">面积<a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/<?php if($mtuCon['style']){if($mtuCon['huxing']){echo $mtuCon['style']."-".$mtuCon['huxing'];}else{echo $mtuCon['style'];}}else{echo $mtuCon['huxing'];} ?>">不限</a></div>
+                       <div class="list-con fl">
+                          <?php foreach ($area as $k => $v): ?>
+                                <a  href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/<?php if($mtuCon['style']){echo $mtuCon['style'].'-';} ?><?php if($mtuCon['huxing']){echo $mtuCon['huxing'].'-';} ?>{$v.FONT_PINYIN}" <?php if($mtuCon['area']==$v['FONT_PINYIN']){echo "class='touch' id='active3'";} ?>>
+                                
+                                        {$v.NAME}
+                                </a>
+                        <?php endforeach ?>
+                       </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <script>
+            	$(function(){
+			$('#p1-more').click(function(){
+                                    $('#p1-list').toggleClass('p1-list-h');
+                                    $('.p1-more').toggleClass('p1-more-h');
+                                  })		
+
+                                var active1=$.trim($('a#active1').attr('key'));
+                                if(active1>13){
+                                     $('#p1-list').toggleClass('p1-list-h');
+                                     $('.p1-more').toggleClass('p1-more-h');
+                                }
+		})
+            </script>
+            
+     
+                
+    
+            <!-- part2 -->
+
+        <div class="ybj-p2">
+                <ul>
+                <volist name="meitulist" id="vo" key="k">
+                            <li>
+                    	<div class="p2-img">
+                        	<a href="{$vo.URL3D}" target="_blank">
+                            	<img src="http://www.sc.cc{$vo.IMAGE}" width="376" height="281" />
+                                <img src="__PUBLIC__/web/yangbanjian/images/index6.png" width="376" height="281" class="p2-yy" />
+                            </a>
+                        </div>
+                    <div class="p2-tit">
+                        	<div class="p2-tit-con">
+                                <p class="tit-0 fr"><a href="{:C('scurl')['COUNTPRICE_ZXYS']}">免费获取报价</a></p>
+                                <p class="tit-1"><a href="{$vo.URL3D}" target="_blank">{$vo.NAME}</a></p>
+                                <p class="tit-2"><a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/{$vo.SID|getStyleFont_PinYin}{:C('scurl')['GHOUZHUI']}">{$vo.SID|getstyletype}</a><a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/{$vo.TYPEID|getHosetypeFont_PinYin}{:C('scurl')['GHOUZHUI']}">{$vo.TYPEID|gethousetype}</a><a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/{$vo.AREA|returnarea}{:C('scurl')['GHOUZHUI']}">{$vo.AREA}㎡</a></p>
+                            </div>
+                    </div>
+                    </li>
+               </volist>
+
+                    <div class="clear"></div>
+                </ul>
+                
+                  
+            </div>
+
+            <!-- part3 -->
+                        <p class="nex-page">{$page}</p>
+        
+            <!--无搜索结果情况-->
+        <?php if (!$meitulist): ?>
+            <div class="no-jieguo" style="display:block;">
+                    <img src="__PUBLIC__/web/yangbanjian/images/index8.jpg" width="120" height="120" />
+                    <p>抱歉，没有找到跟 <span id="sorry_content"></span> 相关的结果！ </p>
+                    <a href="{:C('scurl')['XIAOGUOTU_MEITU']}">看最新装修案例</a>
+                </div>
+        <?php endif ?>
+            
+        <script type="text/javascript">
+            var active1=$.trim($('a#active1').text());
+              var active2=$.trim($('a#active2').text());
+                var active3=$.trim($('a#active3').text());
+                $('span#sorry_content').text(active1 + active2 + active3);
+        </script>    
+          
+			<!-- part4 -->
+        <div class="ybj-p4-left fl">
+            	<div class="p4-tit">实创装修报价</div>
+                <?php foreach ($map_citys as $k => $v): ?>
+                    <div class="p4-list">
+                        <div class="p4list-l fl">{$v.AreaName}</div>
+
+                        <div class="p4list-r fr">
+                              <?php foreach ($v['area'] as  $vo): ?>
+                                    <a href="{$vo.baojia_url}">{$vo.NAME}装修报价</a>
+                              <?php endforeach ?>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                <?php endforeach ?>
+              
+              
+            </div>
+            
+        <div class="ybj-p4-right fr">
+            	<div class="p4-tit2">最新装修图册</div>
+                <div class="p4-list2">
+                	<ul>
+                    <?php foreach ($tuce as $k => $v): ?>
+                        <li><a href="{$v.url}"><span>{$k+1}</span>{$v.SID|getstyletype}{$v.TYPEID|gethousetype}{$v.AREA}㎡装修效果图</a></li>
+                    <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+    </div>
+<!--*********************footer 引入区*********************-->
+<include file="Common/yl"/> 
+<!--*********************footer 引入区 end*********************-->
+</block>
+
+
+
+    </body>
+</html>

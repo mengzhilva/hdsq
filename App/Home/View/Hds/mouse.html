@@ -1,0 +1,45 @@
+
+    <style>
+        .Imgss img:hover{
+            cursor: pointer;
+            z-index:999;
+        }
+        .Imgss {
+            z-index:999;
+        }
+        .Imgss a{
+            display:block;
+        }
+    </style>
+<div class="Imgss"><a <if condition="$vo.url eq null"> 
+						href="javascript:baommouse()"
+					<else/> 
+						<if  condition="$Promoterid eq '0'">
+							href="{$vo.url}" target="_blank"
+						<else/>
+							href="#"
+						</if>
+					</if>><img src="{$vo['backgroundimg']}" /></a></div>
+
+    <script type="text/javascript">
+    $(function(){
+        $(".Imgss img").mouseover(function(){
+            $(this).attr("src","{$vo['image']}");
+        });
+    });
+     $(".Imgss img").mouseout(function(){
+        $(this).stop().attr("src","{$vo['backgroundimg']}");
+    });
+
+function baommouse()
+{
+	var diag = new Dialog();
+	diag.Width = 420;
+	diag.Height =280;
+	diag.Title = "我要报名";
+	diag.URL = "{:C('scurl')['HD_INDEX']}link/id/{$id}?utm_source={$utm_source}&utm_term={$utm_term}&Promoterid={$Promoterid}";
+	diag.show();
+	$("#_DialogDiv_0").show();
+}
+
+</script>

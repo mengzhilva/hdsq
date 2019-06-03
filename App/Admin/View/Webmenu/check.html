@@ -1,0 +1,34 @@
+<h2 class="contentTitle">链接审核</h2>
+
+
+<div class="pageContent">
+    
+    <form method="post" action="__CONTROLLER__/chupdate/navTabId/listlinks/callbackType/closeCurrent"   class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+        <div class="pageFormContent nowrap" layoutH="97">
+            
+            <dl>
+                <!-- <h4>{$newsstatus.ID}</h4> -->
+                <dt>审核结果：</dt>
+                <dd>
+                     <label>
+                     <input type="hidden" name="link_id" value="{$links.link_id}">
+                     <input type="radio" name="is_show"  value="1" <if condition="$links.is_show eq 1">checked</if>>审核通过</label>
+                    <label>
+                    <input type="radio" name="is_show" value="-1" <if condition="$links.is_show eq -1">checked</if>>审核未通过</label>
+                </dd>
+
+            </dl>
+
+            
+   
+        </div>
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+    
+</div>
+

@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/hdlunbotu/css/zzsc.css" />
+<script type="text/javascript" src="__PUBLIC__/web/hdlunbotu/js/jquery-1.8.2.min.js"></script>
+<div class="main" >
+	<div class="pro-switch">
+		<div class="slider">
+			<div class="flexslider">
+                              <p>{$title}</p>
+				<ul class="slides">
+                                    <volist name="imgarr" id="vo">
+					<li>
+						<div class="img"><img src="http://www.sc.cc{$vo.IMAGE}"  alt="{$title}" /></div>
+					</li>
+                                    </volist>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script defer src="__PUBLIC__/web/hdlunbotu/js/slider.js"></script> 
+<script type="text/javascript">
+    $(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+
+    });
+  </script>
+<div style="text-align:center;clear:both"><br>
+
+
+</div>

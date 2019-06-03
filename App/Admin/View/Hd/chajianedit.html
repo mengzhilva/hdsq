@@ -1,0 +1,147 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/chajianupdate/navTabId/listhdcj/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.chid}"/>
+		<div class="pageFormContent nowrap" layoutH="60"  >
+			
+			<dl>
+				<dt>标题：</dt>
+				<dd>{$vo.name}{$vo.chid}</dd>
+			</dl>
+			<notin name="vo.cjid" value="10,20,24,28,29">
+			<dl>
+		
+				<dt>字体颜色：</dt>
+				<dd>
+		            <input style="width:80px;background:{$vo['color']}" name="color" type="text" id="colors" class="add_tr4_input" value="{$vo["color"]}" />
+		         	
+					<input style="display:none;" type="color" id="color" />
+					<a id="btn">选择颜色</a>
+				</dd>
+			
+
+			</dl>
+                        <in name="vo.cjid" value="4,14">
+                        <dl>
+                            <dt>字体大小：</dt>
+                            <dd>
+                                <input name="font_size" type="text" maxlength="3" class="digits" value="{$vo["font_size"]}">
+                                       <span class="info">单位(像素),默认值PC:23,M:26,只需要输入数字即可</span>
+                            </dd>
+                        </dl>
+                        </in>
+			</notin>
+			<if condition="$vo['cjid'] eq 3 or $vo['cjid'] eq 10 or $vo['cjid'] eq 20 or $vo['cjid'] eq 13  or $vo['cjid'] eq 28 or $vo['cjid'] eq 29">
+			<dl>
+				<dt>链接：</dt>
+				<dd>
+					<input type="text" id="url" name="url" value="{$vo['curl']}"/>
+				</dd>
+			
+			</dl>
+			</if>
+			<if condition="$vo['cjid'] eq 21 or $vo['cjid'] eq 22 or $vo['cjid'] eq 24 or $vo['cjid'] eq 28 or $vo['cjid'] eq 29">
+			<dl>
+				<dt>背景图片：</dt>
+				<dd>
+				<div style="display:blodk;width:500px;">
+				<img id="backgroundimgi"  style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.backgroundimg}"/>
+				<a style="display:blodk;float:left;width:100px;height:50px;padding-top:50px;padding-left:20px;" href="__CONTROLLER__/upindex/type/backgroundimg"  target="dialog">上传图片</a>
+				</div>
+				
+				
+				<input type="hidden" style="width:100%" name="backgroundimg" id="backgroundimg" value="{$vo.backgroundimg}" class="valid">
+			</dl>
+			</if>
+			<if condition="$vo['cjid'] eq 1 or $vo['cjid'] eq 2 or $vo['cjid'] eq 11 or $vo['cjid'] eq 12 or $vo['cjid'] eq 21 or $vo['cjid'] eq 22   or $vo['cjid'] eq 23 or $vo['cjid'] eq 25 or $vo['cjid'] eq 28 or $vo['cjid'] eq 29">
+			<dl>			
+			<if condition="$vo['cjid'] eq 28 or $vo['cjid'] eq 29">
+				<dt>鼠标移入图片：(150px*36px)</dt>
+			<else/>
+				<dt>提交图片：(150px*36px)</dt>
+			</if>
+				<dd>
+				<div style="display:blodk;width:500px;">
+				<img id="imagei"  style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.image}"/>
+				<a style="display:blodk;float:left;width:100px;height:50px;padding-top:50px;padding-left:20px;" href="__CONTROLLER__/upindex/type/image"  target="dialog">上传图片</a>
+				</div>
+				
+				
+				<input type="hidden" style="width:100%" name="image" id="image" value="{$vo.image}" class="valid">
+			</dl>
+			</if>
+			
+			<if condition="$vo['cjid'] eq 9 ">
+			<dl>
+				<dt>宽：</dt>
+				<dd>
+					<input type="text" id="url" name="width" value="{$vo['hwidth']}"/>
+				</dd>
+			
+			</dl>
+			<dl>
+				<dt>高：</dt>
+				<dd>
+					<input type="text" id="url" name="height" value="{$vo['hheight']}"/>
+				</dd>
+			
+			</dl>
+			
+			</if>
+                        <if condition="$vo['cjid'] eq 26  or $vo['cjid'] eq 27">
+                            <dl>
+                                <dt>案例ID：</dt>
+                                <dd>
+					<input type="text" id="caseid" name="caseid" value="{$vo['caseid']}"/>
+				</dd>
+                            </dl> 
+                        </if>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	<notin name="vo.cjid" value="10,20,24,28,29">
+	<script type="text/javascript">
+document.getElementById('btn').onclick = function(){
+	$("#color").show();
+	document.getElementById('color').click();
+};
+
+document.getElementById('color').onchange = function(){
+	$("#colors").val(this.value);
+	$("#colors").css('background',this.value);
+	$("#color").hide();
+};
+
+</script>
+</notin>
+
+    <script>
+    function filebackgood(json){
+
+        if(json.state == 200){
+            var pho = "__APP__"+json.msg;
+            // alert(pho);
+            switch(json.type){
+                case "image":
+                    $.pdialog.closeCurrent();
+                    $("#imagei").attr('src',pho);
+                    $("#image").val(json.msg);
+                    break;
+                case "backgroundimg":
+                    $.pdialog.closeCurrent();
+                    $("#backgroundimgi").attr('src',pho);
+                    $("#backgroundimg").val(json.msg);
+                    break;
+            }
+        }
+    }
+    </script>
+</div>
+

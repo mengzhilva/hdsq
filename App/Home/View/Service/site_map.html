@@ -1,0 +1,384 @@
+<include file="Common/header" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/mapNew.css" />
+<div class="mapNew">
+        <div class="mapNav">网站地图</div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">城市分类</div>
+            </div>
+            <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="mapTr clearfix">
+                <div class="mapTrLeft">{$v.AreaName}</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($v['area'] as $i => $r): ?>
+                        <li>
+                            <a href="http://{$r.urls}" target="_blank">{$r.NAME}</a>
+                            
+                        </li>
+                    <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <?php endforeach ?>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+               <a href="http://zhuangxiuxiaoguotu.sc.cc/" target="_blank"> <div class="mapTrLeft mapTrH2">效果图</div></a>
+            </div>
+            <div class="mapTr clearfix">
+               <a href="http://zhuangxiuxiaoguotu.sc.cc/meitu/" target="_blank"> <div class="mapTrLeft mapTrH2">灵感美图（单图）</div></a>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">风格</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                        
+                    <?php foreach ($fengge as $k=> $v): ?>
+                        <li>
+                            <a href="{$v.zxxgt_url}" target="_blank">{$v.FONTNAME}</a>
+                        </li>
+                    <?php endforeach ?>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">空间</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($kongjian as $k => $v): ?>
+                        <li>
+                            <a href="{$v.zxxgt_url}" target="_blank">{$v.FONTNAME}</a>
+                        </li>
+                    <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">局部</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($jubu as $k => $v): ?>
+                        <li>
+                            <a href="{$v.zxxgt_url}" target="_blank">{$v.FONTNAME}</a>
+                        </li>
+                    <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">色彩</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                     <?php foreach ($color as $k => $v): ?>
+                        <li>
+                            <a href="{$v.zxxgt_url}" target="_blank">{$v.NAME}</a>
+                        </li>
+                    <?php endforeach ?>
+                    
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+               <a href="http://zhuangxiuxiaoguotu.sc.cc/tuce/" target="_blank"> <div class="mapTrLeft mapTrH2">灵感美图（图册）</div></a>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">户型</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                        
+                        <?php foreach ($huxing as $k => $v): ?>
+                            <li>
+                            <a href="{$v['url']}" target="_blank">{$v.NAME}</a>
+                        </li>
+                        <?php endforeach ?>
+                
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">面积</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                        <li>
+                            <a href="{$mapurl}60pingmi/" target="_blank">60㎡以下</a>
+                        </li>
+                        <li>
+                            <a href="{$mapurl}90pingmi/" target="_blank">60-90㎡</a>
+                        </li>
+                        <li>
+                            <a href="{$mapurl}120pingmi/" target="_blank">90-120㎡</a>
+                        </li>
+                        <li>
+                            <a href="{$mapurl}160pingmi/" target="_blank">120-160㎡</a>
+                        </li>
+                        <li>
+                            <a href="{$mapurl}200pingmi/" target="_blank">160-200㎡</a>
+                        </li>
+                        <li>
+                            <a href="{$mapurl}10000pingmi/" target="_blank">200㎡以</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft">风格</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($fengge as $k=> $v): ?>
+                        <li>
+                            <a href="{$v.url}" target="_blank">{$v.FONTNAME}</a>
+                        </li>
+                    <?php endforeach ?>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+               <a href="http://zhuangxiuxiaoguotu.sc.cc/yangbanjian/" target="_blank"> <div class="mapTrLeft mapTrH2">3D样板间</div></a>
+            </div>
+            <!-- <div class="mapTr clearfix">
+               <a href="#" target="_blank"> <div class="mapTrLeft mapTrH2">3D云设计</div></a>
+            </div> -->
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">家装案例</div>
+            </div>
+             <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="mapTr clearfix">
+                <div class="mapTrLeft">{$v.AreaName}</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($v['area'] as $i => $r): ?>
+                        <li>
+
+                            <a href="http://{$r.anli_url}" target="_blank">{$r.NAME}家装案例</a>
+
+                        </li>
+
+                    <?php endforeach ?>
+
+                    </ul>
+                </div>
+            </div>
+
+            <?php endforeach ?>
+          
+
+        </div>
+        <div class="mapLine"></div>
+         <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">装修报价</div>
+            </div>
+             <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="mapTr clearfix">
+                <div class="mapTrLeft">{$v.AreaName}</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($v['area'] as $i => $r): ?>
+                        <li>
+
+                            <a href="http://{$r.baojia_url}" target="_blank">{$r.NAME}装修报价</a>
+
+                        </li>
+
+                    <?php endforeach ?>
+
+                    </ul>
+                </div>
+            </div>
+
+            <?php endforeach ?>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapLine"></div>
+         <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">设计师</div>
+            </div>
+     <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="mapTr clearfix">
+                <div class="mapTrLeft">{$v.AreaName}</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($v['area'] as $i => $r): ?>
+                        <li>
+
+                            <a href="http://{$r.shejs_url}" target="_blank">{$r.NAME}设计师</a>
+
+                        </li>
+
+                    <?php endforeach ?>
+
+                    </ul>
+                </div>
+            </div>
+
+            <?php endforeach ?>
+        </div>
+        <div class="mapLine"></div>
+         <div class="mapLine"></div>
+         <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">小区装修</div>
+            </div>
+                <?php foreach ($map_citys as $k => $v): ?>
+                 <div class="mapTr clearfix">
+                <div class="mapTrLeft">{$v.AreaName}</div>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                    <?php foreach ($v['area'] as $i => $r): ?>
+                        <li>
+
+                            <a href="http://{$r.xqzy_url}" target="_blank">{$r.NAME}小区装修</a>
+
+                        </li>
+
+                    <?php endforeach ?>
+
+                    </ul>
+                </div>
+            </div>
+
+            <?php endforeach ?>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">装修知识</div>
+            </div>
+         
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/zxzysx/" target="_blank"><div class="mapTrLeft">家具配饰</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                          <?php foreach ($jiaju as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}" target="_blank">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/zxcl/" target="_blank"><div class="mapTrLeft">装修主材</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                         <?php foreach ($zhucai as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}" target="_blank">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/zhuangxiuliucheng/" target="_blank"><div class="mapTrLeft">装修流程</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                          <?php foreach ($zhuangxiulc as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}" target="_blank">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/zxzysx/" target="_blank"><div class="mapTrLeft">装修注意事项</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                         <?php foreach ($zhuyisx as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}" target="_blank">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/zxsgzd/" target="_blank"><div class="mapTrLeft">装修施工重点</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                        <?php foreach ($shigongzd as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}"  target="_blank">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://gonglue.sc.cc/huodongzhuanti/" target="_blank"><div class="mapTrLeft">热门专题</div></a>
+                <div class="mapTrRight clearfix">
+                    <ul>
+                       <?php foreach ($zhuanti as $k => $v): ?>
+                          <li>
+                            <a href="{$v.url}">{$v.ClassName}</a>
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <a href="http://www.sc.cc/about/" target="_blank"><div class="mapTrLeft mapTrH2">关于实创</div></a>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="http://www.sc.cc/about/brand/" target="_blank"><div class="mapTrLeft">品牌荣誉</div></a>
+                <a href="http://www.sc.cc/about/history/" target="_blank"><div class="mapTrLeft">品牌历程</div></a>
+                <a href="{:C('scurl')['STANDARD_HBZC']}" target="_blank"><div class="mapTrLeft">实创主材</div></a>
+                <a href="{:C('scurl')['STANDARD_KBGC']}" target="_blank"><div class="mapTrLeft">实创施工标准</div></a>
+                <a href="{:C('scurl')['STANDARD_QZSH']}" target="_blank"><div class="mapTrLeft">全责售后</div></a>
+                <a rel="nofollow" href="http://sc.hirede.com/CareerSite/EmployerBasic" target="_blank"><div class="mapTrLeft">加入我们</div></a>
+                <a href="http://www.sc.cc/about/legal/" target="_blank"><div class="mapTrLeft">法律声明</div></a>
+            </div>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">自助服务</div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="{:C('scurl')['SERVICE_CSHOPLIST']}" target="_blank"><div class="mapTrLeft">展厅查询</div></a>
+                <a href="{:C('scurl')['USER_LOGIN']}" target="_blank"><div class="mapTrLeft">会员登录</div></a>
+                <a href="{:C('scurl')['USER_REGISTER']}" target="_blank"><div class="mapTrLeft">会员注册</div></a>
+                <a href="{:C('scurl')['USER_FINDPSW']}" target="_blank"><div class="mapTrLeft">找回密码</div></a>
+            </div>
+        </div>
+        <div class="mapLine"></div>
+        <div class="mapBar clearfix">
+            <div class="mapTr clearfix">
+                <div class="mapTrLeft mapTrH2">专题页面</div>
+            </div>
+            <div class="mapTr clearfix">
+                <a href="{:C('scurl')['WWW_DOMAIN']}baojia/" target="_blank"><div class="mapTrLeft">报价</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}laofang/" target="_blank"><div class="mapTrLeft">老房装修</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}xinfang/" target="_blank"><div class="mapTrLeft">新房装修</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}xiaohuxing/" target="_blank"><div class="mapTrLeft">小户型装修</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}ruanzhuang/" target="_blank"><div class="mapTrLeft">软装装修</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}anli/xhx/" target="_blank"><div class="mapTrLeft">小户型装修实例</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}yangbanjian/" target="_blank"><div class="mapTrLeft">样板间</div></a>
+                <a href="{:C('scurl')['WWW_DOMAIN']}tool/" target="_blank"><div class="mapTrLeft">装修计算器</div></a>
+            </div>
+        </div>
+    </div>
+<!--*********************contanier 内容区 end *********************-->
+
+
+<!--*********************footer 引入区*********************-->
+<include file="Common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+</body>
+</html>

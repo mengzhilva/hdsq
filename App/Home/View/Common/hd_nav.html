@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>专题导航</title>
+        <meta name="keywords" content="" /> 
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/hd_nav.css" />
+    </head>
+<body>
+    <div style="background-color: #fff;width:100%;">
+    <div class="spNav">
+        <a href="{:C('scurl')['INDEX_INDEX']}" target="_blank"><div class="spLogo"><img src="__PUBLIC__/images/hd_top.png"></div></a>
+        <ul>
+            <li><a href="{:C('scurl')['INDEX_INDEX']}" target="_blank" class="cur">首 页</a></li>
+            <li><a href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}{:C('scurl')['GHOUZHUI']}" target="_blank">理想装</a></li>
+            <li><a href="{:C('scurl')['XIAOGUOTU_MEITU']}" target="_blank">家装案例</a></li>
+            <li><a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a></li>
+            <li><a href="{:C('scurl')['DESIGNER_INDEX']}" target="_blank">设计师</a></li>
+            <li><a href="{:C('scurl')['CASES_INDEX']}" target="_blank">小区装修</a></li>
+            <li><a href="{:C('scurl')['GONGLUE_INDEX']}{:C('scurl')['GHOUZHUI']}" target="_blank">装修知识</a></li>
+            <li><a href="{:C('scurl')['ABOUT_INDEX']}" target="_blank">关于实创</a></li>
+        </ul>
+        <div class="spRight"><if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></div>
+    </div>
+    </div>

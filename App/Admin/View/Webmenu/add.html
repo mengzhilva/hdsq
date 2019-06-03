@@ -1,0 +1,55 @@
+<h2 class="contentTitle">添加友情链接</h2>
+<div class="pageContent">
+
+    <form method="post" action="__URL__/insert/navTabId/listlinks/callbackType/closeCurrent"  class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);" enctype="multipart/form-data">
+        <div class="pageFormContent nowrap" layoutH="97">
+
+
+            <dl>
+                <dt>链接名：</dt>
+                <dd><input type="text" name="name" class="required" value="" ></dd>
+            </dl>
+
+            <dl>
+                <dt>链接地址</dt>
+                <dd><input type="text" name="url" class="required " value="http://" ></dd>
+            </dl>
+   
+            <dl>
+                <dt>排序</dt>
+                <dd><input type="text" name="orderby" class=" " value="0" ></dd>
+            </dl>
+            <dl>
+                <dt>是否是新页面</dt>
+                <dd>
+                    <input type="radio" name="isblank"  value="0"  checked />否
+                    <input type="radio" name="isblank" value="1"  />是
+                </dd>
+            </dl>
+        </div>
+
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script>
+</script>
+<script>
+    $(function () {
+        var index = 1;
+        $("#adddiv").click(function (e) {
+            if (index > 20) {
+                alert('一次最多添加20条内容');
+            } else {
+                var str = '<dl style="border-top:4px solid #b8d0d6;width:100%;margin-top:20px"></dl><dl><dt>链接名：</dt><dd><input type="text" name="link_name[]" class="required" value="" ></dd></dl><dl><dt>链接地址</dt><dd><input type="text" name="url[]" class="required url" value="http://" ></dd></dl>';
+                $('#add').append(str);
+                index += parseInt(1);
+            }
+        });
+    });
+</script>
+

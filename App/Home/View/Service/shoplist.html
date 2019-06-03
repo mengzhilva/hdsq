@@ -1,0 +1,51 @@
+<include file="Common/header" />
+<!--*********************header 引入区 end*********************-->
+<script src="__PUBLIC__/web/js/Component.js" type="text/javascript"></script>
+
+<!--页面独立css和js引入区-->
+<link href="__PUBLIC__/web/css/self-service.css" type="text/css" rel="stylesheet">
+<script src="__PUBLIC__/web/js/sc-ui-control.js" type="text/javascript"></script>
+<!--*********************contanier 内容区 *********************-->
+<div class="shoplist-wrap clearfix">
+  <div class="big-banner">
+  	<img src="__PUBLIC__/web/temp/big-banner.png"/>
+  </div>
+   <div class="shoplist">
+   	<h3>实创装饰整体家居体验馆</h3>
+        <ul>
+          <volist name="shop" id="vo">
+            <li>
+              <div class="shopListTit">
+              <h2>{$vo.NAME}体验馆</h2>
+              </div>
+              <?php if(!empty($Promoter['PromoterTel'])) {?>
+              <p>电话：<?php echo $Promoter['PromoterTel']; ?></p>
+              <?php }else{ ?>
+              <p>电话：{$vo.TELEPHONE}</p>
+              <?php } ?>
+              <p>地址：{$vo.ADDRESS}</p>
+            </li>
+          </volist>
+        </ul>
+   </div>
+</div>
+<!--*********************contanier 内容区 end *********************-->
+
+
+
+
+<!--*********************footer 引入区*********************-->
+<include file="common/foot" />
+<!--*********************footer 引入区 end*********************-->
+
+
+<script type="text/javascript">
+//设计师列表【tab切换】
+ $('.demo-TabName li').on('click',function(){
+	tabDemo($(this));
+ });
+</script>
+
+
+</body>
+</html>

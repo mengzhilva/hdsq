@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head  id="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{$title|default="实创"}</title>
+	<meta name="keywords" content="{$keywords}" />
+	<meta name="description" content="{$description}" />
+	<link href="__PUBLIC__/web/css/global.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/newIndex.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/2016/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/2016/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/2016/css/nav.css" />
+	<script src="__PUBLIC__/web/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<link href="__PUBLIC__/web/css/index.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="__PUBLIC__/web/js/slide-simulate.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/web/js/jquery.slider.js"></script>
+	<div id="Promoterid" style="display:none">{$Promoter.Id}</div>
+	<div id="citynam" style="display:none">{$city}</div>
+	<script src="__PUBLIC__/web/js/func.js" type="text/javascript"></script>
+	<script src="__PUBLIC__/web/js/Component.js" type="text/javascript"></script><!-- 请置于所有广告位代码之前 -->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+BAIDU_CLB_preloadSlots("1040606","1040705");
+</script>
+<script src="__PUBLIC__/web/js/placeholder.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/2016/js/toggle.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('input, textarea').placeholder();
+	});
+</script>
+        <script type="text/javascript">
+            function zdfs()
+            {
+                var diag = new Dialog();
+                diag.Width = 500;
+                diag.Height = 350;
+                diag.Title = "预约装修";
+                diag.URL = "{:C('scurl')['INDEX_ZDFS']}";
+                diag.show();
+            }
+            function opin()
+            {
+                var diag = new Dialog();
+                diag.Width = 500;
+                diag.Height = 330;
+                diag.Title = "在线报修";
+                diag.URL = "{:C('scurl')['INDEX_OPINION']}";
+                diag.show();
+            }
+            function bmcg(a,b,c)
+            {
+                var diag = new Dialog();
+                diag.Width = 500;
+                diag.Height = 300;
+                diag.Title = "获取报价";
+                diag.URL = "{:C('scurl')['INDEX_INDEX']}index/bmcg/haohua/"+a+"/jiandan/"+b+"/jingzhi/"+c;
+                diag.show();
+            }
+        </script>
+    </head>
+	<body>
+    <!-- 顶部广告-->
+    <if condition="$slidebanner neq ''">
+     <div class="new-width top-gg" id="top-gg">
+        <a href="{$slidebanner.url}" class="new-width-img" target="_blank"><img src="{$slidebanner.image}" alt="{$slidebanner.name}"></a> 
+       <a class="top-gg-colse" id="close"><img src="__PUBLIC__/web/2016/images/index-colse.png" alt=""></a>
+     </div>
+     </if>
+    
+    <!--top-->
+    <div class="index-top">
+    	<div class="it-content">
+        	<div class="itc-left left">城市：<a class="a-city" href="http://{$cityinfo.DOMAIN}.sc.cc{:C('scurl')['GHOUZHUI']}">{$cityinfo.NAME}</a><a id="gh1">[更换]</a></div>
+            <!--城市弹出层始-->
+			<div class="city_name" id="city_select1">
+					<dl>
+						<dt>东北</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '东北'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if>
+							</volist>
+						</dd>
+					</dl>
+
+					<dl style="height: 60px;">
+						<dt>华北</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '华北'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if><if condition="$vo.DOMAIN eq 'bj'">style=" font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if> 
+							</volist>
+						</dd>
+					</dl>
+					<dl>
+						<dt>华东</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '华东'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if>
+							<if condition="$vo.DOMAIN eq 'sh'"> style=" font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if>
+							</volist>
+						</dd>
+					</dl>
+					<dl>
+						<dt>中南</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '中南'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if>
+							<if condition="$vo.DOMAIN eq 'gz'"> style=" font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if>  
+							</volist>
+						</dd>
+					</dl>
+					<dl>
+						<dt>西南</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '西南'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if>  
+							</volist>
+						</dd>
+					</dl>
+					<dl>
+						<dt>西北</dt>
+						<dd>
+							<volist name="citys" id="vo">
+							<if condition="$vo.AreaName eq '西北'">
+							<a href="http://{$vo.DOMAIN}{:C('scurl')['DOMAIN']}{:C('scurl')['GHOUZHUI']}"  <if condition="$vo.DOMAIN eq $city"> style="color: #ec4e21; font-weight: bold;"</if>>{$vo.NAME}</a>
+							</if> 
+							</volist>
+						</dd>
+					</dl>
+			</div>
+			<!--弹出层末-->
+            <div class="itc-right right">
+
+            	<!-- <a href="{:U($city .'/countprice/zxys')}" class="right"target="_blank">装修报价</a> -->
+            	<a class="right indexZx"  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" rel="nofollow" target="_blank">咨询客服</a>
+
+            	<!-- <a href="{:C('scurl')['COUNTPRICE_ZXYS']}" class="right"target="_blank">装修报价</a>
+            	<a class="right"  rel="nofollow" href="http://j.looyu.com/WebModule/chat/p.do?c={$cityinfo.LEYUCID}&f={$cityinfo.LEYUFID}&{$leyurl}" rel="nofollow" target="_blank">联系客服</a> -->
+                <if condition="$user neq ''">
+                    <?php
+                    $httpUrl = explode(".",$_SERVER['HTTP_HOST']);
+                  if(in_array("zhuangxiuxiaoguotu",$httpUrl)){
+                  ?>
+                    <a class="right" href="{:C('scurl')['XIAOGUOTU_YUN']}logout/">[退出]<a>
+                        <?php }else{  ?>
+                        <a class="right" href="{:C('scurl')['USER_INDEX']}logout/">[退出]<a>
+                            <?php
+                }
+                ?>
+                </if>
+            	
+				<if condition="$user eq ''">
+            	<a class="right" href="{:C('scurl')['USER_LOGIN']}" id="loginuser" rel="nofollow" target="_blank">登录</a>
+            	</if>
+				<if condition="$user neq ''">
+            	<a class="right" href="{:C('scurl')['VIP_INDEX']}" target="_blank"><if condition="$user.username neq ''">{$user.username}</if><if condition="$user.username eq ''">{$user.mobilephone}</if></a>
+            	</if>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="new-width new-top">
+       <div class="new-top-con con">
+         <div class="new-top-con-left left">
+            <div class="new-top-con-logo left"><a href="{:C('scurl')['INDEX_INDEX']}"><img src="__PUBLIC__/web/2016/images/index-logo.png" width="220" height="26" alt="实创装饰整体家装"></a></div>
+            <span class="left"><img src="__PUBLIC__/web/2016/images/index-slo.png" width="178" height="26"></span>
+         </div>
+         <div class="new-top-con-sou left">
+            <div class="sou-left left">
+              <select name="" class="index-input-02" id="searchtype">
+                <option value="1" <eq name="CONTROLLER_NAME" value="Xiaoguotu">selected</eq>>案例</option>
+                <option value="2" <eq name="CONTROLLER_NAME" value="Designer">selected</eq>>设计师</option>
+                <option value="3" <eq name="CONTROLLER_NAME" value="Gonglue">selected</eq>>装修知识</option>
+                <option value="4" <eq name="CONTROLLER_NAME" value="Cases">selected</eq> <eq name="CONTROLLER_NAME" value="Hotcom">selected</eq>>找小区</option>
+             </select>
+            </div>
+           <div class="sou-right left">
+             <input type="text" class="index-input-01 left" id="searchkeyword" placeholder="请输入关键词" value="{$keyword}" />
+             <a href="javascript:;" class="index-button-01 all-hover-animate left" id="searchurls" ></a>
+           </div>
+           <div class="sou-con left">
+             <a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a>
+			 <a href="http://gonglue.sc.cc/jiajufengshui/" target="_blank">家居风水</a>
+             <a href="http://gonglue.sc.cc/zhuangxiuliucheng/" target="_blank">装修流程</a>
+             <a href="http://zhuangxiuxiaoguotu.sc.cc/keting/" target="_blank">客厅装修效果图</a>
+             <a href="http://zhuangxiuxiaoguotu.sc.cc/tatami/" target="_blank">榻榻米装修效果图</a>   
+           </div>
+         
+         </div>
+         <script>
+  			var url = "{:C('scurl')['XIAOGUOTUE_MEITU_KEYWORDS']}";
+        	function changeword(){
+         		var searchkeyword = $("#searchkeyword").val();
+         		var type = $("#searchtype").val();
+         		if(type ==1){
+             		 url = "{:C('scurl')['XIAOGUOTU_MEITU_KEYWORD']}"+searchkeyword;
+         		}else if(type == 2){
+             		 url = "{:C('scurl')['DESIGNER_LISTS']}?search="+searchkeyword;
+         		}else if(type == 3){
+             		 url = "{:C('scurl')['GONGLUE_SEARCH_KEYWORD']}"+searchkeyword;
+         		}else if(type == 4){
+             		 url = "{:C('scurl')['CASES_INDEX']}keyword="+searchkeyword;
+         		}
+        	}
+        	$("#searchurls").click(function(){
+        		changeword();
+         		window.open(url);
+        		//$("#searchkeyword").css('border','1px solid #ff6600');
+        	})
+         	$("#searchkeyword").keydown(function(){
+         		changeword();
+         	})
+          //取消默认回车调转 增加填写form回车跳转；
+      $(function(){
+               $('input').focus(function(event) {
+                   inputId= $(this).attr('id') ;  
+               });
+               document.onkeydown=function(event){
+                 var e = event || window.event || arguments.callee.caller.arguments[0];
+                 if(e && e.keyCode==13){ // enter 键
+
+                      if(inputId=='searchkeyword'){
+                           changeword();
+                            window.open(url);     //要做的事情
+                      }else{
+                       
+                          return false;
+                      }
+                 }
+               };   
+          })
+         </script>
+
+        <div class="new-top-con-right right">
+            <p class="right">
+				<if condition="$Promoter.PromoterTel neq ''">{$Promoter.PromoterTel}<else/>{$cityinfo.TELEPHONE}</if></p>
+            
+           </div>
+         
+      </div>
+    </div>
+      <!---导航开始-->
+      <!-- <div class="nav">
+        <div class="nav-con">
+          <div class="nav-left left"><h2><a>所有分类</a> </h2></div>
+          <div class="nav-right right">
+            <a href="{:C('scurl')['INDEX_INDEX']}" class="nav-right-a-cur">首页</a>
+            <a 
+				<switch name="cityinfo.NAME">
+	  				<case value="上海">href="http://www.sc.cc/package/sthree.html"</case>
+	  				<default />href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}"
+  				</switch>  target="_blank">看产品</a>
+            <a href="{:C('scurl')['XIAOGUOTU_MEITU']}" target="_blank">挑风格</a>
+            <a href="{:C('scurl')['GONGLUE_INDEX']}" target="_blank">学装修</a>
+            <a href="{$slide.0.url}" target="_blank">有优惠</a>
+            <a href="{:C('scurl')['HOTCOM_INDEX']}" target="_blank">我的小区</a>
+            <a href="{:C('scurl')['ABOUT_INDEX']}" target="_blank">了解实创</a>
+          </div>            
+        </div>
+    </div> -->
+    <div class="nav2016">
+        <div class="navCenter">
+            <ul>
+                <li>
+                    <a href="{:C('scurl')['INDEX_INDEX']}">首页</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['LIXIANGZHUANG']}{$lixiang}{:C('scurl')['GHOUZHUI']}" target="_blank" >理想装</a>
+  				 
+                </li>
+                <li class="nav2016Xgt">
+                    <a href="{:C('scurl')['XIAOGUOTU_HOMEPIC']}" target="_blank">效果图</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['COUNTPRICE_ZXYS']}" target="_blank">装修报价</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['DESIGNER_INDEX']}" target="_blank">设计师</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['CASES_INDEX']}" target="_blank">小区装修</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['GONGLUE_INDEX']}{:C('scurl')['GHOUZHUI']}" target="_blank">装修知识</a>
+                </li>
+                <li>
+                    <a href="{:C('scurl')['ABOUT_INDEX']}" target="_blank">关于实创</a>
+                </li>
+            </ul>
+            <div class="navXgtxq">
+                <ul>
+                    <li>
+                        <a href="{:C('scurl')['XIAOGUOTU_HOMEPIC']}tuce/" target="_blank">灵感美图</a>
+                    </li>
+                    <li>
+                        <a href="{:C('scurl')['XIAOGUOTU_MEITU']}" target="_blank">家装案例</a>
+                    </li>
+                    <li>
+                        <a href="{:C('scurl')['XIAOGUOTU_THREE']}" target="_blank">3D样板间</a>
+                    </li>
+                    <li class="navLf">
+                        <a href="{:C('scurl')['XIAOGUOTU_YUN']}" target="_blank">3D云设计</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     <script type="text/javascript">
+         $(function(){
+            $(".nav2016Xgt,.navXgtxq").mouseover(function(){
+                $(".navXgtxq").css({"display":"block"});
+                $(".nav2016Xgt").css({"background":"#12b5b2"});
+                //alert("123");
+            });
+            $(".nav2016Xgt,.navXgtxq").mouseout(function(){
+                $(".navXgtxq").css({"display":"none"});
+                $(".nav2016Xgt").css({"background":"#00908c"});
+            });
+        });
+        </script>
+<script type="text/javascript" src="__PUBLIC__/web/js/zDrag.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/zDialog.js"></script>
+
+ <script type="text/javascript">
+ function lijibaoming()
+{
+  var diag = new Dialog();
+  diag.Width = 620;
+  diag.Height = 300;
+  diag.Title = "马上预定";
+  diag.URL = "{:C('scurl')['PACKAGE_BAOMING']}";
+  diag.show();
+}
+
+ function show_Favorite(sURL, sTitle){
+		sURL = encodeURI(sURL);
+		try{
+				window.external.addFavorite(sURL, sTitle);
+			}catch(e) {
+				try{window.sidebar.addPanel(sTitle, sURL, "");
+			}catch (e) 
+		{
+			alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+			}
+	}
+
+}
+function  showList(id,num){
+	if(num==1){
+		document.getElementById(id).style.display="block"
+	}else{
+		document.getElementById(id).style.display="none"}
+	}
+function show_index(url){
+	if (document.all) {
+		document.body.style.behavior='url(#default#homepage)';
+		document.body.setHomePage(url);
+	}else{
+		alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");}
+}
+
+	</script>
+	<div id="whitebg"></div>
+<!--*********************header 引入区 end*********************-->
+
+

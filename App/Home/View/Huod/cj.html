@@ -1,0 +1,119 @@
+
+<script src="__PUBLIC__/web/cj/js/modernizr.js"></script>
+<script src="__PUBLIC__/web/cj/js/jquery.1.11.1.js"></script>
+<script src="__PUBLIC__/web/cj/js/main.js"></script> 
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/cj/css/style1.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/web/cj/css/iframe.css">
+
+
+<style>
+.scCjName{
+color:{$vo['color']}
+}
+.scCjInfo{
+color:{$vo['color']}
+}
+#jpword{
+color:{$vo['color']}
+}
+
+<if condition="$vo['image'] !=''">
+.scCj{
+background:url(http://www.sc.cc/{$vo['backgroundimg']}) no-repeat center top;
+}
+</if> 
+</style>
+
+	<div class="cd-popup" role="alert">
+	<div class="cd-popup-container">
+		<div class="scCj">
+			<div class="scCjMain">
+				<div class="scCjImg">
+					<img id="jpimg" src="" style="height: 120px;margin-top: 5px;" />
+				</div>
+				<h2 id="jpword"> </h2>
+			</div>
+		<form action="http://www.sc.cc/{$city}/cj/bm/id/{$cjid}" method="post" id="form1">
+			<div class="scCjBm clearfix">
+				<input type="hidden"  id="jid" name="jid" value="" />
+				<input type="hidden"  name="qudao" value="{$qudao}" />
+				<input type="hidden"  name="Promoterid" value="{$Promoterid}" />
+				<input type="hidden"  name="utm_term" value="m站" />
+				<div class="scCjName">姓名<input type="text"  name="UserName" id="name" /></div>
+				<div class="scCjName scCjTel">电话<input name="TelePhone" id="phone"  maxlength="11" type="text" /></div>
+			</div>
+			</form>
+			<a href="javascript:bm();"><div class="scCjLjBtn">
+			    <if condition="$vo['image'] ==''">
+						<img src="__PUBLIC__/web/cj/images/ljBtn.png">
+			    <else /> 
+						<img src="http://www.sc.cc/{$vo['image']}" style="width:126px;height:34px">
+				</if></div></a>
+			<div class="scCjInfo">详情请咨询{$PromoterTel}</div>
+		</div>
+		<a href="#" class="cd-popup-close img-replace">关闭</a>
+	</div>  <!-- cd-popup-container -->
+</div>
+<script type="text/javascript">
+
+function bm(){
+	var name = $("#name").val();
+	var phone = $("#phone").val();
+	if(name == ''){
+		alert('请填写姓名！');
+		return 
+	}
+	if(phone == ''){
+		alert('请填写电话！');
+		return 
+	}
+    if(phone.length!=11)
+    {
+		alert('请输入有效的手机号码');
+        return 
+    }    
+	var re = /^1[3|4|5|8|7][0-9]\d{8}$/;
+	if(!re.test(phone)){
+		alert('请输入有效的手机号码');
+        return 
+	}
+	if(name != '' && phone != ''){
+		$('#form1').submit();
+	}
+}
+function cj(){
+
+	var cjid = "{$cjid}";
+	var tim = "{$time}";
+	$.ajax({
+		    type : "post",
+		    url : "http://www.sc.cc/{$city}/cj/cjajaxm",
+		    dataType : "jsonp",
+	        data: 
+			{
+	        	id:cjid
+			},
+		    jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+		    jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+		    success : function(data){
+				if(tim == -1){
+		    		alert('活动尚未开始，敬请期待！');
+		    	}else if(tim == 1){
+		    		alert('活动已结结束了，请关注下次活动吧！');
+		    	}else if(data.state == 1){
+		    		$('#jpword').html(data.title);
+		    		$('#jpimg').attr('src',"http://www.sc.cc/"+data.background);
+		    		$('#jid').val(data.id);
+
+	    			event.preventDefault();
+	    			$('.cd-popup').addClass('is-visible');
+		    		
+		    	}else if(data.state == -1){
+		    		alert('很遗憾，手太慢了，奖品已发完！');
+		    	} 
+		    }
+		});
+}
+</script>
+<!--弹出报名框-->
+	

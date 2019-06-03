@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-size:12px;}
+li{ list-style-type:none;}
+a{ text-decoration:none; }
+.clear{ clear:both;}
+img{border:none;}
+.bag{background:url(../images/bag_01.jpg) top center no-repeat #22004a }
+.bag2{background:url(../images/bag_02.jpg) center 984px no-repeat;}
+
+
+.contain{ width:1020px; margin:0 auto; position:relative; font-family: Arial,Helvetica,sans-serif;}
+.nav{right:229px !important;}
+
+.address{
+	color: #6600ca;
+	font-size: 26px;
+	font-family: "微软雅黑";
+	font-weight: bold
+}
+
+
+.baoming1,.baoming2,.baoming3,.baoming4{
+	color: #cb0101;
+	float:left;
+	width: 456px;
+	font-size: 14px;
+	font-family: "微软雅黑"
+	
+}
+.baoming1 td{ color:#cb0101; font-size:14px;} 
+.input{ width:176px; height:26px; line-height:26px; padding:0px 0px 0px 4px; border:a0a0a0 1px solid; }
+.gdz{
+	margin-top:380px;margin-left:56px;
+}
+.gdh{
+float:left;
+	width:200px;margin-left: 35px;
+margin-top: 34px;
+}
+.bmrh{width:200px;height:40px;margin-left:40px;}
+.gdk{width:215px;height:107px;background:#fff;border:1px solid #333;padding-left:40px}
+.bm_num{
+	color: #cb0101;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	float:left;
+	width: 39px;
+	text-align: center;
+}
+.bm_numh{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	float:left;
+	width: 39px;
+	height:50px;
+	text-align: center;
+}
+
+.baomingh{
+	margin-top: 77px;
+	margin-left: 93px;
+	color: #cb0101;
+	float:left;
+	width: 465px;
+	font-size: 14px;
+	font-family: "微软雅黑"
+
+}
+.baomingz{
+	margin-left: 25px;
+	color: #fff;
+	float:left;
+	width: 265px;
+	font-size: 16px;
+	margin-top:72px;
+	font-family: "微软雅黑"
+
+}
+.yxl23{
+	color: #EA5503;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: normal;
+	left: 598px;
+	line-height: 26px;
+	position: absolute;
+	top: 4732px;
+	width: 374px;
+	}
+
+.bus{
+	color: #8d2202;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	left: 756px;
+	line-height: 23px;
+	position: absolute;
+	top: 5485px;
+	width: 338px;
+	height: 338px;
+	}
+.bus tr td{ font-size:12px; font-weight:bolder;}
+.bus_2{
+	color: #8d2202;
+	font-family: "微软雅黑";
+	font-weight: normal;
+	left: 197px;
+	line-height: 24px;
+	position: absolute;
+	top: 5889px;
+	width: 840px;
+	height: 106px;
+	}
+.bus_2 tr td{ font-size:14px; font-weight:bolder;}
+
+.lineKefu { width:75px; height:89px; position:fixed; top:287px; right:5px; z-index:5; }

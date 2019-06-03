@@ -1,0 +1,403 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<link href="__PUBLIC__/m/css/style.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" id="viewportid" content="target-densitydpi=320,width=640,user-scalable=no">
+<script>
+if (window.innerWidth > 640){
+    document.getElementById('viewportid').setAttribute('content', 'target-densitydpi=285,width=640,user-scalable=yes');
+}
+</script>
+
+<meta name="apple-touch-fullscreen" content="no" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="no" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+<!--IOS 添加到主屏幕 应用图标-->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
+<link rel="apple-touch-icon-precomposed" href="">
+<link rel="shortcut icon" href="">
+<link href="__PUBLIC__/m/css/hd.css" rel="stylesheet" type="text/css" />
+<if condition="$chajiantyle eq '1'">
+<link href="__PUBLIC__/m/css/hddisplay.css" rel="stylesheet" type="text/css" />
+<else/>
+<link href="__PUBLIC__/m/css/hddisplaynew.css" rel="stylesheet" type="text/css" />
+</if>
+<link href="__PUBLIC__/m/css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/m/web/css/style1.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/m/web/css/styleZss.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/m/web/css/ybj.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/m/web/css/hdtop.css" />
+
+<title>{$list['Title']} — {$webset.NAME}</title>
+<meta name="keywords" content="{$keywords}" /> 
+<meta name="description" content="{$list['hdld']}" />
+<script type="text/javascript" src="__PUBLIC__/m/js/zDialog.js"></script>
+<script type="text/javascript" src="__PUBLIC__/public/js/zDialogdzp.js"></script>
+<script type="text/javascript" src="__PUBLIC__/m/js/jquery.min.js"></script>
+<script src="__PUBLIC__/m/web/js/placeholder.min.js"></script>
+</head>
+<style>*{margin:0px;}
+body{overflow-x:hidden;height:{$list['height']+80}px;background:{$list['backgroundcolor']};} 
+.root{position: relative; margin-bottom:78px !important;}
+.img{z-index:-1; position:absolute;background-size:100% !important;}
+.tou{background:#fff;}
+.lineKefu{position: absolute!important;}
+.hd_con{ width:640px; margin:0 auto; overflow:hidden}
+
+
+
+.header, .main, .footer{ width:640px; height:53px; margin: 0 auto; text-align:center;}
+h1{ width:; height:61px; font-size:23px; line-height:60px;  font-weight:normal;}
+.sizes{font-size:14px;}
+.dh_01 {background: #fff;}
+.dh_01 a{ display:block; margin: 0 auto; width:175px; text-align:left; height:44px; background:url(../../../../Public/Home/images/index_01.jpg) no-repeat; line-height:44px; padding-left:385px; font-size:20px; color:#ea5408; box-sizing: content-box;}
+</style>
+<body>
+ <script type="text/javascript">
+		// 首页导航显示隐藏
+		$(function(){
+				$(".mNav-icon").bind("click", function(){
+						$(".mNav").addClass('mNav-ani-fromTop');
+				})
+				$(".mNav-close img").bind("click", function(){
+						$(".mNav").removeClass('mNav-ani-fromTop');
+				})
+		})
+	</script>
+        
+
+
+        <div class="wapM" style="padding-bottom:0px;height:;">
+            <header  style="height:74px;    padding: 22px 3.125%;">
+       <h1 class="fl">
+                    <a href="#">
+                        <img src="{$webset.headerlogo}" width="170" height="20" alt="{$webset.NAME}" />
+                    </a>
+                </h1>
+                <div class="city-title fl" style="font-size:26px">
+                   活动优惠
+                </div>
+                <div class="mNav-icon fr"><img src="__PUBLIC__/m/web/images/mNav_00.png" width="38" height="20" /></div>
+                <div class="mNav">
+                    <div class="mNav-close"><img src="__PUBLIC__/m/web/images/mNav_10.png" width="30" height="30" /></div>
+                    <ul>
+                        <li>
+                        <a href="{$webset.DOMAIN}">
+                        <img src="__PUBLIC__/m/indexnew/images/mNav_01.png" /><span class="sizes">首页</span></a></li>
+                    <volist name="webmenu" id="vo">
+                        <a href="{$vo.url}">
+                        <img src="__PUBLIC__/m/indexnew/images/mNav_01.png" /><span class="sizes">{$vo.name}</span></a></li>
+                    
+                    </volist>
+                        <div class="clear"></div>
+                    </ul>
+                </div>    
+                </header>
+                </div>
+<div class="hd_con">
+<script type="text/javascript">
+<!--
+
+//-->
+var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+function tijiaos(i){		
+    if(i!=0){
+        var form = $("#form"+i);
+        var UserName = $('#form'+i+' input[name="UserName"]').val();
+        var TelePhone = $('#form'+i+' input[name="TelePhone"]').val();
+        //alert(UserName);
+        if(UserName == ''){
+            alert('请填写姓名!');
+        }else if (TelePhone == ''){
+            alert('请填写电话!');
+        }else if(!mobile.test(TelePhone)){
+			alert('请输入有效的手机号码！');
+        }else{
+            ga('send', 'event', 'huodong', 'tijiao', 'huodong', 350);
+            form.submit();
+        }
+    }
+}
+function dzp(cjid){
+
+	var diag = new Dialogdzp();
+	diag.Width = 835;
+	diag.Height = 900;
+	diag.Title = "拼手气";
+	diag.URL = "http://{:C('scurl')['SEC_DOMAIN']}{:C('scurl')['DOMAIN']}/wxdzp/"+"?cjid="+cjid+"&t=2"+"&city="+"{$city}";
+	diag.show();
+	$("#_DialogDiv_1").show();
+}
+
+</script>
+
+    <if condition="$list['Isleft'] eq '1'">
+<div class="baomingFd" id="baomingFd">
+     <p class="bm_num"></p>
+    <form action="__APP__/{$city}/Huod/bm/" method="post" name="formleft" id="formleft" onSubmit="return chkadd();">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-size:12px;">
+  <tbody><tr>
+      <td colspan="2">
+            <input type="hidden" name="source" value="{$source}"/>
+            <input type="hidden" name="Ism" value="{$Ism}">
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+      </td>
+  </tr>
+  <tr>
+    <td height="38" align="right" width="40px">姓名:&nbsp;</td>
+    <td height="38"><input name="UserName" id="UserName" type="text" class="input i1"></td>
+   </tr>
+   <tr>
+    <td height="38" align="right" width="40px">性别:&nbsp;</td>
+    <td height="38"><input type="radio" name="Sex" checked="checked" value="先生">&nbsp;男&nbsp;<input type="radio" name="Sex" value="女士">&nbsp;女</td>
+  </tr>
+  <tr>
+    <td height="38" align="right" width="40px">电话:&nbsp;</td>
+   <td height="38"><input type="text"  class="input i2" id="TelePhone" name="TelePhone" size="5" maxlength="11" ></td> 
+     <!-- <td height="38" align="right">楼盘:&nbsp;</td>
+         <td height="38"><input  name="LpName" type="text" class="input"  size="5" /></td> -->
+  </tr>
+  <tr>
+    <!-- <td height="38" align="right">面积:&nbsp;</td>
+        <td height="38"><input  name="LpName" type="text" class="input i1"  size="1" /></td> -->
+    <td height="40" colspan="2" align="right"><a href="javascript:baoming();"><img src="__PUBLIC__/m/images/button.jpg" border="0" class="baoming" id="a4"></a></td>
+  </tr>
+</tbody></table>
+    </form>
+
+</div>
+
+<if condition="$Promoterid eq '99999999999999'">
+<!--微信-->
+<link rel="stylesheet" type="text/css" href="/css/wx.css">
+<!--弹出层-->
+    <div class="tcc" id="tc">
+    手机请在下方输入：139********<br/>
+    座机请在下方输入：0105156****<br/>
+    输入您号码并点击回电，我们的专职客服将提供专业咨询，同时提供 <b>免费量房服务</b>。本次通话完全免费。
+    </div>
+<!--弹出层结束-->
+    <div class="gb" id="Float_Show" ><a title=查看官方微信 
+onclick="javascript:$('#wx').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#wx').show();});$('#Float_Show').fadeOut()" 
+href="javascript:void(0);"><img src="/images/leyu_2_v.png" width="27" height="135" /></a></div>
+
+
+
+<div class="wx" id="wx" >
+
+    <div class="gb_but"><a title=关闭官方微信 
+onclick="javascript:$('#wx').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#wx').hide();});$('#Float_Show').fadeIn(800);"
+href="javascript:void(0);"><img src="/images/wx_01.jpg" width="141" height="30" /></a></div>
+
+    
+    <form action="__APP__/Huod/bm/" method="post" name="wxform" >
+        <input type="text" name="TelePhone" id="TelePhone" size="5" maxlength="11" class="tel" value="请输入您的电话号码"   onfocus="if(document.getElementById('tc').style.display='none'){document.getElementById('tc').style.display='block'};if(value=='请输入您的电话号码'){value=''}" onBlur="if(document.getElementById('tc').style.display='block'){document.getElementById('tc').style.display='none'};if(value==''){value='请输入您的电话号码'}" />
+            
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+            <input type="hidden" name="UserName" value="微信报名" />
+            <input type="hidden" name="Sex" value="先生" />
+            <input class="baoming" id="aa" type="image" src="/images/but.jpg" name="btn" onClick="if(document.wxform.elements['TelePhone'].value=='请输入您的电话号码' || document.wxform.elements['TelePhone'].value==''){alert('请输入您的电话号码');return false;}" />
+    </form>
+</div>
+<!--微信结束-->
+</if>
+</if>        
+                <div class="clear"></div>
+<div class="root" id="root" style="left: 0;width:{$list['width']};height:{$list['height']+80}; margin: 0 auto">
+
+
+
+    <volist name="chajians" id="vo">
+
+                <if condition="$vo['chajianID'] eq 11">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <include file='Huod/mhbmk'/>
+                </div>
+            </if>
+
+            <if condition="$vo['chajianID'] eq 12">
+                
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <include file='Huod/mzbmk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 13">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"
+                <if condition="$vo.url eq ''"> 
+                    href="javascript:baom()"
+                <else/> 
+                    <if  condition="$Promoterid eq '0'">
+                        href="{$vo.url}" target="_blank"
+                    <else/>
+                        href="#"
+                    </if>
+                </if>>
+                
+                <include file='Huod/rdlj'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 14">
+                
+                <div style="position:absolute;text-align: center;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <include file='Huod/phone'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 15">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:open()">      
+                <include file='Huod/phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 16">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="#{$vo['url']}">      
+                <include file='Huod/phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 17">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  name="{$vo['cid']}" id="{$vo['cid']}">     
+                <include file='Huod/phonelink'/>
+                </a>
+            </if>
+            <if condition="$vo['chajianID'] eq 18">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <include file='Huod/gdk'/>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 19">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <iframe src="__APP__/Huod/hdp/id/{$vo['cid']}/width/{$vo['width']}/height/{$vo['height']}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 20">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <iframe src="{$vo.url}" width="{$vo['width']}" height="{$vo['height']}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </if>
+            <if condition="$vo['chajianID'] eq 22">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  class="" href="javascript:dzp('{$cjid}');">  
+                </a>    
+            </if>
+            <if condition="$vo['chajianID'] eq 23">
+                <div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+                <include file='Huod/mbj'/>
+                </div>
+            </if>
+        <if condition="$vo['chajianID'] eq 26">
+                <a style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};"  href="javascript:getlunbo('{$vo.caseid}');">      
+                <include file='Huod/lunbotu'/>
+                </a>
+            </if>
+				<if condition="$vo['chajianID'] eq 29">
+					<div style="position:absolute;left:{$vo['lefts']};top:{$vo['tops']};width:{$vo['width']};height:{$vo['height']};">
+					<include file='Huod/mouse'/>
+					</div>
+				</if>
+    </volist>
+	<?php if(empty($list['qiegenum'])){ ?>
+   
+        <div class="img" id="img" style="background:url({$list['background']});width:{$list['width']}px;height:{$list['height']}px; top:0px;"></div>
+    
+    
+     <?php }else{ ?>
+	    <div class="img" id="img" style="width:{$list['width']};height:{$list['height']+80};">
+	    <?php for($i=0;$i<$list['qiegenum'];$i++){ ?>
+	    
+	    <img class="tpimg" src="__PUBLIC__/Uploads/hd/t<?php echo $list['ID'].$i ;?>.jpg" style="width:{$list['width']};height:{$list['height']/20};" />
+	    <?php } ?>
+	    </div>
+    <?php } ?>
+    
+    <script type="text/javascript">
+        $(window).scroll( function() { 
+                    //baomingFd.style.top = (document.body.scrollTop+240) +"px";
+                    lineKefu.style.top = (document.body.scrollTop+250) +"px";
+         } );
+        var w = $("body").css("width");
+        str=w.replace('px',""); 
+        var imgWidth = "{$list['width']}";
+        if(imgWidth > str){
+            root.style.left = "-" + ((imgWidth - str) / 2) + "px";
+            //baomingFd.style.left = ((imgWidth - str) / 2) + "px";
+            //alert(lef)
+            $(".tpimg").css("margin-left","-" + ((imgWidth - str) / 2) + "px");
+        }else{
+            root.style.left =  ((str - imgWidth) / 2) + "px";
+            //alert(lef)
+            $(".tpimg").css("margin-left",((str - imgWidth) / 2) + "px");
+            //baomingFd.style.left =  "-" + ((str - imgWidth) / 2) + "px";
+        }
+        var lef = (str - 1200)/2;
+    
+        $(".hdTop").css("left",lef);
+        
+        //alert(document.body.scrollTop);
+        var url = "__APP__/Huod/ajaxgetbmnumber/city/{$city}";
+        var id = "{$id}";
+        $.post(url,
+            {id:id},
+            function(txt){
+                    //alert(txt);
+                    $(".bm_numz").html('');
+                    $(".bm_numz").html(txt);
+                    $(".bm_numh").html('');
+                    $(".bm_numh").html(txt);
+                    $(".bm_num").html(txt);
+                }
+            
+            );
+        var mobile = /^1[3|4|5|8|7][0-9]\d{8}$/;
+        function baoming(){     		
+            var tp =  $("#TelePhone").val();
+            var un =  $("#UserName").val();
+            if(tp==''){
+                alert('请输入您的电话号码');return ;
+            }else if(!mobile.test(tp)){
+    			alert('请输入有效的手机号码！');
+            }else if(un == ''){
+                alert('请输入您的姓名');return ;
+            }else{
+                ga('send', 'event', 'huodong', 'tijiao', 'huodong', 350);
+                this.document.formleft.submit();
+            }
+            
+        }
+    </script>
+
+    
+ <div style="width: 446px;
+height: 80px;
+position: absolute;
+left: 13%;
+bottom: 0px;
+text-align: center;
+font-size: 18px;
+line-height: 30px;">Copyright @ {$webset.NAME}
+    移动：{$webset.DOMAIN} {$webset.beian}</div>
+    
+    </div>
+
+	<include file="Common/hd_foot" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listhd/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,navTabAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.ID}"/>
+		<div class="pageFormContent nowrap" layoutH="60" >
+			<dl style="display:none;">
+				<dt>城市：</dt>
+				<dd><select name="CityID" class="combox">
+					<volist name="city" id="vos">
+						<option value="{$vos['ID']}" <if condition="$vo['CityID'] eq $vos['ID']">selected</if>>{$vos['NAME']}</option>
+					</volist>
+				</select></dd>
+			</dl>
+			<dl>
+				<dt>标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="Title" value="{$vo.Title}"/></dd>
+			</dl>
+			<dl style="display:none;">
+				<dt>短信内容：</dt>
+				<dd><input type="text"  style="width:100%" name="phonecontent" value="{$vo.phonecontent}"/></dd>
+			</dl>
+			<dl style="display:none;">
+				<dt>外链地址：</dt>
+				<dd><input type="text"  style="width:100%" name="url" value="{$vo.LinkUrl}"/></dd>
+			</dl>
+			<dl>
+				<dt>活动地址：</dt>
+				<dd><input type="text" name="address" class="required" value="{$vo.address}" size="80"></dd>
+			</dl>
+			<dl>
+				<dt>是否m站：</dt>
+				<dd>
+					<label><input type="radio" name="Ism" value="1" <if condition="$vo['Ism'] eq '1'">checked</if> />是</label>
+					<label><input type="radio" name="Ism" value="0" <if condition="$vo['Ism'] eq '0'">checked</if> />否</label>
+				</dd>
+			</dl>
+			<dl style="display:none;">
+				<dt>活动亮点(m站填)：</dt>
+				<dd><textarea name="hdld"  rows="8" cols="50">{$vo.hdld}</textarea></dd>
+			</dl>
+			<dl>
+				<dt>结束时间：</dt>
+				<dd><p>
+				<input type="text" name="EndTime" class="date required textInput readonly valid" value="{$vo.endtimes}" readonly="true">
+				<a class="inputDateButton" href="javascript:;">选择</a>
+				<span class="info">yyyy-MM-dd</span>
+				</p>
+			</dl>
+			<dl>
+				<dt>活动时间：</dt>
+				<dd><p>
+				<input type="text" name="starttime" class="date required textInput readonly valid" value="{$vo.starttime}" readonly="true">
+				<a class="inputDateButton" href="javascript:;">选择</a>
+				<span class="info">yyyy-MM-dd</span>
+				</p>
+			</dl>
+			<dl>
+				<dt>背景图片：</dt>
+				<dd>
+				
+			
+
+				<img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.background}"/>
+				<a class="button" href="__MODULE__/Demo/add"  target="dialog"><span>上传图片</span></a>
+
+				
+				
+				<input type="hidden" style="width:100%" name="background" value="{$vo.background}" id="background" class="valid">
+			</dl>
+			<dl>
+				<dt>背景颜色：<br>电脑端应大于宽1920px，如果是m站活动，上传图片宽度为640px</dt>
+				<dd>
+					<input style="width:80px;background:{$vo['backgroundcolor']}" name="backgroundcolor" type="text" id="colors" class="add_tr4_input" value="{$vo["backgroundcolor"]}" />
+					
+					<input style="display:none;" type="color" id="color" />
+					<a id="btn">选择颜色</a>
+				</dd>
+			
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	<script type="text/javascript">
+document.getElementById('btn').onclick = function(){
+	$("#color").show();
+	document.getElementById('color').click();
+};
+
+document.getElementById('color').onchange = function(){
+	$("#colors").val(this.value);
+	$("#colors").css('background',this.value);
+	$("#color").hide();
+};
+
+</script>
+</div>
+

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<LINK href="__PUBLIC__/web/css/lanrentuku.css" type=text/css rel=stylesheet>
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.4.2.min.js"></script>
+<?php
+$height = str_replace('px','',$height)-20;
+$height = $height.'px';
+$imgwidth = str_replace('px','',$width)-38;
+$imgheight = str_replace('px','',$height)/2-30;
+ ?>
+<style>
+#imgPlay{
+width:{$width}px;height:{$height};
+}
+#imgPlay .imgs LI {
+width:{$width}px;height:{$height};
+}
+#imgPlay .prev{
+TEXT-INDENT: 9999px;top:<?php echo $imgheight ?>px;
+}
+#imgPlay .next{
+TEXT-INDENT: 9999px;top:<?php echo $imgheight ?>px;left:<?php echo $imgwidth ?>px
+}
+</style>
+<div id="iwidth" style="display:none" ><?php echo  str_replace('px','',$width) ?></div>
+<SCRIPT src="__PUBLIC__/web/js/lanrentukuhd.js" type=text/javascript></SCRIPT>
+<!--iepng-->
+<script type="text/javascript" src="__PUBLIC__/web/js/iepng.js"></script>
+<script type="text/javascript">
+   EvPNG.fix('div ');
+</script>
+<DIV id=imgPlay>
+<UL class=imgs id=actor>
+<?php foreach($hdp as $kh=>$vh){ ?>
+ 	<?php if(!empty($vh['url'] )) {?>
+  		<LI><a href="<?php echo $vh['url']?>" target="_blank"><IMG src="<?php echo $vh['img']?>" style="width:{$width};height:{$height};"></a></LI>
+	<?php }else{ ?>
+  		<LI><IMG src="<?php echo $vh['img']?>" style="width:{$width}px;height:{$height};"></LI>
+	<?php } ?>
+<?php } ?>
+</UL>
+<DIV class=num>
+<P class=lc></P>
+<P class=mc></P>
+<P class=rc></P></DIV>
+<DIV class=num id=numInner></DIV>
+<DIV class=prev></DIV>
+<DIV class=next></DIV></DIV>

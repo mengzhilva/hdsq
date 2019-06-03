@@ -1,0 +1,25 @@
+
+<div class="pageContent">
+		<input type="hidden" name="Id" value="{$info.Id}"/>
+		<div class="pageFormContent nowrap" layoutH="60" style="overflow-x:hidden !important;">
+				<dl>
+					<dt style="width:150px">
+					扫描绑定微信（转发）：</dt>
+					<dt style="width:250px">
+					<if condition="$info.wxopenid eq ''">未绑定<else/>已绑定</if></dt>
+					<dd>
+
+					<img style="height: 230px;width: 230px;border: 0px;" src="http://www.sc.cc/erwm/ttt.php?url={$returnurl}" />
+					</dd>
+				</dl>			
+				<dl>
+					<dt >
+					公众号二维码：</dt>
+					<dd>
+						<img style="height:230px;width:230px;border: 0px;" src="__URL__/gettgerwm/id/{$id}" />				
+					</dd>
+				</dl>
+		</div>
+		
+</div>
+

@@ -1,0 +1,86 @@
+.order-content .process-wrap { width:1180px; height:48px;}
+.order-content .process-wrap  ul { width:1180px; overflow:hidden;}
+.order-content .process-wrap  ul li { width:293px; height:40px; line-height:30px; text-align:center;  background:#fff; color:#999;border-top: 8px solid #999; font-size:14px; cursor:pointer; margin:0 1px; float:left; _width:285px;}
+.order-content .process-wrap  ul li.hover{border-top: 8px solid #fa4c06; background:#f5f5f5; color:#fa4c06;}
+.order-wrap .order-title { height:57px; line-height:57px; position:relative; width:1180px;}
+.order-wrap .order-title h3 { width:150px; height:57px; line-height:57px; padding-left:20px; font-size:18px; color:#0e050a;}
+.order-wrap .order-title a { display:block; width:113px; height:28px; line-height:28px; border:1px solid #e6c7a5; background:#f6efe9; text-align:center; color:#fa4c06; position:absolute; right:0; top:17px;}
+.order-wrap .order-title a:hover { color:#fff; background:#fa4c06;}
+.order-wrap table { border:1px solid #dbdbdb; width:1180px;}
+.order-wrap table th { height:34px; line-height:34px; background:#eaeaea; border-bottom:1px solid #dbdbdb; font-size:14px; color:696969;}
+.order-wrap table td { color:#585858;}
+.order-wrap table .th-1 { width:137px; text-align:center;}
+.order-wrap table .th-2 { width:440px; text-align:left;} 
+.order-wrap table .th-3 { width:145px; text-align:center;} 
+.order-wrap table .th-4 { width:280px; text-align:center;}
+.order-wrap table .th-5 { width:220px; text-align:center;} 
+.order-wrap table tr { border-bottom:1px solid #dbdbdb;}
+.order-wrap table td { height:118px;}
+.order-wrap table .img { padding-left:19px;}
+.order-wrap table .td-2 { height:75px;}
+.order-wrap table .td-2 a{ font-size:14px; color:#585858; font-weight:bold;}
+.order-wrap table .td-2 p { color:#585858;}
+.order-wrap table .td-2 input { width:298px; height:25px; padding-left:10px;}
+.order-wrap table .td-3{ font-size:14px; text-align:center;}
+.order-wrap table .td-4{ font-size:14px; text-align:center;}
+.order-wrap table .td-5{ font-size:14px; font-weight:bold; text-align:center;}
+.order-wrap table .td-6{ width:150px; text-align:center;}
+.order-wrap table .td-6 a { display:block; width:89px; height:28px; line-height:28px; text-align:center; color:#fa4c06; background:#f6efe9; border:1px solid #e6c7a5; margin:0 auto;}
+.order-wrap table .td-6 a:hover { color:#fff; background:#fa4c06; border:1px solid #fa4c06;}
+.order-wrap table .td-2 p.color { margin-bottom:15px;}
+.information { border:1px solid #dbdbdb; padding:20px 0; *height:200px;_height:200px}
+.information div { line-height:30px; margin-bottom:10px; height:30px;}
+.information div.right-add { height:80px;}
+.information div.add-bt { width:600px;}
+.information div span { font-size:14px; color:#666;; float:left;}
+.information div span.w-90 { width:90px; text-align:right; display:block; margin-right:22px; float:left;}
+.order-area { width:1180px; position:relative; height:180px; margin-top:20px;}
+.order-area div { width:1180px; height:46px; line-height:46px;}
+.order-area p { float:right; height:46px; line-height:46px; width:293px; position:relative;}
+.order-area p span { float:left;}
+.order-area p .p-left { width:176px; font-size:14px; color:#585858; text-align:right;}
+.order-area p a { width:293px; height:46px; display:block; color:#fff; background:#fa4c06; text-align:center; position:absolute; right:0; font-size:18px;}
+.order-area p .price { float:left; width:108px; font-size:18px; color:#fa4c06;}
+.order-area p .big { font-size:24px;}
+.order-area p .big i { font-size:18px;}
+.text_box-wrap { width:105px; height:23px; margin:0 auto; position:relative; *width:110px; _width:110px;}
+.text_box-wrap .add { width:23px; height:19px; border:1px solid #999; float:left; display:block; margin-right:5px; top:1px; position:relative; line-height:19px; cursor:pointer;}
+.text_box-wrap input { width:34px; height:21px; line-height:19px; text-align:center; float:left; margin-right:5px;}
+.text_box-wrap .min { width:23px; height:19px; border:1px solid #999; float:left; display:block; margin-right:5px; top:1px; position:relative; line-height:19px;cursor:pointer;}
+.td-6 span{ font-size:14px;color:#585858;}
+#total { font-size:24px; color:#fa4c06;}
+.point { font-size:18px; color:#fa4c06; font-style:normal;}
+.information input { width:208px; height:28px; line-height:28px; padding-left:10px; border:1px solid #dbdbdb;}
+.aside-select {
+background: url(images/select.png) 65px -3px no-repeat;
+}
+ .aside-select {
+width: 239px;
+height: 34px;
+line-height: 34px;
+line-height: 28px\0;
+border: 1px solid #dbdbdb;
+padding-left: 11px;
+color: #999899;
+}
+span.h-70 { height:70px;}
+.right-add { width:600px; float:left;}
+.right-add input { width:98px; height:28px; line-height:28px;}
+.add-bt { width:600px; margin-top:10px;}
+.add-bt span { float:left; display:block; margin-right:20px;}
+.add-bt input { width:208px; height:28px; line-height:28px; padding-left:10px; border:1px solid #dbdbdb; float:left;}
+.select-input {
+background: url(images/select.png) no-repeat center right;
+}
+.select-more input { width:100px!important;}
+
+
+.pay-wrap { width:550px; margin:50px auto;}
+.pay-wrap .pay-left { width:64px; height:300px; float:left; margin-right:15px;}
+.pay-wrap .pay-right { width:450px; float:left;}
+.pay-wrap .pay-right h3 { font-size:24px; color:#ea4d16; margin-bottom:10px;}
+.pay-wrap .pay-right .active { font-size:14px; color:#4b4948; margin-bottom:50px;}
+.pay-wrap .pay-right .active a{ color:#fa4c07;}
+.pay-wrap .pay-right p { font-size:14px; color:#4b4948; margin-bottom:10px;}
+
+.select-more { width:100px; *float:left; margin-right:10px; _float:left;}

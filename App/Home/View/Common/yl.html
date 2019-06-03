@@ -1,0 +1,99 @@
+	<!--<script type="text/javascript" src="__PUBLIC__/2016/js/toggle.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/web/2016/css/ylStyle.css" />
+				<div class="pic-con con">
+				 <div class="index-pic">
+					<div class="index-yqlj-top con left">
+						<ul>
+							<in name="pindao" value="2,3,4"><li class="li-cur left">友情链接</li></in>
+							<li <notin name="pindao" value="2,3,4">class="li-cur left" <else/>class="left"</notin>>服务城市</li>
+
+			 				<li class="left">热点标签</li>
+
+							<in name="pindao" value="3"><li class="left">推荐图册</li></in>
+
+
+             				
+                            <if condition="$haveFlag eq 1">
+                                <li class="left" <?php if ($SERVER_NAME=='www.sc.cc'): ?>
+									style="display:none;"
+								<?php endif ?>>城市报价</li>
+                            </if>
+                            <if condition="$zxalFlag eq 1">
+                                <li class="left">装修案例</li>
+                            </if>
+
+                            <if condition="$sjsFlag eq 1">
+                                <li class="left">设计师</li>
+                            </if>
+							<if condition="$wendaFlag eq 1">
+								<li class="left">装修报价</li>
+								<li class="left">装修套餐</li>
+							</if>
+						</ul>
+					</div>
+					<div class="index-yqlj-bottom left">
+						<ul>
+							<in name="pindao" value="2,3,4"><li class="left show">
+								<!--<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2087605121&site=qq&menu=yes" rel="nofollow">友链合作</a> |-->
+								<volist name="friend" id="friendvo">
+									<a href="{$friendvo.url}" target="_blank">{$friendvo.link_name}</a> |
+								</volist>
+								<a href="http://www.sc.cc/about/link/" target="_blank">更多>></a>
+							</li></in>
+							
+							<li <notin name="pindao" value="2,3,4">class="left show"<else/>class="left"</notin>>
+								<volist name="citys" id="citysvo">
+									<a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/" target="_blank">{$citysvo.NAME}家装公司</a> |
+								</volist>
+							</li>
+
+							<li class="left">
+								<volist name="redian" id="redianvo">
+									<a href="{$redianvo.url}" target="_blank">{$redianvo.link_name}</a> |
+								</volist>
+							</li>
+
+							<in name="pindao" value="3"><li class="left">
+								
+								<volist name="phone" id="vo">
+									<a href="{:C('scurl')['XIAOGUOTU_TUCE_ID']}{$vo.ID|get_tuce_url}{:C('scurl')['HOUZHUI']}" target="_blank">{$vo.AREA}㎡{$vo.NAME}{$vo.FONTNAME}装修效果图</a> |
+								</volist>
+							</li></in>
+							
+                            <if condition="$haveFlag eq 1">
+                                <li <notin name="pindao" value="2,3,4">class="left"<else/>class="left"</notin>>
+                                <volist name="citys" id="citysvo">
+                                    <a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/baojia/" target="_blank">{$citysvo.NAME}装修报价</a> |
+                                </volist>
+                                </li>
+                            </if>
+                            <if condition="$zxalFlag eq 1">
+                                <li class="left">
+                                <volist name="citys" id="citysvo">
+                                    <a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/zhuangxiuanli/" target="_blank">{$citysvo.NAME}装修案例</a> |
+                                </volist>
+                                </li>
+                            </if>
+                            <if condition="$sjsFlag eq 1">
+                                <li class="left">
+                                <volist name="citys" id="citysvo">
+                                    <a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/shejishi/" target="_blank">{$citysvo.NAME}室内设计师</a> |
+                                </volist>
+                                </li>
+                            </if>
+							<if condition="$wendaFlag eq 1">
+								<li class="left">
+                                <volist name="citys" id="citysvo">
+                                    <a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/baojia/" target="_blank">{$citysvo.NAME}装修报价</a> |
+                                </volist>
+                                </li>
+                                <li class="left">
+                                <volist name="citys" id="citysvo">
+                                    <a href="http://{$citysvo.DOMAIN}{:C('scurl')['DOMAIN']}/lixiangzhuang/" target="_blank">{$citysvo.NAME}装修套餐</a> |
+                                </volist>
+                                </li>
+							</if>
+						</ul>
+					</div>
+				 </div>
+		 </div>

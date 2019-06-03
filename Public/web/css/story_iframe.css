@@ -1,0 +1,412 @@
+/*共用部分*/
+@charset "utf-8";
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family:Microsoft YaHei;
+}
+a{
+	text-decoration: none;
+	color: #555;
+	font: 12px/15px Verdana, Arial, Helvetica, sans-serif;
+}
+a div,a li,a p,a span{
+	cursor:pointer;
+	font-family:Microsoft YaHei;
+}
+img {
+	border-width: 0px;
+}
+.clear{
+	clear:both;
+}
+p{
+	line-height:25px;
+	font-size:12px;
+}
+input{
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	border:none;
+}
+a:hover{
+	cursor: pointer;
+}
+td, th {
+	display: table-cell;
+	vertical-align: inherit;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	border-color: gray;
+}
+li{
+	list-style-type: none;
+}
+.clearfix:after {
+	 content: ".";
+	 display: block;
+	 height: 0;
+	 clear: both;
+	 visibility: hidden;
+	 line-height: 0px;
+}
+.iframeLeft{
+	width: 800px;
+	height: 540px;
+	margin-top:10px;
+	float: left;
+
+}
+
+/* Swipe 幻灯片 */
+img {
+  margin: 0 auto;
+  display: block;
+}
+.container{
+  margin: 0 auto;
+}
+
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+	width: 720px;
+	height: 540px;
+	line-height: 540px;
+	vertical-align: middle;
+  	overflow: hidden;
+  	position: relative;
+}
+.swipe-wrap div{
+	width: 720px;
+	height: 540px!important;
+	line-height: 540px!important;
+	vertical-align: middle!important;
+  	overflow: hidden; 
+  	display: table-cell;
+}
+.swipe-wrap img{
+	max-width: 720px;
+	line-height: 540px;
+	vertical-align: middle;
+}
+.swipe-wrap > div {
+  width:100%;
+  position: relative;
+}
+
+.slider-control .left{
+  position: absolute;
+  left: 20px;
+  top: 45%;
+}
+
+.slider-control .right{
+  position: absolute;
+  right: 20px;
+  top: 45%;
+    background:url(../story/images/right.png) no-repeat left center; 	
+
+}
+
+.slider-control button{
+  width: 26px;
+  height: 43px;
+  font-size: 20px;
+  cursor: pointer;
+  background:url(../story/images/left.png) no-repeat left center; 
+  display: none;
+  border:none;
+}
+.swipe:hover button{
+  display: block;
+}
+
+.slider-control button:hover{
+  opacity: 0.5;
+}
+span.imgInfo{
+	width: 710px;
+	height: 65px;
+	padding-top: 5px;
+	line-height: 20px;
+	padding-left: 10px;
+	position: fixed;
+	z-index: 999;
+	bottom:0px;
+	left: 40px;
+	display: block;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);
+	overflow:hidden;
+}
+span.imgInfo i{
+	font-size: 14px;
+	font-style: normal;
+	margin-right: 5px;
+}
+.iframeRight{
+	width: 310px;
+	height: 560px;
+	float: right;
+	background: #f5f5f5;
+}
+.iframeRTop{
+	width: 300px;
+	margin-left: 10px;
+	height: 46px;
+	line-height: 30px;
+}
+.iframeRTop img{
+	float: left;
+	width: 45px;
+	height: 45px;
+}
+.iframeRTop p{
+	width: 250px;
+	height: 46px;
+	line-height: 40px;
+	float: right;
+	color: #333333;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.iframeRTop p i{
+	font-style: normal;
+	color: #fa4c06;
+}
+.iframeZan{
+	width: 100%;
+	height: 30px;
+	background: #fff;
+	margin-top:10px;
+	position: relative;
+}
+.zan{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 35px;
+	color: #333333;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	background: url(../story/images/heart.png) no-repeat 15px 8px;
+	border-right: 1px solid #f5f5f5;
+	float:left;
+}
+.iframeZan .share{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	border-right: 1px solid #f5f5f5;
+}
+.jiathis_style{
+	margin-top: 6px;
+	margin-left: 15px;
+}
+.jiathis_style a span{
+	display: block;
+	margin-right: 5px;
+}
+.weixin{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	color: #333333;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	text-indent: 7px;
+}
+.weixin img{
+	float: left;
+	margin-top:10px;
+	width: 14px;
+	height: 13px;
+	margin-left: 15px;
+}
+.weixin img:hover{
+	cursor: pointer;
+}
+.weiXD{
+	position: absolute;
+	top:20px;
+	left: 186px;
+	width: 102px;
+	height: 102px;
+	display: none;
+}
+.weiXD img{
+	width: 102px;
+	height: 102px;
+}
+.iframeSay{
+	width: 100%;
+	height: 25px;
+	margin-top:10px;
+}
+.iframeSay input{
+	width: 230px;
+	height: 23px;
+	float: left;
+	border:1px solid #ccc;
+	line-height: 23px;
+	text-indent: 10px;
+	color: #666666;
+	font-size: 12px;
+	font-family: 宋体;
+	margin-left: 10px;
+}
+.iframeSay a{
+	display: block;
+	float: left;
+	width: 60px;
+	height: 25px;
+	line-height: 25px;
+	background: #fa4c06;
+	color: #fff;
+	font-size: 12px;
+	font-family: 宋体;
+	text-align:center;
+}
+.iframeCom{
+	width: 100%;
+	height: 345px;
+	overflow-y: scroll;
+	overflow-x:hidden;
+}
+.iframeComBar{
+	width: 300px;
+	margin-left: 10px;
+	height: auto;
+	margin-top:10px;
+	
+}
+.iframeComBar > img{
+	width: 40px;
+	height: 40px;
+}
+.iframeComBar img{
+	float: left;
+}
+.iframeComBarR{
+	width: 226px;
+	height: auto;
+	float: left;
+	margin-left: 10px;
+}
+.iframeComBarR span{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	color: #fa4c06;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.iframeComBarR span i{
+	color: #666666;
+	font-style: normal;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.iframeComBarM{
+	width: 100%;
+	height: auto;
+}
+.iframeComBarM p{
+	width: 200px;
+	height: auto;
+	line-height: 25px;
+	color: #666666;
+	font-size: 12px;
+	font-family: 宋体;
+	float: left;
+}
+.iframeFb{
+	width: 15px;
+	height: 15px;
+	float: right;
+	margin-top:10px;
+}
+.iframeFb:hover{
+	cursor: pointer;
+}
+.iframePlSr{
+	width: 230px;
+	height: 80px;
+	margin-top:10px;
+	display: none;
+}
+.iframePlSr form textarea{
+	width: 218px;
+	padding:5px;
+	height: 38px;
+	background: #fff;
+	border:1px solid #ccc;
+	line-height: 24px;
+	color: #cccccc;
+	font-size: 12px;
+	font-family: Microsoft YaHei;
+}
+.iframePlSr a{
+	display: block;
+	float: right;
+	width: 60px;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 5px;
+	background: #fa4c06;
+	color: #fff;
+	text-align: center;
+}
+.iframeComFt{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-top:60px;
+}
+.iframeComFt h2{
+	width: 160px;
+	height: 30px;
+	line-height: 30px;
+	font-style:italic;
+	color: #fa4c06;
+	font-size: 16px;
+	font-family: Microsoft YaHei;
+	margin-left: 10px;
+	float: left;
+}
+.iframeComFt a{
+	display: block;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	width: 120px;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	font-family: Microsoft YaHei;
+	font-weight: bold;
+	background: #fa4c06;
+	margin-left: 10px;
+}
+#jiathis_weixin_modal{
+	left: 70%!important;
+}

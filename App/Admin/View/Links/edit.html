@@ -1,0 +1,103 @@
+<h2 class="contentTitle">编辑友情链接</h2>
+
+<div class="pageContent">
+    <form method="post" action="__URL__/update/navTabId/listlinks/callbackType/closeCurrent"  class="pageForm required-validate" 
+        onsubmit="return iframeCallback(this,navTabAjaxDone);" enctype="multipart/form-data">
+        <input type="hidden" name="link_id" value="{$vo.link_id}"/>
+        <div class="pageFormContent nowrap" layoutH="97">
+            
+            <dl>
+                <dt>频道：</dt>
+                <select name="pindaoid" class="combox" id="pdid">
+                        <volist name="pindaolist" id="pindaovo" offset="1">
+                      
+                            <option value="{$pindaovo.id}" <if condition="$vo.pindaoid eq $pindaovo['id']">selected</if>>{$pindaovo.name}</option>
+
+                        </volist>
+                    </select>
+            </dl>
+
+            <dl class="csedit">
+                <dt>城市：</dt>
+                <select name="cid" class="combox">
+                <option value="0">请选择</option> 
+                <volist name="city" id="cityvo">
+                            <option value="{$cityvo['ID']}" <if condition="$vo.CityID eq $cityvo['ID']">selected</if>>{$cityvo['NAME']}</option>
+                </volist>
+                </select>
+            </dl>
+            
+            <dl>
+                <dt>链接名：</dt>
+                <dd><input type="text" name="link_name"  value="{$vo.link_name}" class="required"></dd>
+            </dl>
+            
+            <dl>
+                <dt>链接地址</dt>
+                <dd><input type="text" name="url" value="{$vo.url}" class="url required"></dd>
+            </dl>
+
+            <dl>
+                <dt>链接类型</dt>
+                <dd class="linkType">
+                <if condition="$vo.is_pic elt 3">
+                        
+                       <input type="radio" name="is_pic"  value="1"  <if condition="$vo.is_pic eq 1">checked</if>/>友情链接
+                        <input type="radio" name="is_pic" value="2"  <if condition="$vo.is_pic eq 2">checked</if>/>合作伙伴
+                        <input type="radio" name="is_pic" value="3"  <if condition="$vo.is_pic eq 3">checked</if>/>热点标签
+                <else/>
+
+                          <input type="radio" name="is_pic"  value="4"  <if condition="$vo.is_pic eq 4">checked</if>/>同行业网站
+                        <input type="radio" name="is_pic" value="5"  <if condition="$vo.is_pic eq 5">checked</if>/> 综合性网站
+                        <input type="radio" name="is_pic" value="6"  <if condition="$vo.is_pic eq 6">checked</if>/>地方性网站
+                </if>
+             
+                </dd>
+            </dl>
+            
+ 
+            <dl>
+                <dt>链接图片</dt>
+                <dd>
+                    <div style="display:blodk;width:500px;">
+                        <img id="uploadimg" style="display:blodk;float:left;width:200px;height:100px;" src="{$vo.pic}"/>
+                        <a class="button"   href="__MODULE__/Demo/add"  target="dialog"><span>上传图片</span></a>
+                        </div>
+                    <input type="hidden" style="width:100%" name="pic" id="background" class="valid">
+                </dd>
+            </dl>
+            
+        </div>
+        
+        <div class="formBar">
+            <ul>
+                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                <li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script>
+        if($("#pdid").val() !== 2){
+             $(".csedit").hide();
+             $(".csedit").val(0);
+         }
+       
+        $("#pdid").change(function(){
+            if($("#pdid").val() ==2){
+                $(".csedit").show();
+            }else if($("#pdid").val() ==6){
+                var str=' <input type="radio" name="is_pic"  value="4"  checked />同行业网站<input type="radio" name="is_pic" value="5"  />综合性网站<input type="radio" name="is_pic" value="6"  />地方性网站';
+                $('dd.linkType').html(str);
+                 $(".cs").val(0).hide();
+            }else{
+
+                 var str=' <input type="radio" name="is_pic"  value="1"  checked />友情链接<input type="radio" name="is_pic" value="2"  />合作链接<input type="radio" name="is_pic" value="3"  />热点标签';
+                $('dd.linkType').html(str);
+                 $(".csedit").hide();
+                 $(".csedit").val(0);
+            }
+            
+        })
+</script>
+

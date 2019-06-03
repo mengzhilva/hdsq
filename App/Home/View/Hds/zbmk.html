@@ -1,0 +1,141 @@
+<style>
+<!--
+
+-->
+
+.baomingz table tr td{
+font-size:14px;color:{$vo['color']};font-family:Microsoft YaHei;
+}
+.bmrz{
+color:{$vo['color']};width:200px;padding-left:65px;
+}
+.bmrh span{
+color:{$vo['color']};
+}
+.bm_numz{
+	color: {$vo['color']};
+	font-family: Arial,Helvetica,sans-serif;
+	
+	text-align: center;
+	}
+   .LpNamem{
+    background:#fff url(__PUBLIC__/images/Home/mjBg.png) no-repeat 95% center;    
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 0px 0px 4px;
+    border: 1px solid #dcdcdc;
+  }
+</style>
+<script type="text/javascript">
+<!--
+
+//-->
+function chkadd(){
+
+}
+</script>
+<div class="baomingz">
+<form action="{:C('scurl')['HD_INDEX']}bm/" method="post" class="formhengzong" name="form{$i}" id="form{$i}" onsubmit="return chkadd();">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-size:12px;">
+  <tbody><tr>
+      <td colspan="2">
+            <input type="hidden" name="ClassRoomID" value="{$id}">
+            <input type="hidden" name="ClassRoomName" value="{$list['Title']}">
+            <input type="hidden" name="qudao" value="{$utm_source}">
+            <input type="hidden" value="add" name="action">
+            <input type="hidden" value="{$Promoterid}" name="Promoterid">
+            <input type="hidden" value="{$PromoterName}" name="PromoterName">
+            <input type="hidden" value="{$utm_term}" name="utm_term">
+            <input name="CityID" type="hidden" id="CityID" value="{$list['CityID']}">
+            <input name="CityName" type="hidden" id="CityName" value="{$list['CityID']}">
+            <input name="renshu" type="hidden" id="renshu" value="1">
+      </td>
+  </tr>
+  <tr>
+    <td width="" height="40" align="right" style="color:{$vo['color']}">姓名:&nbsp;</td>
+    <td width="" height="40"><input name="UserName" type="text" class="input"></td>
+  </tr>
+  <tr>
+    <td height="40" align="right" style="color:{$vo['color']}">电话:&nbsp;</td>
+    <td height="40"><input type="text" class="input" name="TelePhone" size="5" maxlength="11"></td>
+  </tr>
+  <tr>
+    <td height="40" align="right" style="color:{$vo['color']}">面积:&nbsp;</td>
+    <td height="40"><input name="LpNamem" class="LpNamem" type="text" class="input" size="1"></td>
+  </tr>
+  <tr>
+    <td height="40" colspan="2" align="center">
+    <a href="javascript:tijiaos({$i});">
+    <if condition="$vo['image'] ==''">
+    	<img src="__PUBLIC__/images/Home/button_03.jpg" border="0" class="baoming" id="a4">
+    <else /> 
+		<img src="{$vo['image']}" border="0" class="baoming" id="a4">
+	</if>
+    </a></td>
+ </tr>
+</tbody></table>
+</form>
+<script>
+
+(function() {
+  // use custom tooltip; disable animations for now to work around lack of refresh method on tooltip
+  $("#form{$i}").tooltip({
+    show: false,
+    hide: false
+  });
+
+//横、纵报名框报名
+
+  $("#form{$i}").validate({
+    submitHandler: function(form){  
+
+        var formParam = $(form).serialize();//序列化表格内容为字符串  
+
+        $.ajax({    
+            type:'post',        
+            url:"{:C('scurl')['HD_INDEX']}bm/",    
+            data:formParam,    
+            cache:false,    
+            dataType:'json',    
+            success:function(data){ 
+            	if(data.state == 1){
+            		bmok();
+
+            		$(".input").val('');
+            	}else{
+            		bmsb(data.msg);
+            	}
+            	//alert(data.info);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //alert('提交失败');
+            },
+            complete:function(){
+            }  
+        });  
+        //alert("formParam");    
+    },     
+    rules: {
+        UserName: "required",
+        TelePhone: { 
+            required:true, 
+            isMobile:true 
+        },
+
+    },
+    messages: {
+        UserName: "请输入您的姓名",
+        TelePhone: {
+            required: "请输入您的联系电话",
+            isMobile: "您输入的电话号码有误！"
+        },
+    }
+  });
+
+
+})();
+
+</script>    
+    
+</div>

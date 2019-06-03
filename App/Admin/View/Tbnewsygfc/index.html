@@ -1,0 +1,124 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+    <input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+    <input type="hidden" name="numPerPage" value="{$numPerPage}" />
+    <input type="hidden" name="_order" value="{$Think.request._order}"/>
+    <input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+
+<div class="pageHeader">
+    <form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                        <b>搜索</b> &nbsp; 新闻标题：<input type="text" size="15" name="keyword" value="{$Think.post.keyword}" />
+                    </td>
+                    <td>
+                        城市：
+                    </td>
+                    <td>
+                        <select class="combox" name="CityID" >
+                            <option value="" >-全部-</option>
+                            <volist name="city" id="citvo">
+                            <option value="{$citvo.ID}" <if condition="$Think.post.CityID eq $citvo['ID']">selected</if>>{$citvo.NAME}</option>
+                            </volist>
+                        </select>
+                    </td>
+                    <td>
+                        <div class="buttonActive"><div class="buttonContent"><button type="submit">搜索</button></div></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li><a class="add" href="__CONTROLLER__/add" target="navTab"  rel="addnews" title="添加新闻"><span>添加</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/del/ids/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}" target="ajaxTodo" postType="string" title="确定要删除吗?"><span>删除</span></a></li>
+            <li><a class="edit" href="__URL__/edit/ID/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}"   target="navTab" rel="editnews" title="编辑新闻"><span>编辑</span></a></li>
+            <li class="line">line</li>
+            <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+            <li><a class="icon"   onclick="doSelect(0)" ><span>全选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(1)" ><span>全不选</span></a></li>
+            <li><a class="icon"   onclick="doSelect(2)" ><span>反选</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/del" target="selectedTodo" postType="string" title="确定要删除吗?"><span>批量删除</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/audit/type/y" target="selectedTodo" postType="string" title="确定审核通过？"><span>批量审核通过</span></a></li>
+            <li><a class="delete" href="__CONTROLLER__/audit/type/n" target="selectedTodo" postType="string" title="确定审核不通过？"><span>批量审核不通过</span></a></li>
+        </ul>
+    </div>
+    <table class="table" width="100%" layoutH="112">
+        <thead>
+            <tr>
+            <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                <th width="50" orderField="ID" <if condition="$Think.request._order eq 'ID'">class="{$Think.request._sort}"</if>>序号</th>
+                <th width="60" orderField="CityID" <if condition="$Think.request._order eq 'CityID'">class="{$Think.request._sort}"</if>>所属城市</th>
+                <th width="70" orderField="ClassName" >新闻类型</th>
+                <th width="200" orderField="Title" >新闻标题</th>
+                <th width="60" orderField="Author" >作者</th>
+                <th width="80" orderField="CopyFrom">来源</th>
+                <th width="150" orderField="Intro">新闻简介</th>
+                <th width="30" orderField="InIndex">首页</th>
+                <th width="30" orderField="Hot">热点</th>
+                <th width="30" orderField="Stars">等级</th>
+                <th width="60" orderField="Statusdescription">审核状态</th>
+                <th width="80" orderField="UpdateTime" <if condition="$Think.request._order eq 'UpdateTime'">class="{$Think.request._sort}"</if>>更新时间</th>
+                <th width="80" orderField="Editor">管理员</th>
+                <th width="100" >基本操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="newslist">
+                <tr target="item_id" rel="{$newslist.ID}">
+                    <td><input name="ids" value="{$newslist.ID}" type="checkbox"></td>
+                    <td>{$newslist.ID}</td>
+                    <td>{$newslist.CityID|getcityname}</td>
+                    <td>{$newslist.ClassID|getnewsclass}</td>
+                    <td>{$newslist.Title}</td>
+                    <td>{$newslist.Author}</td>
+                    <td>{$newslist.CopyFrom}</td>
+                    <td>{$newslist.Intro}</td>
+                    <td>{$newslist.inindex}</td>
+                    <td>{$newslist.hot}</td>
+                    <td>{$newslist.Stars}</td>
+                    <td>{$newslist.status}</td>
+                    <td>{$newslist.updatetime|date="Y-m-d",###}</td>
+                    <td>{$newslist.Editor}</td>
+                    <td><a href="__CONTROLLER__/check/ID/{$newslist.ID}" target="navTab" rel="checknews" title="新闻审核">审核</a>&nbsp;<a class="edit" href="__URL__/edit/ID/{$newslist.ID}"   target="navTab" rel="editnews" title="编辑新闻">编辑</a>&nbsp;<a class="delete" href="__CONTROLLER__/del/ids/{$newslist.ID}" target="ajaxTodo" postType="string" title="确定要删除吗?">删除</a></td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <div class="panelBar">
+        <div class="pages">
+            <span>显示</span>
+            <select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+                <option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+                <option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+                <option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+                <option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+                <option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+            </select>
+            <span>共{$totalCount}条</span>
+        </div>
+        <div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+    </div>
+</div>
+<script type="text/javascript">
+        //定义函数处理选择框的选择
+           function doSelect(m){
+                //获取上面所有的input节点
+                var list = document.getElementsByTagName("input");
+                //遍历
+                for(var i=0;i<list.length;i++){
+                    //判断如何选择中
+                    switch(m){
+                        case 0: list[i].checked=true;   break; //全选
+                        case 1: list[i].checked=false;  break; //全不选
+                        case 2: list[i].checked=!list[i].checked;  break; //反选
+                    }
+                }
+           }
+</script>
